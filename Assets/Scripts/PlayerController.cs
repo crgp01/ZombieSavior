@@ -20,19 +20,15 @@ public class PlayerController : MonoBehaviour
         {
             other.gameObject.SetActive(false);
             scoreManager.recolectedCoins++;
+            animator.Play("Pickup");
         }
     }
     private void FixedUpdate()
     {
-        if (Input.GetKey(KeyCode.F))
-        {
-            animator.Play("Pickup");
-        }
-
         if (Input.GetKeyDown(KeyCode.V))
         {
             animator.Play("Wave");
         }
     }
-
+     
 }
