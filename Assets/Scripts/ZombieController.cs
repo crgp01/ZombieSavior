@@ -9,10 +9,8 @@ public class ZombieController : MonoBehaviour
     private int minDist = 2;
     private GameObject player;
     private Transform playerTransform;
-    private Rigidbody playerRigidBody;
     private Animator animator;
     private GameObject coinPrefab;
-    private int velocity = 4;
     private NavMeshAgent zombieAgent;
 
 
@@ -33,14 +31,17 @@ public class ZombieController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Transform spawnTransform = transform;
         if (other.CompareTag("Medicine"))
         {
-            transform.gameObject.SetActive(false);
-
-            Instantiate(coinPrefab, spawnTransform.position, spawnTransform.rotation);
-            //Instantiate(peoplePrefab, spawnTransform.position, spawnTransform.rotation);
+            //animator.Play("zombie_death_standing");
+            Invoke("KillZombie", 1);
         }
+    }
+
+    private void KillZombie() {
+        Transform spawnTransform = transform;
+        transform.gameObject.SetActive(false);
+        Instantiate(coinPrefab, spawnTransform.position, spawnTransform.rotation);
     }
 
     void FollowingPlayer(Transform zombieTransform, Transform playerTransform) {
@@ -48,8 +49,8 @@ public class ZombieController : MonoBehaviour
 
         if (Vector3.Distance(zombieTransform.position, playerTransform.position) >= maxDist)
         {
+            //animator.Play("zombie_walk_forward");
             zombieAgent.SetDestination(playerTransform.position);
-            animator.Play("Walk");
             //zombieTransform.position += zombieTransform.forward * velocity * Time.deltaTime;
         }
 
