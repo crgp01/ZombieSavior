@@ -8,6 +8,7 @@ TagManager:
   - fire
   - Medicine
   - People
+  - Zombie
   layers:
   - Default
   - TransparentFX

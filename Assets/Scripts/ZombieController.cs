@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class ZombieController : MonoBehaviour
 {
@@ -8,10 +9,12 @@ public class ZombieController : MonoBehaviour
     private int minDist = 2;
     private GameObject player;
     private Transform playerTransform;
+    private Rigidbody playerRigidBody;
     private Animator animator;
     private GameObject coinPrefab;
     private int velocity = 4;
-    //private GameObject peoplePrefab;
+    private NavMeshAgent zombieAgent;
+
 
     // Start is called before the first frame update
     void Start()
@@ -20,12 +23,12 @@ public class ZombieController : MonoBehaviour
         playerTransform = player.GetComponent<Transform>();
         animator = GetComponent<Animator>();
         coinPrefab = GameObject.FindGameObjectWithTag("Coin");
-        //peoplePrefab = GameObject.FindGameObjectWithTag("People");
+        zombieAgent = GetComponent<NavMeshAgent>();
     }
 
     void Update()
     {
-        FollowingPlayer(transform, playerTransform);
+        FollowingPlayer(transform, playerTransform);       
     }
 
     private void OnTriggerEnter(Collider other)
@@ -45,7 +48,9 @@ public class ZombieController : MonoBehaviour
 
         if (Vector3.Distance(zombieTransform.position, playerTransform.position) >= maxDist)
         {
-            zombieTransform.position += zombieTransform.forward * velocity * Time.deltaTime;
+            zombieAgent.SetDestination(playerTransform.position);
+            animator.Play("Walk");
+            //zombieTransform.position += zombieTransform.forward * velocity * Time.deltaTime;
         }
 
         if (Vector3.Distance(zombieTransform.position, playerTransform.position) <= minDist)
