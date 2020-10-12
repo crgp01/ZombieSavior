@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    private Rigidbody rb;
     [SerializeField] private ScoreManager scoreManager;
     Animator animator;
 
@@ -18,9 +17,10 @@ public class PlayerController : MonoBehaviour
     {
         if (other.CompareTag("Coin"))
         {
+            animator.Play("Pickup");
             other.gameObject.SetActive(false);
             scoreManager.recolectedCoins++;
-            animator.Play("Pickup");
+           
         }
     }
     private void FixedUpdate()

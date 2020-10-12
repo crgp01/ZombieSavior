@@ -33,7 +33,6 @@ public class GunController : MonoBehaviour
 
             bulletRB.AddForce(newGo.transform.forward * bulletSpeed, ForceMode.Impulse);
             fireParticleSystem.Play();
-            //fireParticleSystem.Stop();
         }
     }
 }

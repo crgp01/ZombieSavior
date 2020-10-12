@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Coin
   - fire
+  - Medicine
+  - People
   layers:
   - Default
   - TransparentFX

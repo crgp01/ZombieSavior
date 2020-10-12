@@ -4,12 +4,14 @@ using UnityEngine;
 
 public class ZombieController : MonoBehaviour
 {
-    private int maxDist = 10;
+    private int maxDist = 2;
     private int minDist = 2;
     private GameObject player;
     private Transform playerTransform;
     private Animator animator;
+    private GameObject coinPrefab;
     private int velocity = 4;
+    //private GameObject peoplePrefab;
 
     // Start is called before the first frame update
     void Start()
@@ -17,18 +19,36 @@ public class ZombieController : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
         playerTransform = player.GetComponent<Transform>();
         animator = GetComponent<Animator>();
+        coinPrefab = GameObject.FindGameObjectWithTag("Coin");
+        //peoplePrefab = GameObject.FindGameObjectWithTag("People");
     }
 
-    // Update is called once per frame
     void Update()
     {
-        transform.LookAt(playerTransform);
+        FollowingPlayer(transform, playerTransform);
+    }
 
-        if (Vector3.Distance(transform.position, playerTransform.position) >= maxDist)
+    private void OnTriggerEnter(Collider other)
+    {
+        Transform spawnTransform = transform;
+        if (other.CompareTag("Medicine"))
+        {
+            transform.gameObject.SetActive(false);
 
-            transform.position += transform.forward * velocity * Time.deltaTime;
+            Instantiate(coinPrefab, spawnTransform.position, spawnTransform.rotation);
+            //Instantiate(peoplePrefab, spawnTransform.position, spawnTransform.rotation);
+        }
+    }
 
-        if (Vector3.Distance(transform.position, playerTransform.position) <= minDist)
+    void FollowingPlayer(Transform zombieTransform, Transform playerTransform) {
+        transform.LookAt(playerTransform.position);
+
+        if (Vector3.Distance(zombieTransform.position, playerTransform.position) >= maxDist)
+        {
+            zombieTransform.position += zombieTransform.forward * velocity * Time.deltaTime;
+        }
+
+        if (Vector3.Distance(zombieTransform.position, playerTransform.position) <= minDist)
         {
             animator.Play("zombie_attack");
         }
