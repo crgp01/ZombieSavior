@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         animator = GetComponent<Animator>();
+
     }
 
     private void OnTriggerEnter(Collider other)
@@ -21,6 +23,12 @@ public class PlayerController : MonoBehaviour
             other.gameObject.SetActive(false);
             scoreManager.recolectedCoins++;
            
+        }
+        if (other.CompareTag("Gun"))
+        {
+            animator.Play("Pickup");
+            other.gameObject.SetActive(false);
+            scoreManager.weapon1Collected = true;
         }
     }
     private void FixedUpdate()

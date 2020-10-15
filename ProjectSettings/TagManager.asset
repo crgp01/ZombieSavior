@@ -9,6 +9,9 @@ TagManager:
   - Medicine
   - People
   - Zombie
+  - Gun
+  - GunInHand
+  - GunUI
   layers:
   - Default
   - TransparentFX

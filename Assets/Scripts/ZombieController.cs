@@ -34,14 +34,10 @@ public class ZombieController : MonoBehaviour
         if (other.CompareTag("Medicine"))
         {
             //animator.Play("zombie_death_standing");
-            Invoke("KillZombie", 1);
+            Transform spawnTransform = transform;
+            transform.gameObject.SetActive(false);
+            Instantiate(coinPrefab, spawnTransform.position + new Vector3(0, 5, 0), spawnTransform.rotation);
         }
-    }
-
-    private void KillZombie() {
-        Transform spawnTransform = transform;
-        transform.gameObject.SetActive(false);
-        Instantiate(coinPrefab, spawnTransform.position, spawnTransform.rotation);
     }
 
     void FollowingPlayer(Transform zombieTransform, Transform playerTransform) {

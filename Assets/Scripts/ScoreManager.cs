@@ -8,7 +8,10 @@ public class ScoreManager : MonoBehaviour
 {
     public int recolectedCoins;
     public Text coinScore;
-   
+    public GameObject gunImage;
+    public GameObject gunInHand;
+    public bool weapon1Collected = false;
+
 
     // Start is called before the first frame update
     private void Start()
@@ -18,5 +21,10 @@ public class ScoreManager : MonoBehaviour
     private void Update()
     {
         coinScore.text = $"Monedas: {recolectedCoins}";
+        if (weapon1Collected == true)
+        {
+            gunImage.gameObject.SetActive(true);
+            gunInHand.gameObject.SetActive(true);
+        }
     }
 }

@@ -9,6 +9,7 @@ public class GunController : MonoBehaviour
     [SerializeField] float bulletSpeed;
     private GameObject fire;
     private ParticleSystem fireParticleSystem;
+    [SerializeField] private ScoreManager scoreManager;
     // [SerializeField] AudioSource shootSound;
 
     // Update is called once per frame
@@ -16,23 +17,29 @@ public class GunController : MonoBehaviour
     {
         fire = GameObject.FindGameObjectWithTag("fire");
 
-        fireParticleSystem = fire.GetComponent<ParticleSystem>();
+        if (fire) {
+            fireParticleSystem = fire.GetComponent<ParticleSystem>();
+        }
+       
     }
 
     void Update()
     {
-        if (Input.GetButtonDown("Fire1"))
+        if (scoreManager.weapon1Collected)
         {
-            GameObject newGo = Object.Instantiate(bullet);
-            // shootSound.Play();
+            if (Input.GetButtonDown("Fire1"))
+            {
+                GameObject newGo = Object.Instantiate(bullet);
+                // shootSound.Play();
 
-            newGo.transform.position = spawnPoint.position;
-            newGo.transform.rotation = spawnPoint.rotation;
+                newGo.transform.position = spawnPoint.position;
+                newGo.transform.rotation = spawnPoint.rotation;
 
-            Rigidbody bulletRB = newGo.GetComponent<Rigidbody>();
+                Rigidbody bulletRB = newGo.GetComponent<Rigidbody>();
 
-            bulletRB.AddForce(newGo.transform.forward * bulletSpeed, ForceMode.Impulse);
-            fireParticleSystem.Play();
+                bulletRB.AddForce(newGo.transform.forward * bulletSpeed, ForceMode.Impulse);
+                fireParticleSystem.Play();
+            }
         }
     }
 }
