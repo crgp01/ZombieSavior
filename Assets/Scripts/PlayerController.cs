@@ -7,11 +7,15 @@ public class PlayerController : MonoBehaviour
 {
     [SerializeField] private ScoreManager scoreManager;
     Animator animator;
+    GameObject medicine;
+    GameObject curePosition;
 
     // Start is called before the first frame update
     void Start()
     {
         animator = GetComponent<Animator>();
+        medicine = GameObject.FindGameObjectWithTag("Cure");
+        curePosition = GameObject.FindGameObjectWithTag("CurePosition");
 
     }
 
@@ -33,6 +37,12 @@ public class PlayerController : MonoBehaviour
         if (other.CompareTag("Zombie"))
         {
             scoreManager.lifeBarSlider.value -= 1;
+                   }
+        if (other.CompareTag("Cure"))
+        {
+            medicine.gameObject.SetActive(false);
+            curePosition.gameObject.SetActive(false);
+            scoreManager.lifeBarSlider.value = 3;
         }
     }
     private void FixedUpdate()
@@ -42,5 +52,13 @@ public class PlayerController : MonoBehaviour
             animator.Play("Wave");
         }
     }
+    private void Update()
+    {
+        if (scoreManager.lifeBarSlider.value == 0) {
+            medicine.gameObject.SetActive(true);
+            curePosition.gameObject.SetActive(true);
+        }
      
+    }
+
 }
