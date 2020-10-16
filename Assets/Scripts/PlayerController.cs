@@ -7,16 +7,14 @@ public class PlayerController : MonoBehaviour
 {
     [SerializeField] private ScoreManager scoreManager;
     Animator animator;
-    GameObject medicine;
-    GameObject curePosition;
+    public GameObject medicine;
+    public GameObject curePosition;
+    public GameObject cureText;
 
     // Start is called before the first frame update
     void Start()
     {
         animator = GetComponent<Animator>();
-        medicine = GameObject.FindGameObjectWithTag("Cure");
-        curePosition = GameObject.FindGameObjectWithTag("CurePosition");
-
     }
 
     private void OnTriggerEnter(Collider other)
@@ -42,7 +40,9 @@ public class PlayerController : MonoBehaviour
         {
             medicine.gameObject.SetActive(false);
             curePosition.gameObject.SetActive(false);
+            cureText.gameObject.SetActive(false);
             scoreManager.lifeBarSlider.value = 3;
+
         }
     }
     private void FixedUpdate()
@@ -57,6 +57,7 @@ public class PlayerController : MonoBehaviour
         if (scoreManager.lifeBarSlider.value == 0) {
             medicine.gameObject.SetActive(true);
             curePosition.gameObject.SetActive(true);
+            cureText.gameObject.SetActive(true);
         }
      
     }

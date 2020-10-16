@@ -14,6 +14,7 @@ TagManager:
   - GunUI
   - Cure
   - CurePosition
+  - CureText
   layers:
   - Default
   - TransparentFX
