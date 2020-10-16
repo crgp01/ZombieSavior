@@ -11,6 +11,7 @@ public class ScoreManager : MonoBehaviour
     public GameObject gunImage;
     public GameObject gunInHand;
     public bool weapon1Collected = false;
+    public Slider lifeBarSlider;
 
 
     // Start is called before the first frame update
@@ -26,5 +27,13 @@ public class ScoreManager : MonoBehaviour
             gunImage.gameObject.SetActive(true);
             gunInHand.gameObject.SetActive(true);
         }
+    }
+    private void ZombieMode()
+    {
+        if (lifeBarSlider.value == 0)
+        {
+            Debug.Log("Modo zombie");
+        }
+       
     }
 }

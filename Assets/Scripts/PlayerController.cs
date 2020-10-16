@@ -30,6 +30,10 @@ public class PlayerController : MonoBehaviour
             other.gameObject.SetActive(false);
             scoreManager.weapon1Collected = true;
         }
+        if (other.CompareTag("Zombie"))
+        {
+            scoreManager.lifeBarSlider.value -= 1;
+        }
     }
     private void FixedUpdate()
     {
