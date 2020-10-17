@@ -17,7 +17,7 @@ public class ScoreManager : MonoBehaviour
     public Text timeText;
     public bool medicinePicked = false;
     public GameObject endgamePanel;
-
+    public PosprocesingController posprocesingController;
     // Start is called before the first frame update
     private void Start()
     {
@@ -25,8 +25,11 @@ public class ScoreManager : MonoBehaviour
     private void Update()
     {
         coinScore.text = $"Monedas: {recolectedCoins}";
+
         TimeCounter();
+
         if (lifeBarSlider.value == 0) {
+            posprocesingController.EnableColorGrading(true);
             timeText.gameObject.SetActive(true);
             timerIsRunning = true;
         }
@@ -53,7 +56,9 @@ public class ScoreManager : MonoBehaviour
             {
                 timeRemaining -= Time.deltaTime;
                 DisplayTime(timeRemaining);
+
                 if (medicinePicked) {
+                    posprocesingController.EnableColorGrading(false);
                     timerIsRunning = false;
                     timeRemaining = 20;
                     timeText.gameObject.SetActive(false);
