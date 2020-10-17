@@ -42,6 +42,7 @@ public class PlayerController : MonoBehaviour
             curePosition.gameObject.SetActive(false);
             cureText.gameObject.SetActive(false);
             scoreManager.lifeBarSlider.value = 3;
+            scoreManager.medicinePicked = true;
 
         }
     }

@@ -13,7 +13,7 @@ public class ZombieController : MonoBehaviour
     private GameObject coinPrefab;
     private NavMeshAgent zombieAgent;
 
-
+    [SerializeField] private ScoreManager scoreManager;
     // Start is called before the first frame update
     void Start()
     {
@@ -46,7 +46,10 @@ public class ZombieController : MonoBehaviour
         if (Vector3.Distance(zombieTransform.position, playerTransform.position) >= maxDist)
         {
             //animator.Play("zombie_walk_forward");
-            zombieAgent.SetDestination(playerTransform.position);
+            if (scoreManager.lifeBarSlider.value > 0) {
+                zombieAgent.SetDestination(playerTransform.position);
+            }
+      
             //zombieTransform.position += zombieTransform.forward * velocity * Time.deltaTime;
         }
 
