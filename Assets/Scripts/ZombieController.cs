@@ -11,7 +11,9 @@ public class ZombieController : MonoBehaviour
     private Transform playerTransform;
     private Animator animator;
     private GameObject coinPrefab;
+    public GameObject people;
     private NavMeshAgent zombieAgent;
+    private Transform peopleTransform;
 
     [SerializeField] private ScoreManager scoreManager;
     // Start is called before the first frame update
@@ -22,11 +24,14 @@ public class ZombieController : MonoBehaviour
         animator = GetComponent<Animator>();
         coinPrefab = GameObject.FindGameObjectWithTag("Coin");
         zombieAgent = GetComponent<NavMeshAgent>();
+        peopleTransform = people.GetComponent<Transform>();
+
+       
     }
 
     void Update()
     {
-        FollowingPlayer(transform, playerTransform);       
+               FollowingPlayer(transform, playerTransform);       
     }
 
     private void OnTriggerEnter(Collider other)
@@ -36,7 +41,13 @@ public class ZombieController : MonoBehaviour
             //animator.Play("zombie_death_standing");
             Transform spawnTransform = transform;
             transform.gameObject.SetActive(false);
-            Instantiate(coinPrefab, spawnTransform.position + new Vector3(0, 5, 0), spawnTransform.rotation);
+            Instantiate(coinPrefab, spawnTransform.position + new Vector3(0, 8, 0), spawnTransform.rotation);
+            GameObject peoplePrefab = Instantiate(people, spawnTransform.position + new Vector3(0, 1, 0), spawnTransform.rotation);
+
+            NavMeshAgent peopleAgent = peoplePrefab.AddComponent<NavMeshAgent>();
+            peopleAgent.SetDestination(new Vector3(200, 1, 190));
+
+            Animator peopleAnimator = peoplePrefab.GetComponent<Animator>();
         }
     }
 

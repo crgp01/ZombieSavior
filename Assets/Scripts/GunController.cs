@@ -7,7 +7,7 @@ public class GunController : MonoBehaviour
     [SerializeField] GameObject bullet;
     [SerializeField] Transform spawnPoint;
     [SerializeField] float bulletSpeed;
-    private GameObject fire;
+    public GameObject fire;
     private ParticleSystem fireParticleSystem;
     [SerializeField] private ScoreManager scoreManager;
     // [SerializeField] AudioSource shootSound;
@@ -15,12 +15,11 @@ public class GunController : MonoBehaviour
     // Update is called once per frame
     void Start()
     {
-        fire = GameObject.FindGameObjectWithTag("fire");
-
-        if (fire) {
+        if (fire)
+        {
             fireParticleSystem = fire.GetComponent<ParticleSystem>();
         }
-       
+
     }
 
     void Update()
@@ -39,6 +38,7 @@ public class GunController : MonoBehaviour
 
                 bulletRB.AddForce(newGo.transform.forward * bulletSpeed, ForceMode.Impulse);
                 fireParticleSystem.Play();
+
             }
         }
     }
