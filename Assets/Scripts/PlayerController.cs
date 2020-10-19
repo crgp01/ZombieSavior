@@ -21,9 +21,7 @@ public class PlayerController : MonoBehaviour
     {
         if (other.CompareTag("Coin"))
         {
-            animator.Play("Pickup");
-            other.gameObject.SetActive(false);
-            scoreManager.recolectedCoins++;
+            
            
         }
         if (other.CompareTag("Gun"))
@@ -44,6 +42,15 @@ public class PlayerController : MonoBehaviour
             scoreManager.lifeBarSlider.value = 3;
             scoreManager.medicinePicked = true;
 
+        }
+    }
+    void OnCollisionEnter(Collision col)
+    {
+        if (col.gameObject.tag == "Coin")
+        {
+            animator.Play("Pickup");
+            col.gameObject.SetActive(false);
+            scoreManager.recolectedCoins++;
         }
     }
     private void FixedUpdate()
