@@ -41,13 +41,11 @@ public class ZombieController : MonoBehaviour
             //animator.Play("zombie_death_standing");
             Transform spawnTransform = transform;
             transform.gameObject.SetActive(false);
-            Instantiate(coinPrefab, spawnTransform.position + new Vector3(0, 8, 0), spawnTransform.rotation);
+            Instantiate(coinPrefab, spawnTransform.position + new Vector3(1, 8, 1), spawnTransform.rotation);
             GameObject peoplePrefab = Instantiate(people, spawnTransform.position + new Vector3(0, 1, 0), spawnTransform.rotation);
 
             NavMeshAgent peopleAgent = peoplePrefab.AddComponent<NavMeshAgent>();
             peopleAgent.SetDestination(new Vector3(200, 1, 190));
-
-            Animator peopleAnimator = peoplePrefab.GetComponent<Animator>();
         }
     }
 
