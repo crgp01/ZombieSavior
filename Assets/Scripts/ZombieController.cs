@@ -25,8 +25,6 @@ public class ZombieController : MonoBehaviour
         coinPrefab = GameObject.FindGameObjectWithTag("Coin");
         zombieAgent = GetComponent<NavMeshAgent>();
         peopleTransform = people.GetComponent<Transform>();
-
-       
     }
 
     void Update()

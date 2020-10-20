@@ -16,6 +16,8 @@ TagManager:
   - CurePosition
   - CureText
   - EndGamePanel
+  - Signal
+  - CureHouse
   layers:
   - Default
   - TransparentFX

@@ -19,11 +19,6 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Coin"))
-        {
-            
-           
-        }
         if (other.CompareTag("Gun"))
         {
             animator.Play("Pickup");
@@ -33,7 +28,11 @@ public class PlayerController : MonoBehaviour
         if (other.CompareTag("Zombie"))
         {
             scoreManager.lifeBarSlider.value -= 1;
-                   }
+        }
+        if (other.CompareTag("Zombie"))
+        {
+            scoreManager.lifeBarSlider.value -= 1;
+        }
         if (other.CompareTag("Cure"))
         {
             medicine.gameObject.SetActive(false);
@@ -51,6 +50,14 @@ public class PlayerController : MonoBehaviour
             animator.Play("Pickup");
             col.gameObject.SetActive(false);
             scoreManager.recolectedCoins++;
+        }
+        if (col.gameObject.tag == "Signal") {
+            scoreManager.showSignal = true;
+        }
+        if (col.gameObject.tag == "CureHouse") {
+            col.gameObject.SetActive(false);
+            scoreManager.showStory = true;
+            scoreManager.cureWasPicked = true;
         }
     }
     private void FixedUpdate()

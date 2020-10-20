@@ -12,15 +12,19 @@ public class ScoreManager : MonoBehaviour
     public GameObject gunInHand;
     public bool weapon1Collected = false;
     public Slider lifeBarSlider;
-    private float timeRemaining = 30;
+    public float timeRemaining = 30;
     public bool timerIsRunning = false;
     public Text timeText;
     public bool medicinePicked = false;
-    public GameObject endgamePanel;
+    public bool showSignal = false;
+    public bool cureWasPicked = false;
+    public bool showStory = false;
+    
     public PosprocesingController posprocesingController;
     // Start is called before the first frame update
     private void Start()
     {
+       
     }
     private void Update()
     {
@@ -34,7 +38,7 @@ public class ScoreManager : MonoBehaviour
             timerIsRunning = true;
         }
        
-        if (weapon1Collected == true)
+        if (weapon1Collected && cureWasPicked)
         {
             gunImage.gameObject.SetActive(true);
             gunInHand.gameObject.SetActive(true);
@@ -69,8 +73,6 @@ public class ScoreManager : MonoBehaviour
             {
                 timeRemaining = 0;
                 timerIsRunning = false;
-                Time.timeScale = 0f;
-                endgamePanel.gameObject.SetActive(true);
             }
         }
     }
