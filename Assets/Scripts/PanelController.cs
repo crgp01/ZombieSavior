@@ -10,6 +10,7 @@ public class PanelController : MonoBehaviour
     public GameObject endgamePanel;
     public ScoreManager scoreManager;
     private GameObject instructionText;
+    public GameObject gunInstructionText;
     // Start is called before the first frame update
     void Start()
     {
@@ -36,7 +37,11 @@ public class PanelController : MonoBehaviour
             storyPanel.gameObject.SetActive(true);
         }
         if (scoreManager.cureWasPicked) {
-            instructionText.gameObject.SetActive(false);
+            instructionText.GetComponent<Text>().color = Color.green;
+            gunInstructionText.gameObject.SetActive(true);
+        }
+        if (scoreManager.weapon1Collected) {
+            gunInstructionText.GetComponent<Text>().color = Color.green;
         }
 
     }
@@ -51,7 +56,6 @@ public class PanelController : MonoBehaviour
         cemeteryPanel.gameObject.SetActive(false);
         UnpauseGame();
         scoreManager.showSignal = false;
-        instructionText.gameObject.SetActive(false);
     }
 
     private void PauseGame() {
