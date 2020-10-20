@@ -18,6 +18,9 @@ TagManager:
   - EndGamePanel
   - Signal
   - CureHouse
+  - InstructionText
+  - ZombieInstructionText
+  - GunInstructionText
   layers:
   - Default
   - TransparentFX
