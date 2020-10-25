@@ -44,8 +44,6 @@ public class PanelController : MonoBehaviour
         if (scoreManager.timeRemaining == 0) {
             PauseGame();
             endgamePanel.gameObject.SetActive(true);
-            playerPanel.gameObject.SetActive(false);
-            miniMapPanel.gameObject.SetActive(false);
         }
         if (scoreManager.showSignal)
         {
@@ -106,9 +104,13 @@ public class PanelController : MonoBehaviour
     }
     public void RestartGame()
     {
-        player.transform.position = respawnPoint.transform.position;
+        scoreManager.RestartZombieMode();
+        scoreManager.KillAllZombies();
         endgamePanel.SetActive(false);
-        mainPanel.gameObject.SetActive(false);
+        scoreManager.cureText.SetActive(false);
+        playerPanel.SetActive(true);
+        miniMapPanel.SetActive(true);
+        player.transform.position = respawnPoint.transform.position;
         UnpauseGame();
 
     }
@@ -133,4 +135,4 @@ public class PanelController : MonoBehaviour
         endgamePanel.SetActive(false);
         mainPanel.gameObject.SetActive(true);
     }
-}
+  }

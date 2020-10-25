@@ -21,10 +21,12 @@ public class ScoreManager : MonoBehaviour
     public bool showStory = false;
     public bool allCoinsCollected = false;
     public bool allDiariesCollected = false;
+    public bool zombieMode = false;
     public int diariesCounter = 0;
     private int TOTAL_TIME = 30;
     private int COINS_TARGET = 20;
     private int DIARIES_TARGET = 5;
+    public GameObject cureText;
     private GameObject[] gameObjects;
 
     
@@ -40,12 +42,17 @@ public class ScoreManager : MonoBehaviour
 
         TimeCounter();
 
-        if (lifeBarSlider.value == 0) {
-            posprocesingController.EnableColorGrading(true);
-            timeText.gameObject.SetActive(true);
-            timerIsRunning = true;
+        if (lifeBarSlider.value == 0)
+        {
+            zombieMode = true;
         }
-       
+        if (lifeBarSlider.value > 0) {
+            zombieMode = false;
+        }
+        if (zombieMode)
+        {
+            StartZombieMode();
+        }
         if (weapon1Collected && cureWasPicked)
         {
             gunImage.gameObject.SetActive(true);
@@ -64,7 +71,7 @@ public class ScoreManager : MonoBehaviour
 
         float minutes = Mathf.FloorToInt(timeToDisplay / 60);
         float seconds = Mathf.FloorToInt(timeToDisplay % 60);
-
+        cureText.SetActive(true);
         timeText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
     }
     private void TimeCounter() {
@@ -76,10 +83,7 @@ public class ScoreManager : MonoBehaviour
                 DisplayTime(timeRemaining);
 
                 if (medicinePicked) {
-                    posprocesingController.EnableColorGrading(false);
-                    timerIsRunning = false;
-                    timeRemaining = TOTAL_TIME;
-                    timeText.gameObject.SetActive(false);
+                    RestartZombieMode();
 
                 }
             }
@@ -92,9 +96,23 @@ public class ScoreManager : MonoBehaviour
     }
     public void KillAllZombies ()
     {
-        gameObjects = GameObject.FindGameObjectsWithTag("yourTag");
+        gameObjects = GameObject.FindGameObjectsWithTag("Zombie");
 
         for (var i = 0; i < gameObjects.Length; i++)
             Destroy(gameObjects[i]);
+    }
+    public void RestartZombieMode() {
+        posprocesingController.EnableColorGrading(false);
+        timerIsRunning = false;
+        timeRemaining = TOTAL_TIME;
+        timeText.gameObject.SetActive(false);
+        zombieMode = false;
+        lifeBarSlider.value = 3;
+    }
+    public void StartZombieMode() {
+            posprocesingController.EnableColorGrading(true);
+            timeText.gameObject.SetActive(true);
+            timerIsRunning = true;
+
     }
 }

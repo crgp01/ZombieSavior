@@ -9,7 +9,7 @@ public class PlayerController : MonoBehaviour
     Animator animator;
     public GameObject medicine;
     public GameObject curePosition;
-    public GameObject cureText;
+    private PanelController panelController;
 
     // Start is called before the first frame update
     void Start()
@@ -29,15 +29,11 @@ public class PlayerController : MonoBehaviour
         {
             scoreManager.lifeBarSlider.value -= 1;
         }
-        if (other.CompareTag("Zombie"))
-        {
-            scoreManager.lifeBarSlider.value -= 1;
-        }
         if (other.CompareTag("Cure"))
         {
             medicine.gameObject.SetActive(false);
             curePosition.gameObject.SetActive(false);
-            cureText.gameObject.SetActive(false);
+            scoreManager.cureText.gameObject.SetActive(false);
             scoreManager.lifeBarSlider.value = 3;
             scoreManager.medicinePicked = true;
         }
@@ -73,10 +69,9 @@ public class PlayerController : MonoBehaviour
     }
     private void Update()
     {
-        if (scoreManager.lifeBarSlider.value == 0) {
+        if (scoreManager.zombieMode) {
             medicine.gameObject.SetActive(true);
             curePosition.gameObject.SetActive(true);
-            cureText.gameObject.SetActive(true);
         }
      
     }
