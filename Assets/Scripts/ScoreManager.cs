@@ -25,6 +25,7 @@ public class ScoreManager : MonoBehaviour
     private int TOTAL_TIME = 30;
     private int COINS_TARGET = 20;
     private int DIARIES_TARGET = 5;
+    private GameObject[] gameObjects;
 
     
     public PosprocesingController posprocesingController;
@@ -88,5 +89,12 @@ public class ScoreManager : MonoBehaviour
                 timerIsRunning = false;
             }
         }
+    }
+    public void KillAllZombies ()
+    {
+        gameObjects = GameObject.FindGameObjectsWithTag("yourTag");
+
+        for (var i = 0; i < gameObjects.Length; i++)
+            Destroy(gameObjects[i]);
     }
 }

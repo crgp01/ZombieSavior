@@ -15,15 +15,18 @@ public class PanelController : MonoBehaviour
     public GameObject gameOptionsPanel;
     public GameObject creditsPanel;
     public ScoreManager scoreManager;
+    private GameObject player;
     private GameObject instructionText;
     public GameObject gunInstructionText;
     public GameObject coinInstructionText;
+    public GameObject respawnPoint;
     public Text diariesInstructionText;
     public Text coinCounterText;
     // Start is called before the first frame update
     void Start()
     {
         PauseGame();
+        player = GameObject.FindGameObjectWithTag("Player");
         miniMapPanel.gameObject.SetActive(false);
         playerPanel.gameObject.SetActive(false);
         instructionText = GameObject.FindGameObjectWithTag("InstructionText");
@@ -42,6 +45,7 @@ public class PanelController : MonoBehaviour
             PauseGame();
             endgamePanel.gameObject.SetActive(true);
             playerPanel.gameObject.SetActive(false);
+            miniMapPanel.gameObject.SetActive(false);
         }
         if (scoreManager.showSignal)
         {
@@ -102,7 +106,10 @@ public class PanelController : MonoBehaviour
     }
     public void RestartGame()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        player.transform.position = respawnPoint.transform.position;
+        endgamePanel.SetActive(false);
+        mainPanel.gameObject.SetActive(false);
+        UnpauseGame();
 
     }
     public void GoToLevel2()
@@ -123,6 +130,7 @@ public class PanelController : MonoBehaviour
     {
         gameOptionsPanel.SetActive(false);
         creditsPanel.SetActive(false);
+        endgamePanel.SetActive(false);
         mainPanel.gameObject.SetActive(true);
     }
 }
