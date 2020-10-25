@@ -40,11 +40,7 @@ public class PanelController : MonoBehaviour
     {
         coinCounterText.text = $"Recoge 20 monedas: {scoreManager.recolectedCoins}/20";
         diariesInstructionText.text = $"Recoge los diarios del Dr. Cuaticus: {scoreManager.diariesCounter}/5";
-
-        if (scoreManager.timeRemaining == 0) {
-            PauseGame();
-            endgamePanel.gameObject.SetActive(true);
-        }
+        EndGame();
         if (scoreManager.showSignal)
         {
             PauseGame();
@@ -54,19 +50,10 @@ public class PanelController : MonoBehaviour
             PauseGame();
             storyPanel.gameObject.SetActive(true);
         }
-        if (scoreManager.cureWasPicked) {
-            instructionText.GetComponent<Text>().color = Color.green;
-            gunInstructionText.gameObject.SetActive(true);
+        if (playerPanel) {
+            ChangeColorText();
         }
-        if (scoreManager.weapon1Collected) {
-            gunInstructionText.GetComponent<Text>().color = Color.green;
-        }
-        if (scoreManager.allCoinsCollected) {
-            coinInstructionText.GetComponent<Text>().color = Color.green;
-        }
-        if (scoreManager.allDiariesCollected) {
-            diariesInstructionText.GetComponent<Text>().color = Color.green;
-        }
+       
 
     }
 
@@ -134,5 +121,33 @@ public class PanelController : MonoBehaviour
         creditsPanel.SetActive(false);
         endgamePanel.SetActive(false);
         mainPanel.gameObject.SetActive(true);
+    }
+    private void ChangeColorText() {
+        if (scoreManager.cureWasPicked)
+        {
+            instructionText.GetComponent<Text>().color = Color.green;
+            gunInstructionText.gameObject.SetActive(true);
+        }
+        if (scoreManager.weapon1Collected)
+        {
+            gunInstructionText.GetComponent<Text>().color = Color.green;
+        }
+        if (scoreManager.allCoinsCollected)
+        {
+            coinInstructionText.GetComponent<Text>().color = Color.green;
+        }
+        if (scoreManager.allDiariesCollected)
+        {
+            diariesInstructionText.GetComponent<Text>().color = Color.green;
+        }
+    }
+    private void EndGame() {
+        if (scoreManager.timeRemaining == 0)
+        {
+            PauseGame();
+            endgamePanel.gameObject.SetActive(true);
+            playerPanel.gameObject.SetActive(false);
+            miniMapPanel.gameObject.SetActive(false);
+        }
     }
   }

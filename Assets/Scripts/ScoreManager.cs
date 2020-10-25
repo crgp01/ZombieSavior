@@ -28,10 +28,8 @@ public class ScoreManager : MonoBehaviour
     private int DIARIES_TARGET = 5;
     public GameObject cureText;
     private GameObject[] gameObjects;
-
-    
     public PosprocesingController posprocesingController;
-    // Start is called before the first frame update
+
     private void Start()
     {
        
