@@ -23,6 +23,7 @@ TagManager:
   - GunInstructionText
   - Document
   - Terrain
+  - FinalGameObject
   layers:
   - Default
   - TransparentFX

@@ -2,12 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PanelController : MonoBehaviour
 {
     public GameObject storyPanel;
+    public GameObject miniMapPanel;
+    public GameObject mainPanel;
+    public GameObject playerPanel;
     public GameObject cemeteryPanel;
     public GameObject endgamePanel;
+    public GameObject gameOptionsPanel;
+    public GameObject creditsPanel;
     public ScoreManager scoreManager;
     private GameObject instructionText;
     public GameObject gunInstructionText;
@@ -17,6 +23,9 @@ public class PanelController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        PauseGame();
+        miniMapPanel.gameObject.SetActive(false);
+        playerPanel.gameObject.SetActive(false);
         instructionText = GameObject.FindGameObjectWithTag("InstructionText");
         storyPanel.gameObject.SetActive(false);
         cemeteryPanel.gameObject.SetActive(false);
@@ -32,6 +41,7 @@ public class PanelController : MonoBehaviour
         if (scoreManager.timeRemaining == 0) {
             PauseGame();
             endgamePanel.gameObject.SetActive(true);
+            playerPanel.gameObject.SetActive(false);
         }
         if (scoreManager.showSignal)
         {
@@ -63,6 +73,20 @@ public class PanelController : MonoBehaviour
         UnpauseGame();
         scoreManager.showStory = false;
     }
+    public void PlayGame() {
+        mainPanel.gameObject.SetActive(false);
+        playerPanel.gameObject.SetActive(true);
+        miniMapPanel.gameObject.SetActive(true);
+        UnpauseGame();
+    }
+    public void QuitGame() {
+        #if UNITY_EDITOR
+   
+                UnityEditor.EditorApplication.isPlaying = false;
+        #else
+                 Application.Quit();
+        #endif
+    }
 
     public void CloseCemeteryPanel() {
         cemeteryPanel.gameObject.SetActive(false);
@@ -75,5 +99,30 @@ public class PanelController : MonoBehaviour
     }
     private void UnpauseGame() {
         Time.timeScale = 1;
+    }
+    public void RestartGame()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+
+    }
+    public void GoToLevel2()
+    {
+        SceneManager.LoadScene("Nivel2");
+    }
+    public void GoToGameOptions()
+    {
+        gameOptionsPanel.SetActive(true);
+        mainPanel.gameObject.SetActive(false);
+    }
+    public void GoToCredits()
+    {
+        creditsPanel.SetActive(true);
+        mainPanel.gameObject.SetActive(false);
+    }
+    public void BackToMenu()
+    {
+        gameOptionsPanel.SetActive(false);
+        creditsPanel.SetActive(false);
+        mainPanel.gameObject.SetActive(true);
     }
 }
