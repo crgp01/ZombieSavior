@@ -20,7 +20,12 @@ public class ScoreManager : MonoBehaviour
     public bool cureWasPicked = false;
     public bool showStory = false;
     public bool allCoinsCollected = false;
-    public int documents = 0;
+    public bool allDiariesCollected = false;
+    public int diariesCounter = 0;
+    private int TOTAL_TIME = 30;
+    private int COINS_TARGET = 20;
+    private int DIARIES_TARGET = 5;
+
     
     public PosprocesingController posprocesingController;
     // Start is called before the first frame update
@@ -45,8 +50,11 @@ public class ScoreManager : MonoBehaviour
             gunImage.gameObject.SetActive(true);
             gunInHand.gameObject.SetActive(true);
         }
-        if (recolectedCoins == 5) {
+        if (recolectedCoins == COINS_TARGET) {
             allCoinsCollected = true;
+        }
+        if (diariesCounter == DIARIES_TARGET) {
+            allDiariesCollected = true;
         }
     }
     void DisplayTime(float timeToDisplay)
@@ -69,7 +77,7 @@ public class ScoreManager : MonoBehaviour
                 if (medicinePicked) {
                     posprocesingController.EnableColorGrading(false);
                     timerIsRunning = false;
-                    timeRemaining = 20;
+                    timeRemaining = TOTAL_TIME;
                     timeText.gameObject.SetActive(false);
 
                 }

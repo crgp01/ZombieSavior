@@ -42,7 +42,9 @@ public class PlayerController : MonoBehaviour
             scoreManager.medicinePicked = true;
         }
         if (other.CompareTag("Document")) {
-            scoreManager.documents++;
+            scoreManager.diariesCounter++;
+            animator.Play("Pickup");
+            other.gameObject.SetActive(false);
         }
     }
     void OnCollisionEnter(Collision col)

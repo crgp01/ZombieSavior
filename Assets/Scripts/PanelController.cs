@@ -12,6 +12,8 @@ public class PanelController : MonoBehaviour
     private GameObject instructionText;
     public GameObject gunInstructionText;
     public GameObject coinInstructionText;
+    public Text diariesInstructionText;
+    public Text coinCounterText;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,9 +23,12 @@ public class PanelController : MonoBehaviour
         
     }
 
-    // Update is called once per frame
+    // Update is called once per frames
     void Update()
     {
+        coinCounterText.text = $"Recoge 20 monedas: {scoreManager.recolectedCoins}/20";
+        diariesInstructionText.text = $"Recoge los diarios del Dr. Cuaticus: {scoreManager.diariesCounter}/5";
+
         if (scoreManager.timeRemaining == 0) {
             PauseGame();
             endgamePanel.gameObject.SetActive(true);
@@ -46,6 +51,9 @@ public class PanelController : MonoBehaviour
         }
         if (scoreManager.allCoinsCollected) {
             coinInstructionText.GetComponent<Text>().color = Color.green;
+        }
+        if (scoreManager.allDiariesCollected) {
+            diariesInstructionText.GetComponent<Text>().color = Color.green;
         }
 
     }
