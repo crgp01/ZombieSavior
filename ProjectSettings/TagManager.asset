@@ -21,6 +21,8 @@ TagManager:
   - InstructionText
   - ZombieInstructionText
   - GunInstructionText
+  - Document
+  - Terrain
   layers:
   - Default
   - TransparentFX

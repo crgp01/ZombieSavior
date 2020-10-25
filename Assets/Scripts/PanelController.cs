@@ -11,6 +11,7 @@ public class PanelController : MonoBehaviour
     public ScoreManager scoreManager;
     private GameObject instructionText;
     public GameObject gunInstructionText;
+    public GameObject coinInstructionText;
     // Start is called before the first frame update
     void Start()
     {
@@ -42,6 +43,9 @@ public class PanelController : MonoBehaviour
         }
         if (scoreManager.weapon1Collected) {
             gunInstructionText.GetComponent<Text>().color = Color.green;
+        }
+        if (scoreManager.allCoinsCollected) {
+            coinInstructionText.GetComponent<Text>().color = Color.green;
         }
 
     }

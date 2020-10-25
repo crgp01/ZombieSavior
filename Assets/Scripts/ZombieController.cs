@@ -15,7 +15,7 @@ public class ZombieController : MonoBehaviour
     private NavMeshAgent zombieAgent;
     private Transform peopleTransform;
 
-    [SerializeField] private ScoreManager scoreManager;
+    //private ScoreManager scoreManager;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,7 +25,6 @@ public class ZombieController : MonoBehaviour
         coinPrefab = GameObject.FindGameObjectWithTag("Coin");
         zombieAgent = GetComponent<NavMeshAgent>();
         peopleTransform = people.GetComponent<Transform>();
-
        
     }
 
@@ -41,7 +40,7 @@ public class ZombieController : MonoBehaviour
             //animator.Play("zombie_death_standing");
             Transform spawnTransform = transform;
             transform.gameObject.SetActive(false);
-            Instantiate(coinPrefab, spawnTransform.position + new Vector3(1, 9, 1), spawnTransform.rotation);
+            Instantiate(coinPrefab, spawnTransform.position + new Vector3(1, 5, 1), spawnTransform.rotation);
             GameObject peoplePrefab = Instantiate(people, spawnTransform.position + new Vector3(0, 1, 0), spawnTransform.rotation);
 
             NavMeshAgent peopleAgent = peoplePrefab.AddComponent<NavMeshAgent>();
@@ -54,11 +53,13 @@ public class ZombieController : MonoBehaviour
 
         if (Vector3.Distance(zombieTransform.position, playerTransform.position) >= maxDist)
         {
+
+            zombieAgent.SetDestination(playerTransform.position);
             //animator.Play("zombie_walk_forward");
-            if (scoreManager.lifeBarSlider.value > 0) {
-                zombieAgent.SetDestination(playerTransform.position);
-            }
-      
+            /*if (scoreManager.lifeBarSlider.value > 0) {
+                //zombieAgent.SetDestination(playerTransform.position);
+            }*/
+
             //zombieTransform.position += zombieTransform.forward * velocity * Time.deltaTime;
         }
 

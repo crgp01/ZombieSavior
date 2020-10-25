@@ -1,53 +1,20 @@
 fileFormatVersion: 2
-guid: e220328c34bca0348a4ada832cf83493
+guid: d59a9192e42e6a44bbe80f95dba58fa4
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
     100000: //RootNode
-    100002: Dresser_BottomLeft
-    100004: Dresser_BottomMiddle
-    100006: Dresser_BottomRight
-    100008: Dresser_Dresser
-    100010: Dresser_TopLeft
-    100012: Dresser_TopMiddle
-    100014: Dresser_TopRight
     400000: //RootNode
-    400002: Dresser_BottomLeft
-    400004: Dresser_BottomMiddle
-    400006: Dresser_BottomRight
-    400008: Dresser_Dresser
-    400010: Dresser_TopLeft
-    400012: Dresser_TopMiddle
-    400014: Dresser_TopRight
-    2100000: Dresser_BottomLeftMat
-    2100002: Dresser_BottomMiddleMat
-    2100004: Dresser_BottomRightMat
-    2100006: Dresser_DresserMat
-    2100008: Dresser_TopLeftMat
-    2100010: Dresser_TopMiddleMat
-    2100012: Dresser_TopRightMat
-    2300000: Dresser_BottomLeft
-    2300002: Dresser_BottomMiddle
-    2300004: Dresser_BottomRight
-    2300006: Dresser_Dresser
-    2300008: Dresser_TopLeft
-    2300010: Dresser_TopMiddle
-    2300012: Dresser_TopRight
-    3300000: Dresser_BottomLeft
-    3300002: Dresser_BottomMiddle
-    3300004: Dresser_BottomRight
-    3300006: Dresser_Dresser
-    3300008: Dresser_TopLeft
-    3300010: Dresser_TopMiddle
-    3300012: Dresser_TopRight
-    4300000: Dresser_BottomLeft
-    4300002: Dresser_BottomMiddle
-    4300004: Dresser_BottomRight
-    4300006: Dresser_Dresser
-    4300008: Dresser_TopLeft
-    4300010: Dresser_TopMiddle
-    4300012: Dresser_TopRight
-  externalObjects: {}
+    2100000: Material
+    2300000: //RootNode
+    3300000: //RootNode
+    4300000: student_ID_low.001
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material
+    second: {fileID: 2100000, guid: 511e7e9a16bd70845ac27a593480deea, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
@@ -81,10 +48,11 @@ ModelImporter:
     globalScale: 1
     meshCompression: 0
     addColliders: 0
-    importVisibility: 1
-    importBlendShapes: 1
-    importCameras: 1
-    importLights: 1
+    useSRGBMaterialColor: 1
+    importVisibility: 0
+    importBlendShapes: 0
+    importCameras: 0
+    importLights: 0
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
@@ -105,7 +73,10 @@ ModelImporter:
     normalImportMode: 0
     tangentImportMode: 3
     normalCalculationMode: 4
-  importAnimation: 1
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 0
   copyAvatar: 0
   humanDescription:
     serializedVersion: 2

@@ -19,6 +19,8 @@ public class ScoreManager : MonoBehaviour
     public bool showSignal = false;
     public bool cureWasPicked = false;
     public bool showStory = false;
+    public bool allCoinsCollected = false;
+    public int documents = 0;
     
     public PosprocesingController posprocesingController;
     // Start is called before the first frame update
@@ -42,6 +44,9 @@ public class ScoreManager : MonoBehaviour
         {
             gunImage.gameObject.SetActive(true);
             gunInHand.gameObject.SetActive(true);
+        }
+        if (recolectedCoins == 5) {
+            allCoinsCollected = true;
         }
     }
     void DisplayTime(float timeToDisplay)

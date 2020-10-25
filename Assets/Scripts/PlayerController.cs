@@ -40,7 +40,9 @@ public class PlayerController : MonoBehaviour
             cureText.gameObject.SetActive(false);
             scoreManager.lifeBarSlider.value = 3;
             scoreManager.medicinePicked = true;
-
+        }
+        if (other.CompareTag("Document")) {
+            scoreManager.documents++;
         }
     }
     void OnCollisionEnter(Collision col)
