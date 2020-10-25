@@ -14,6 +14,7 @@ public class PanelController : MonoBehaviour
     public GameObject endgamePanel;
     public GameObject gameOptionsPanel;
     public GameObject creditsPanel;
+    public GameObject pausePanel;
     public ScoreManager scoreManager;
     private GameObject player;
     private GameObject instructionText;
@@ -53,8 +54,10 @@ public class PanelController : MonoBehaviour
         if (playerPanel) {
             ChangeColorText();
         }
-       
-
+        if (Input.GetKeyDown(KeyCode.P)) {
+            pausePanel.gameObject.SetActive(true);
+            PauseGame();
+        }
     }
 
     public void CloseStoryPanel() {
@@ -81,6 +84,10 @@ public class PanelController : MonoBehaviour
         cemeteryPanel.gameObject.SetActive(false);
         UnpauseGame();
         scoreManager.showSignal = false;
+    }
+    public void ClosePauseMenu() {
+        pausePanel.gameObject.SetActive(false);
+        UnpauseGame();
     }
 
     private void PauseGame() {
@@ -120,6 +127,7 @@ public class PanelController : MonoBehaviour
         gameOptionsPanel.SetActive(false);
         creditsPanel.SetActive(false);
         endgamePanel.SetActive(false);
+        pausePanel.SetActive(false);
         mainPanel.gameObject.SetActive(true);
     }
     private void ChangeColorText() {
