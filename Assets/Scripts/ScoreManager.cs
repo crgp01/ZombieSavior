@@ -23,6 +23,8 @@ public class ScoreManager : MonoBehaviour
     public bool allDiariesCollected = false;
     public bool zombieMode = false;
     public int diariesCounter = 0;
+    public bool level1Finished = false;
+    public bool showFinalPanel = false;
     private int TOTAL_TIME = 30;
     private int COINS_TARGET = 20;
     private int DIARIES_TARGET = 5;
@@ -60,6 +62,9 @@ public class ScoreManager : MonoBehaviour
         }
         if (diariesCounter == DIARIES_TARGET) {
             allDiariesCollected = true;
+        }
+        if (allDiariesCollected && allCoinsCollected && weapon1Collected && cureWasPicked) {
+            level1Finished = true;
         }
     }
     void DisplayTime(float timeToDisplay)

@@ -15,20 +15,23 @@ public class PanelController : MonoBehaviour
     public GameObject gameOptionsPanel;
     public GameObject creditsPanel;
     public GameObject pausePanel;
+    public GameObject endLevel1Panel;
     public ScoreManager scoreManager;
+    public GameObject finalGameObject;
     private GameObject player;
     public GameObject instructionText;
     public GameObject gunInstructionText;
     public GameObject coinInstructionText;
+    public GameObject finalInstructionText;
     public GameObject respawnPoint;
     public Text diariesInstructionText;
     public Text coinCounterText;
     // Start is called before the first frame update
     void Start()
     {
-        //PauseGame();
+        PauseGame();
         player = GameObject.FindGameObjectWithTag("Player");
-        //player.transform.position = respawnPoint.transform.position;
+        //splayer.transform.position = respawnPoint.transform.position;
         miniMapPanel.gameObject.SetActive(false);
         playerPanel.gameObject.SetActive(false);
         storyPanel.gameObject.SetActive(false);
@@ -56,6 +59,10 @@ public class PanelController : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.P)) {
             pausePanel.gameObject.SetActive(true);
+            PauseGame();
+        }
+        if (scoreManager.showFinalPanel) {
+            endLevel1Panel.gameObject.SetActive(true);
             PauseGame();
         }
     }
@@ -162,6 +169,10 @@ public class PanelController : MonoBehaviour
         if (scoreManager.allDiariesCollected)
         {
             diariesInstructionText.GetComponent<Text>().color = Color.green;
+        }if (scoreManager.level1Finished)
+        {
+            finalInstructionText.GetComponent<Text>().color = Color.red;
+            finalGameObject.gameObject.SetActive(true);
         }
     }
     private void EndGame() {

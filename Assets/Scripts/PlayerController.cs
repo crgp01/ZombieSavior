@@ -43,6 +43,12 @@ public class PlayerController : MonoBehaviour
             animator.Play("Pickup");
             other.gameObject.SetActive(false);
         }
+        if (other.CompareTag("FinalGameObject"))
+        {
+            Debug.Log("Dentro del trigger");
+            scoreManager.showFinalPanel = true;
+
+        }
     }
     void OnCollisionEnter(Collision col)
     {
