@@ -15,6 +15,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         animator = GetComponent<Animator>();
+        medicine.gameObject.SetActive(false);
     }
 
     private void OnTriggerEnter(Collider other)

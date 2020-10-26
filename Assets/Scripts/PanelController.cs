@@ -17,7 +17,7 @@ public class PanelController : MonoBehaviour
     public GameObject pausePanel;
     public ScoreManager scoreManager;
     private GameObject player;
-    private GameObject instructionText;
+    public GameObject instructionText;
     public GameObject gunInstructionText;
     public GameObject coinInstructionText;
     public GameObject respawnPoint;
@@ -28,9 +28,9 @@ public class PanelController : MonoBehaviour
     {
         PauseGame();
         player = GameObject.FindGameObjectWithTag("Player");
+        player.transform.position = respawnPoint.transform.position;
         miniMapPanel.gameObject.SetActive(false);
         playerPanel.gameObject.SetActive(false);
-        instructionText = GameObject.FindGameObjectWithTag("InstructionText");
         storyPanel.gameObject.SetActive(false);
         cemeteryPanel.gameObject.SetActive(false);
         
@@ -150,7 +150,6 @@ public class PanelController : MonoBehaviour
         if (scoreManager.cureWasPicked)
         {
             instructionText.GetComponent<Text>().color = Color.green;
-            gunInstructionText.gameObject.SetActive(true);
         }
         if (scoreManager.weapon1Collected)
         {
