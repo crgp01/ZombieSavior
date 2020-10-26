@@ -26,9 +26,9 @@ public class PanelController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        PauseGame();
+        //PauseGame();
         player = GameObject.FindGameObjectWithTag("Player");
-        player.transform.position = respawnPoint.transform.position;
+        //player.transform.position = respawnPoint.transform.position;
         miniMapPanel.gameObject.SetActive(false);
         playerPanel.gameObject.SetActive(false);
         storyPanel.gameObject.SetActive(false);
