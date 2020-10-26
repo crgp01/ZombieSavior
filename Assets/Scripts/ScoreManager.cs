@@ -101,14 +101,18 @@ public class ScoreManager : MonoBehaviour
     }
     public void RestartZombieMode() {
         posprocesingController.EnableColorGrading(false);
+        posprocesingController.EnableVignet(false);
         timerIsRunning = false;
         timeRemaining = TOTAL_TIME;
         timeText.gameObject.SetActive(false);
         zombieMode = false;
         lifeBarSlider.value = 3;
+        medicinePicked = false;
+        cureText.gameObject.SetActive(false);
     }
     public void StartZombieMode() {
             posprocesingController.EnableColorGrading(true);
+            posprocesingController.EnableVignet(true);
             timeText.gameObject.SetActive(true);
             timerIsRunning = true;
 

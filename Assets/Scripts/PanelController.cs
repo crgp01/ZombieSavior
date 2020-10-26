@@ -108,6 +108,16 @@ public class PanelController : MonoBehaviour
         UnpauseGame();
 
     }
+    public void GoToBegining()
+    {
+        scoreManager.RestartZombieMode();
+        scoreManager.KillAllZombies();
+        endgamePanel.SetActive(false);
+        scoreManager.cureText.SetActive(false);
+        player.transform.position = respawnPoint.transform.position;
+        PauseGame();
+
+    }
     public void GoToLevel2()
     {
         SceneManager.LoadScene("Nivel2");
@@ -115,7 +125,7 @@ public class PanelController : MonoBehaviour
     public void GoToGameOptions()
     {
         gameOptionsPanel.SetActive(true);
-        mainPanel.gameObject.SetActive(false);
+        //mainPanel.gameObject.SetActive(false);
     }
     public void GoToCredits()
     {
@@ -129,6 +139,12 @@ public class PanelController : MonoBehaviour
         endgamePanel.SetActive(false);
         pausePanel.SetActive(false);
         mainPanel.gameObject.SetActive(true);
+    }
+    public void BackToMenuFromEndGame()
+    {
+        endgamePanel.SetActive(false);
+        mainPanel.gameObject.SetActive(true);
+        GoToBegining();
     }
     private void ChangeColorText() {
         if (scoreManager.cureWasPicked)
