@@ -53,16 +53,8 @@ public class ZombieController : MonoBehaviour
 
         if (Vector3.Distance(zombieTransform.position, playerTransform.position) >= maxDist)
         {
-
             zombieAgent.SetDestination(playerTransform.position);
-            //animator.Play("zombie_walk_forward");
-            /*if (scoreManager.lifeBarSlider.value > 0) {
-                //zombieAgent.SetDestination(playerTransform.position);
-            }*/
-
-            //zombieTransform.position += zombieTransform.forward * velocity * Time.deltaTime;
         }
-
         if (Vector3.Distance(zombieTransform.position, playerTransform.position) <= minDist)
         {
             animator.Play("zombie_attack");
