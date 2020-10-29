@@ -18,12 +18,14 @@ public class PanelController : MonoBehaviour
     public GameObject endLevel1Panel;
     public ScoreManager scoreManager;
     public GameObject finalGameObject;
-    private GameObject player;
     public GameObject instructionText;
     public GameObject gunInstructionText;
     public GameObject coinInstructionText;
     public GameObject finalInstructionText;
     public GameObject respawnPoint;
+    public GameObject Document1Panel;
+    public GameObject Document2Panel;
+    private GameObject player;
     public Text diariesInstructionText;
     public Text coinCounterText;
     // Start is called before the first frame update
@@ -31,7 +33,6 @@ public class PanelController : MonoBehaviour
     {
         //PauseGame();
         player = GameObject.FindGameObjectWithTag("Player");
-        player.transform.position = respawnPoint.transform.position;
         miniMapPanel.gameObject.SetActive(false);
         playerPanel.gameObject.SetActive(false);
         storyPanel.gameObject.SetActive(false);
@@ -65,12 +66,27 @@ public class PanelController : MonoBehaviour
             endLevel1Panel.gameObject.SetActive(true);
             PauseGame();
         }
+        if (scoreManager.document1WasPicked) {
+            Document1Panel.gameObject.SetActive(true);
+            PauseGame();
+        }
+        if (scoreManager.document2WasPicked) {
+            Document2Panel.gameObject.SetActive(true);
+            PauseGame();
+        }
     }
 
     public void CloseStoryPanel() {
         storyPanel.gameObject.SetActive(false);
         UnpauseGame();
         scoreManager.showStory = false;
+    }
+    public void CloseDocumentsPanel() {
+        Document1Panel.gameObject.SetActive(false);
+        scoreManager.document1WasPicked = false;
+        Document2Panel.gameObject.SetActive(false);
+        scoreManager.document2WasPicked = false;
+        UnpauseGame();
     }
     public void PlayGame() {
         mainPanel.gameObject.SetActive(false);
@@ -111,7 +127,7 @@ public class PanelController : MonoBehaviour
         scoreManager.cureText.SetActive(false);
         playerPanel.SetActive(true);
         miniMapPanel.SetActive(true);
-        player.transform.position = respawnPoint.transform.position;
+        scoreManager.RespawnPlayer();
         UnpauseGame();
 
     }
@@ -121,7 +137,7 @@ public class PanelController : MonoBehaviour
         scoreManager.KillAllZombies();
         endgamePanel.SetActive(false);
         scoreManager.cureText.SetActive(false);
-        player.transform.position = respawnPoint.transform.position;
+        scoreManager.RespawnPlayer();
         PauseGame();
 
     }

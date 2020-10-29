@@ -38,15 +38,20 @@ public class PlayerController : MonoBehaviour
             scoreManager.lifeBarSlider.value = 3;
             scoreManager.medicinePicked = true;
         }
-        if (other.CompareTag("Document")) {
-            scoreManager.diariesCounter++;
-            animator.Play("Pickup");
-            other.gameObject.SetActive(false);
-        }
         if (other.CompareTag("FinalGameObject"))
         {
             Debug.Log("Dentro del trigger");
             scoreManager.showFinalPanel = true;
+
+        }
+        if (other.CompareTag("Document1"))
+        {
+            DocumentsCounting("document1", other);
+
+        }
+        if (other.CompareTag("Document2"))
+        {
+            DocumentsCounting("document2", other);
 
         }
     }
@@ -58,14 +63,17 @@ public class PlayerController : MonoBehaviour
             col.gameObject.SetActive(false);
             scoreManager.recolectedCoins++;
         }
-        if (col.gameObject.tag == "Signal") {
+        if (col.gameObject.tag == "Signal")
+        {
             scoreManager.showSignal = true;
         }
-        if (col.gameObject.tag == "CureHouse") {
+        if (col.gameObject.tag == "CureHouse")
+        {
             col.gameObject.SetActive(false);
             scoreManager.showStory = true;
             scoreManager.cureWasPicked = true;
         }
+        
     }
     private void FixedUpdate()
     {
@@ -76,11 +84,25 @@ public class PlayerController : MonoBehaviour
     }
     private void Update()
     {
-        if (scoreManager.zombieMode) {
+        if (scoreManager.zombieMode)
+        {
             medicine.gameObject.SetActive(true);
             curePosition.gameObject.SetActive(true);
         }
-     
-    }
 
+    }
+    private void DocumentsCounting(string documentType, Collider other)
+    {
+        scoreManager.diariesCounter++;
+        animator.Play("Pickup");
+        other.gameObject.SetActive(false);
+
+        if (documentType == "document1") {
+            scoreManager.document1WasPicked = true;
+        } else if (documentType == "document2") {
+            scoreManager.document2WasPicked = true;
+        }
+        
+
+    }
 }

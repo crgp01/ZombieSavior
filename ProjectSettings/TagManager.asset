@@ -24,6 +24,8 @@ TagManager:
   - Document
   - Terrain
   - FinalGameObject
+  - Document1
+  - Document2
   layers:
   - Default
   - TransparentFX

@@ -25,6 +25,10 @@ public class ScoreManager : MonoBehaviour
     public int diariesCounter = 0;
     public bool level1Finished = false;
     public bool showFinalPanel = false;
+    public bool document1WasPicked = false;
+    public bool document2WasPicked = false;
+    private GameObject player;
+    public GameObject respawnPoint;
     private int TOTAL_TIME = 30;
     private int COINS_TARGET = 20;
     private int DIARIES_TARGET = 5;
@@ -34,6 +38,9 @@ public class ScoreManager : MonoBehaviour
 
     private void Start()
     {
+        player = GameObject.FindGameObjectWithTag("Player");
+        //RespawnPlayer();
+       
     }
     private void Update()
     {
@@ -86,7 +93,6 @@ public class ScoreManager : MonoBehaviour
 
                 if (medicinePicked) {
                     RestartZombieMode();
-
                 }
             }
             else
@@ -120,5 +126,18 @@ public class ScoreManager : MonoBehaviour
             timeText.gameObject.SetActive(true);
             timerIsRunning = true;
 
+    }
+    public void RespawnPlayer() {
+        player.transform.position = respawnPoint.transform.position;
+
+    }
+    public void QuitGame()
+    {
+    #if UNITY_EDITOR
+
+            UnityEditor.EditorApplication.isPlaying = false;
+    #else
+                     Application.Quit();
+    #endif
     }
 }

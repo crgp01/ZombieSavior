@@ -22,7 +22,7 @@ public class GunController : MonoBehaviour
 
     }
 
-    void Update()
+    void FixedUpdate()
     {
         if (scoreManager.weapon1Collected)
         {
