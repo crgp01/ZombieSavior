@@ -909,9 +909,9 @@ MonoBehaviour:
   m_HandleRect: {fileID: 0}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 5
+  m_MaxValue: 6
   m_WholeNumbers: 0
-  m_Value: 5
+  m_Value: 6
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -2850,7 +2850,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1190601789873990, guid: a8145fd98e506094980d05080bde9072, type: 3}
       propertyPath: m_TagString
-      value: Zombie
+      value: ZombieBoss
       objectReference: {fileID: 0}
     - target: {fileID: 4257605397364450, guid: a8145fd98e506094980d05080bde9072, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2955,8 +2955,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 111c20c8462e5460185d2dfca5e5acd4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  zombiePrefab: {fileID: 0}
-  zombieLife: {fileID: 0}
+  zombiePrefab: {fileID: 3787859892374528157, guid: 2503c41f30be647878c84483f4668515,
+    type: 3}
+  zombieLifeSlider: {fileID: 495373083}
 --- !u!1 &1150781275
 GameObject:
   m_ObjectHideFlags: 0
@@ -3326,7 +3327,7 @@ PrefabInstance:
     - target: {fileID: 4671812899597373596, guid: 679dd80650e024556bf51faa0c99be63,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4671812899597373599, guid: 679dd80650e024556bf51faa0c99be63,
         type: 3}

@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class BulletController : MonoBehaviour
 {
-    private void OnTriggerEnter(Collider other)
+    private void OnCollisionEnter(Collision collision)
     {
-        if (other.CompareTag("Terrain"))
+        if (collision.gameObject.tag == "Terrain")
         {
             Destroy(gameObject);
         }
     }
+  
 }

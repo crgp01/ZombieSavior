@@ -32,10 +32,9 @@ public class ZombieController : MonoBehaviour
     {
                FollowingPlayer(transform, playerTransform);       
     }
-
-    private void OnTriggerEnter(Collider other)
+    private void OnCollisionEnter(Collision collision)
     {
-        if (other.CompareTag("Medicine"))
+        if (collision.gameObject.tag == "Medicine")
         {
             //animator.Play("zombie_death_standing");
             Transform spawnTransform = transform;
