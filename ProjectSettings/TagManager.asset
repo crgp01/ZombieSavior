@@ -26,6 +26,7 @@ TagManager:
   - FinalGameObject
   - Document1
   - Document2
+  - ZombieBoss
   layers:
   - Default
   - TransparentFX

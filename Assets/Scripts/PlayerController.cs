@@ -26,11 +26,7 @@ public class PlayerController : MonoBehaviour
             other.gameObject.SetActive(false);
             scoreManager.weapon1Collected = true;
         }
-        if (other.CompareTag("Zombie"))
-        {
-            scoreManager.lifeBarSlider.value -= 1;
-        }
-        if (other.CompareTag("Cure"))
+         if (other.CompareTag("Cure"))
         {
             medicine.gameObject.SetActive(false);
             curePosition.gameObject.SetActive(false);
@@ -72,6 +68,10 @@ public class PlayerController : MonoBehaviour
             col.gameObject.SetActive(false);
             scoreManager.showStory = true;
             scoreManager.cureWasPicked = true;
+        }
+        if (col.gameObject.tag == "Zombie")
+        {
+            scoreManager.lifeBarSlider.value -= 1;
         }
         
     }

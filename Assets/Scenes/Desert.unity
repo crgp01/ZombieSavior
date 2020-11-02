@@ -2109,22 +2109,22 @@ PrefabInstance:
     - target: {fileID: 1874623577358142677, guid: c09cebf286c6146088bbf65d11075990,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 383.38
+      value: 322.6
       objectReference: {fileID: 0}
     - target: {fileID: 1874623577358142677, guid: c09cebf286c6146088bbf65d11075990,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -95.046
+      value: -100.02
       objectReference: {fileID: 0}
     - target: {fileID: 1874623577358142677, guid: c09cebf286c6146088bbf65d11075990,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 766.759
+      value: 645.0739
       objectReference: {fileID: 0}
     - target: {fileID: 1874623577358142677, guid: c09cebf286c6146088bbf65d11075990,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 190.091
+      value: 199.9654
       objectReference: {fileID: 0}
     - target: {fileID: 1874623577358142677, guid: c09cebf286c6146088bbf65d11075990,
         type: 3}
@@ -2249,22 +2249,22 @@ PrefabInstance:
     - target: {fileID: 1874623578575858736, guid: c09cebf286c6146088bbf65d11075990,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -0.0000000022118911
+      value: 0.00048828
       objectReference: {fileID: 0}
     - target: {fileID: 1874623578575858736, guid: c09cebf286c6146088bbf65d11075990,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -0.000015258578
+      value: 124.5
       objectReference: {fileID: 0}
     - target: {fileID: 1874623578575858736, guid: c09cebf286c6146088bbf65d11075990,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 1561.9983
+      value: 1561.9993
       objectReference: {fileID: 0}
     - target: {fileID: 1874623578575858736, guid: c09cebf286c6146088bbf65d11075990,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 796
+      value: 1045
       objectReference: {fileID: 0}
     - target: {fileID: 1874623578575858736, guid: c09cebf286c6146088bbf65d11075990,
         type: 3}
@@ -2911,7 +2911,7 @@ PrefabInstance:
     - target: {fileID: 136043099458248162, guid: a8145fd98e506094980d05080bde9072,
         type: 3}
       propertyPath: m_IsTrigger
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a8145fd98e506094980d05080bde9072, type: 3}
@@ -2955,6 +2955,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 111c20c8462e5460185d2dfca5e5acd4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  zombiePrefab: {fileID: 0}
+  zombieLife: {fileID: 0}
 --- !u!1 &1150781275
 GameObject:
   m_ObjectHideFlags: 0
@@ -2992,8 +2994,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.0000032484531, y: 0}
-  m_SizeDelta: {x: 766.72217, y: 186.01953}
+  m_AnchoredPosition: {x: 0.06991196, y: 0.77222}
+  m_SizeDelta: {x: 645.21375, y: 184.47516}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1150781277
 MonoBehaviour:

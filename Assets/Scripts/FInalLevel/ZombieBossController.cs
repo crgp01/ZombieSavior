@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.UI;
 
 public class ZombieBossController : MonoBehaviour
 {
@@ -13,6 +14,8 @@ public class ZombieBossController : MonoBehaviour
     private GameObject coinPrefab;
     private NavMeshAgent zombieAgent;
     private Transform peopleTransform;
+    public GameObject zombiePrefab;
+    public Slider zombieLifeSlider;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,7 +28,23 @@ public class ZombieBossController : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-         FollowingPlayer(transform, playerTransform);       
+         FollowingPlayer(transform, playerTransform);
+        if (zombieLifeSlider.value == 4)
+        {
+            FirstAtack();
+        }
+    }
+    void Update() {
+ 
+       
+    }
+    void OnCollisionEnter(Collision col)
+    {
+         if (col.gameObject.tag == "Medicine")
+        {
+            zombieLifeSlider.value -= 1;
+            Debug.Log(zombieLifeSlider.value);
+        }
     }
 
     void FollowingPlayer(Transform zombieTransform, Transform playerTransform) {
@@ -39,6 +58,10 @@ public class ZombieBossController : MonoBehaviour
         {
             animator.Play("zombie_attack");
         }
+    }
+    void FirstAtack() {
+        Transform currentPosition = transform;
+        Instantiate(zombiePrefab, currentPosition.position + new Vector3(1, 9, 1), Quaternion.identity);
     }
 }
 

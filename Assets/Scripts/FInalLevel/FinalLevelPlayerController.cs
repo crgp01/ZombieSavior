@@ -19,11 +19,7 @@ public class FinalLevelPlayerController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Zombie"))
-        {
-            scoreManager.lifeBarSlider.value -= 1;
-        }
-        if (other.CompareTag("Cure"))
+         if (other.CompareTag("Cure"))
         {
             medicine.gameObject.SetActive(false);
             scoreManager.cureText.gameObject.SetActive(false);
@@ -43,6 +39,14 @@ public class FinalLevelPlayerController : MonoBehaviour
         {
             col.gameObject.SetActive(false);
             scoreManager.cureWasPicked = true;
+        }
+        if (col.gameObject.tag == "ZombieBoss")
+        {
+            scoreManager.lifeBarSlider.value -= 1;
+        }
+        if (col.gameObject.tag == "Zombie")
+        {
+            scoreManager.lifeBarSlider.value -= 1;
         }
     }
     private void FixedUpdate()

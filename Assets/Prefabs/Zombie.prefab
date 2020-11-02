@@ -13,7 +13,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   people: {fileID: 1968476592218994, guid: 313ad0ef31f75b84f9f31c0528802fdd, type: 3}
-  scoreManager: {fileID: 0}
 --- !u!195 &1433377126
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -134,7 +133,7 @@ PrefabInstance:
     - target: {fileID: 136043099458248162, guid: a8145fd98e506094980d05080bde9072,
         type: 3}
       propertyPath: m_IsTrigger
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a8145fd98e506094980d05080bde9072, type: 3}
