@@ -350,6 +350,22 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 734453852}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &167284055
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 167284054}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42a5cd3eebb6d4ed59070ad20699ce05, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bullet: {fileID: 1985338178271116, guid: 48ec186542777474bb236dff1694340c, type: 3}
+  spawnPoint: {fileID: 332440173}
+  bulletSpeed: 5
+  fire: {fileID: 1292831682}
 --- !u!114 &167284056
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2547,7 +2563,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1190601789873990, guid: a8145fd98e506094980d05080bde9072, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1190601789873990, guid: a8145fd98e506094980d05080bde9072, type: 3}
+      propertyPath: m_TagString
+      value: Zombie
       objectReference: {fileID: 0}
     - target: {fileID: 4257605397364450, guid: a8145fd98e506094980d05080bde9072, type: 3}
       propertyPath: m_LocalPosition.x
