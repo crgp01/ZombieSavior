@@ -22,7 +22,7 @@ public class FinalLevelGunController : MonoBehaviour
 
     }
 
-    void FixUpdate()
+    void Update()
     {
         if (Input.GetButtonDown("Fire1"))
         {
