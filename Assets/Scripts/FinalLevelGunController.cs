@@ -9,12 +9,12 @@ public class FinalLevelGunController : MonoBehaviour
     [SerializeField] float bulletSpeed;
     public GameObject fire;
     private ParticleSystem fireParticleSystem;
-    [SerializeField] private FinalLevelController scoreManager;
     // [SerializeField] AudioSource shootSound;
 
     // Update is called once per frame
     void Start()
     {
+        Debug.Log("Dentro del start");
         if (fire)
         {
             fireParticleSystem = fire.GetComponent<ParticleSystem>();
@@ -24,22 +24,21 @@ public class FinalLevelGunController : MonoBehaviour
 
     void FixUpdate()
     {
-        if (scoreManager.weapon1Collected)
+        if (Input.GetButtonDown("Fire1"))
         {
-            if (Input.GetButtonDown("Fire1"))
-            {
-                GameObject newGo = Object.Instantiate(bullet);
-                // shootSound.Play();
+            Debug.Log("Dentro del disparo");
+            GameObject newGo = Object.Instantiate(bullet);
+            // shootSound.Play();
 
-                newGo.transform.position = spawnPoint.position;
-                newGo.transform.rotation = spawnPoint.rotation;
+            newGo.transform.position = spawnPoint.position;
+            newGo.transform.rotation = spawnPoint.rotation;
 
-                Rigidbody bulletRB = newGo.GetComponent<Rigidbody>();
+            Rigidbody bulletRB = newGo.GetComponent<Rigidbody>();
 
-                bulletRB.AddForce(newGo.transform.forward * bulletSpeed, ForceMode.Impulse);
-                fireParticleSystem.Play();
+            bulletRB.AddForce(newGo.transform.forward * bulletSpeed, ForceMode.Impulse);
+            fireParticleSystem.Play();
 
-            }
         }
     }
+
 }

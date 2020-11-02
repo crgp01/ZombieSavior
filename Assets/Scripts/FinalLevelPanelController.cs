@@ -19,12 +19,12 @@ public class FinalLevelPanelController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        PauseGame();
+        //PauseGame();
         player = GameObject.FindGameObjectWithTag("Player");
         playerPanel.gameObject.SetActive(false);
 
     }
-
+     
     // Update is called once per frames
     void Update()
     {

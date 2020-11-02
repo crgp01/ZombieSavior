@@ -10,7 +10,6 @@ public class FinalLevelController : MonoBehaviour
     public Text coinScore;
     public GameObject gunImage;
     public GameObject gunInHand;
-    public bool weapon1Collected = false;
     public Slider lifeBarSlider;
     public float timeRemaining = 30;
     public bool timerIsRunning = false;
