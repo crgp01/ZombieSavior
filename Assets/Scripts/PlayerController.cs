@@ -49,6 +49,10 @@ public class PlayerController : MonoBehaviour
         {
             DocumentsCounting("document2", other);
 
+        }if (other.CompareTag("Store"))
+        {
+            panelController.storePanel.SetActive(true);
+
         }
     }
     void OnCollisionEnter(Collision col)

@@ -13,6 +13,7 @@ public class PanelController : MonoBehaviour
     public GameObject cemeteryPanel;
     public GameObject endgamePanel;
     public GameObject gameOptionsPanel;
+    public GameObject storePanel;
     public GameObject creditsPanel;
     public GameObject pausePanel;
     public GameObject endLevel1Panel;
