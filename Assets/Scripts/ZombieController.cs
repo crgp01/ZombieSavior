@@ -36,7 +36,6 @@ public class ZombieController : MonoBehaviour
     {
         if (collision.gameObject.tag == "Medicine")
         {
-            //animator.Play("zombie_death_standing");
             Transform spawnTransform = transform;
             transform.gameObject.SetActive(false);
             Instantiate(coinPrefab, spawnTransform.position + new Vector3(1, 5, 1), spawnTransform.rotation);
