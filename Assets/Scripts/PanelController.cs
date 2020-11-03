@@ -143,7 +143,9 @@ public class PanelController : MonoBehaviour
     }
     public void GoToLevel2()
     {
+        endLevel1Panel.gameObject.SetActive(true);
         SceneManager.LoadScene("Desert");
+
     }
     public void GoToGameOptions()
     {

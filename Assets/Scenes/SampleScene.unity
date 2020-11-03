@@ -218,7 +218,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3177765}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 22.76, y: 16.71, z: 435.14}
+  m_LocalPosition: {x: 194, y: 2, z: 232}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1007,7 +1007,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1298363187}
-        m_MethodName: ClosePauseMenu
+        m_MethodName: GoToLevel2
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -12883,17 +12883,17 @@ PrefabInstance:
     - target: {fileID: 3087675707647377428, guid: a66cdb69aabbf4bdda25b0355dc46dfe,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 22.76
+      value: 194
       objectReference: {fileID: 0}
     - target: {fileID: 3087675707647377428, guid: a66cdb69aabbf4bdda25b0355dc46dfe,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 14.71
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3087675707647377428, guid: a66cdb69aabbf4bdda25b0355dc46dfe,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 443.14
+      value: 240
       objectReference: {fileID: 0}
     - target: {fileID: 3087675707647377428, guid: a66cdb69aabbf4bdda25b0355dc46dfe,
         type: 3}
