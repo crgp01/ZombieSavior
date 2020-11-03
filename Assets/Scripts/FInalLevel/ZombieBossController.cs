@@ -16,6 +16,9 @@ public class ZombieBossController : MonoBehaviour
     private Transform peopleTransform;
     public GameObject zombiePrefab;
     public Slider zombieLifeSlider;
+    public int hitCounter;
+    public bool spawnZombie = true;
+    public FinalLevelPanelController panelController;
     // Start is called before the first frame update
     void Start()
     {
@@ -28,22 +31,31 @@ public class ZombieBossController : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-         FollowingPlayer(transform, playerTransform);
-        if (zombieLifeSlider.value == 4)
+        if (hitCounter == 2 && spawnZombie)
         {
-            FirstAtack();
+            Debug.Log("Dentro del hit");
+            Instantiate(zombiePrefab, transform.position + new Vector3(1, 1, 1), Quaternion.identity);
+            spawnZombie = false;
+        }
+        FollowingPlayer(transform, playerTransform);
+        if (zombieLifeSlider.value == 0)
+        {
+            panelController.PauseGame();
+            panelController.finalGamePanel.SetActive(true);
+            panelController.mainPanel.gameObject.SetActive(false);
+            panelController.playerPanel.gameObject.SetActive(false);
         }
     }
     void Update() {
- 
-       
+        
     }
     void OnCollisionEnter(Collision col)
     {
          if (col.gameObject.tag == "Medicine")
         {
+            hitCounter++;
             zombieLifeSlider.value -= 1;
-            Debug.Log(zombieLifeSlider.value);
+            animator.Play("zombie_death_standing");
         }
     }
 
@@ -58,10 +70,6 @@ public class ZombieBossController : MonoBehaviour
         {
             animator.Play("zombie_attack");
         }
-    }
-    void FirstAtack() {
-        Transform currentPosition = transform;
-        Instantiate(zombiePrefab, currentPosition.position + new Vector3(1, 9, 1), Quaternion.identity);
     }
 }
 

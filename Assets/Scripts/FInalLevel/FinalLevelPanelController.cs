@@ -11,11 +11,12 @@ public class FinalLevelPanelController : MonoBehaviour
     public GameObject endgamePanel;
     public GameObject gameOptionsPanel;
     public GameObject creditsPanel;
+    public GameObject finalGamePanel;
     public GameObject pausePanel;
-    public GameObject endLevel1Panel;
     public FinalLevelController scoreManager;
     public GameObject respawnPoint;
     private GameObject player;
+    public ZombieBossController ZombieBossController;
     // Start is called before the first frame update
     void Start()
     {
@@ -34,11 +35,6 @@ public class FinalLevelPanelController : MonoBehaviour
             pausePanel.gameObject.SetActive(true);
             PauseGame();
         }
-        /*if (scoreManager.showFinalPanel)
-        {
-            endLevel1Panel.gameObject.SetActive(true);
-            PauseGame();
-        }*/
     }
 
   
@@ -50,12 +46,12 @@ public class FinalLevelPanelController : MonoBehaviour
     }
     public void QuitGame()
     {
-#if UNITY_EDITOR
+        #if UNITY_EDITOR
    
-                UnityEditor.EditorApplication.isPlaying = false;
-#else
-        Application.Quit();
-#endif
+                        UnityEditor.EditorApplication.isPlaying = false;
+        #else
+                Application.Quit();
+        #endif
     }
 
     
@@ -65,7 +61,7 @@ public class FinalLevelPanelController : MonoBehaviour
         UnpauseGame();
     }
 
-    private void PauseGame()
+    public void PauseGame()
     {
         Time.timeScale = 0f;
     }
@@ -80,6 +76,8 @@ public class FinalLevelPanelController : MonoBehaviour
         scoreManager.cureText.SetActive(false);
         playerPanel.SetActive(true);
         scoreManager.RespawnPlayer();
+        ZombieBossController.zombieLifeSlider.value = 6;
+
         UnpauseGame();
 
     }
@@ -91,10 +89,6 @@ public class FinalLevelPanelController : MonoBehaviour
         scoreManager.RespawnPlayer();
         PauseGame();
 
-    }
-    public void GoToLevel2()
-    {
-        SceneManager.LoadScene("Nivel2");
     }
     public void GoToGameOptions()
     {
@@ -119,6 +113,9 @@ public class FinalLevelPanelController : MonoBehaviour
         endgamePanel.SetActive(false);
         mainPanel.gameObject.SetActive(true);
         GoToBegining();
+    }
+    public void FinishGame() {
+        SceneManager.LoadScene("SampleScene");
     }
     private void EndGame()
     {

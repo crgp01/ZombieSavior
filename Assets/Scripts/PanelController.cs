@@ -143,7 +143,7 @@ public class PanelController : MonoBehaviour
     }
     public void GoToLevel2()
     {
-        SceneManager.LoadScene("Nivel2");
+        SceneManager.LoadScene("Desert");
     }
     public void GoToGameOptions()
     {
