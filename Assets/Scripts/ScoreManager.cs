@@ -26,6 +26,7 @@ public class ScoreManager : MonoBehaviour
     public bool allCoinsCollected = false;
     public bool allDiariesCollected = false;
     public bool zombieMode = false;
+    public bool canShoot = false;
     public int diariesCounter = 0;
     public bool level1Finished = false;
     public bool showFinalPanel = false;

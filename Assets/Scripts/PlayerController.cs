@@ -25,6 +25,7 @@ public class PlayerController : MonoBehaviour
             animator.Play("Pickup");
             other.gameObject.SetActive(false);
             scoreManager.weapon1Collected = true;
+            scoreManager.canShoot = true;
         }
          if (other.CompareTag("Cure"))
         {

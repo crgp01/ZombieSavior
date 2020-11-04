@@ -16113,6 +16113,7 @@ MonoBehaviour:
   allCoinsCollected: 0
   allDiariesCollected: 0
   zombieMode: 0
+  canShoot: 0
   diariesCounter: 0
   level1Finished: 0
   showFinalPanel: 0
@@ -22865,7 +22866,7 @@ PrefabInstance:
     - target: {fileID: 7935416683160852474, guid: 508b48af73c994db8b3d6ea6b8e47fc8,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7935416683160852475, guid: 508b48af73c994db8b3d6ea6b8e47fc8,
         type: 3}
@@ -25116,12 +25117,32 @@ PrefabInstance:
       propertyPath: scoreManager
       value: 
       objectReference: {fileID: 1298363185}
+    - target: {fileID: 1311694200, guid: a66cdb69aabbf4bdda25b0355dc46dfe, type: 3}
+      propertyPath: spawnPointShotgun
+      value: 
+      objectReference: {fileID: 420568766}
+    - target: {fileID: 1311694200, guid: a66cdb69aabbf4bdda25b0355dc46dfe, type: 3}
+      propertyPath: fireShotgun
+      value: 
+      objectReference: {fileID: 1156713699}
     - target: {fileID: 1901541524, guid: a66cdb69aabbf4bdda25b0355dc46dfe, type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2056101699, guid: a66cdb69aabbf4bdda25b0355dc46dfe, type: 3}
       propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2105988429, guid: a66cdb69aabbf4bdda25b0355dc46dfe, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.r
+      value: 0.05271268
+      objectReference: {fileID: 0}
+    - target: {fileID: 2105988429, guid: a66cdb69aabbf4bdda25b0355dc46dfe, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2105988429, guid: a66cdb69aabbf4bdda25b0355dc46dfe, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.g
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3084950516336911504, guid: a66cdb69aabbf4bdda25b0355dc46dfe,

@@ -117,9 +117,11 @@ public class PanelController : MonoBehaviour
     }
 
     private void PauseGame() {
+        scoreManager.canShoot = false;
         Time.timeScale = 0f;
     }
     private void UnpauseGame() {
+        scoreManager.canShoot = true;
         Time.timeScale = 1;
     }
     public void RestartGame()

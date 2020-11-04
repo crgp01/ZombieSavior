@@ -6,9 +6,15 @@ public class GunController : MonoBehaviour
 {
     [SerializeField] GameObject bullet;
     [SerializeField] Transform spawnPoint;
+    [SerializeField] Transform spawnPointShotgun;
     [SerializeField] float bulletSpeed;
+    private GameObject newGo;
+    private Rigidbody bulletRB;
     public GameObject fire;
+    public GameObject fireShotgun;
+    public int bulletNumber = 3;
     private ParticleSystem fireParticleSystem;
+    private ParticleSystem fireParticleSystemShotgun;
     [SerializeField] private ScoreManager scoreManager;
     // [SerializeField] AudioSource shootSound;
 
@@ -19,6 +25,10 @@ public class GunController : MonoBehaviour
         {
             fireParticleSystem = fire.GetComponent<ParticleSystem>();
         }
+        if (fireShotgun)
+        {
+            fireParticleSystemShotgun = fireShotgun.GetComponent<ParticleSystem>();
+        }
 
     }
 
@@ -26,15 +36,28 @@ public class GunController : MonoBehaviour
     {
         if (scoreManager.weapon1Collected)
         {
-            if (Input.GetButtonDown("Fire1"))
+            if (Input.GetButtonDown("Fire1") && scoreManager.canShoot)
             {
-                GameObject newGo = Object.Instantiate(bullet);
                 // shootSound.Play();
+                if (scoreManager.shotgunEquiped) {
+                    for (int i = 1; i < bulletNumber; i++) {
+                        newGo = Object.Instantiate(bullet);
+
+                        newGo.transform.position = spawnPointShotgun.position;
+                        newGo.transform.rotation = spawnPointShotgun.rotation;
+
+                        bulletRB = newGo.GetComponent<Rigidbody>();
+
+                        bulletRB.AddForce(newGo.transform.forward * bulletSpeed, ForceMode.Impulse);
+                        fireParticleSystemShotgun.Play();
+                    }
+                }
+                newGo = Object.Instantiate(bullet);
 
                 newGo.transform.position = spawnPoint.position;
                 newGo.transform.rotation = spawnPoint.rotation;
 
-                Rigidbody bulletRB = newGo.GetComponent<Rigidbody>();
+                bulletRB = newGo.GetComponent<Rigidbody>();
 
                 bulletRB.AddForce(newGo.transform.forward * bulletSpeed, ForceMode.Impulse);
                 fireParticleSystem.Play();
