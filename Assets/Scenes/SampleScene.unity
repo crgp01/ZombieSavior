@@ -2619,7 +2619,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: New Text
+  m_Text: 
 --- !u!222 &288095014
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -7072,7 +7072,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &817028170
 RectTransform:
   m_ObjectHideFlags: 0
@@ -11663,7 +11663,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: x3
+  m_Text: 
 --- !u!222 &1313892300
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -14920,7 +14920,7 @@ PrefabInstance:
     - target: {fileID: 7935416683160852474, guid: 508b48af73c994db8b3d6ea6b8e47fc8,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7935416683160852475, guid: 508b48af73c994db8b3d6ea6b8e47fc8,
         type: 3}
@@ -15202,8 +15202,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1298363187}
-        m_MethodName: GoBackFromStore
+      - m_Target: {fileID: 1298363190}
+        m_MethodName: ShowYellowPotionPanel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -15409,8 +15409,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1298363187}
-        m_MethodName: GoBackFromStore
+      - m_Target: {fileID: 1298363190}
+        m_MethodName: UseYellowPotionPanel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -17199,7 +17199,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1884761905
 RectTransform:
   m_ObjectHideFlags: 0
@@ -19744,12 +19744,12 @@ PrefabInstance:
     - target: {fileID: 1874623577078818806, guid: c09cebf286c6146088bbf65d11075990,
         type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1874623577078818806, guid: c09cebf286c6146088bbf65d11075990,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1874623578575858736, guid: c09cebf286c6146088bbf65d11075990,
         type: 3}
@@ -19864,7 +19864,7 @@ PrefabInstance:
     - target: {fileID: 1874623578575858737, guid: c09cebf286c6146088bbf65d11075990,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1874623578720396576, guid: c09cebf286c6146088bbf65d11075990,
         type: 3}
