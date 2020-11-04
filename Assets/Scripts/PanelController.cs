@@ -6,32 +6,14 @@ using UnityEngine.SceneManagement;
 
 public class PanelController : MonoBehaviour
 {
-    public GameObject storyPanel;
-    public GameObject miniMapPanel;
-    public GameObject mainPanel;
-    public GameObject playerPanel;
-    public GameObject cemeteryPanel;
-    public GameObject endgamePanel;
-    public GameObject gameOptionsPanel;
-    public GameObject storePanel;
-    public GameObject inventoryPanel;
-    public GameObject creditsPanel;
-    public GameObject pausePanel;
-    public GameObject endLevel1Panel;
+    public GameObject storyPanel, miniMapPanel, mainPanel, playerPanel, cemeteryPanel, endgamePanel, gameOptionsPanel,
+        storePanel, inventoryPanel, creditsPanel, pausePanel, endLevel1Panel, finalGameObject, instructionText, gunInstructionText,
+        coinInstructionText, finalInstructionText, respawnPoint, Document1Panel, Document2Panel;
     public ScoreManager scoreManager;
-    public GameObject finalGameObject;
-    public GameObject instructionText;
-    public GameObject gunInstructionText;
-    public GameObject coinInstructionText;
-    public GameObject finalInstructionText;
-    public GameObject respawnPoint;
-    public GameObject Document1Panel;
-    public GameObject Document2Panel;
     public bool enterStore;
     private GameObject player;
-    public Text diariesInstructionText;
-    public Text coinCounterText;
-    // Start is called before the first frame update
+    public Text diariesInstructionText, coinCounterText;
+
     void Start()
     {
         //PauseGame();

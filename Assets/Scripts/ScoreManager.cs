@@ -7,37 +7,20 @@ using UnityEngine.SceneManagement;
 public class ScoreManager : MonoBehaviour
 {
     public int recolectedCoins;
-    public Text coinScore;
-    public GameObject gunImage;
-    public GameObject shotgunImage;
-    public GameObject gunInHand;
-    public GameObject shotgunInHand;
-    public bool weapon1Collected = false;
-    public bool pistolEquiped = false;
-    public bool shotgunEquiped = false;
+    public Text coinScore, timeText;
+    public GameObject gunImage, shotgunImage, gunInHand, shotgunInHand, respawnPoint, cureText;
+    public bool weapon1Collected = false, pistolEquiped = false, shotgunEquiped = false,
+        timerIsRunning = false, medicinePicked = false, showSignal = false, cureWasPicked = false,
+        showStory = false, allCoinsCollected = false, allDiariesCollected = false, zombieMode = false,
+        canShoot = false, level1Finished = false, showFinalPanel = false, document1WasPicked = false,
+        document2WasPicked = false;
     public Slider lifeBarSlider;
     public float timeRemaining = 30;
-    public bool timerIsRunning = false;
-    public Text timeText;
-    public bool medicinePicked = false;
-    public bool showSignal = false;
-    public bool cureWasPicked = false;
-    public bool showStory = false;
-    public bool allCoinsCollected = false;
-    public bool allDiariesCollected = false;
-    public bool zombieMode = false;
-    public bool canShoot = false;
     public int diariesCounter = 0;
-    public bool level1Finished = false;
-    public bool showFinalPanel = false;
-    public bool document1WasPicked = false;
-    public bool document2WasPicked = false;
     private GameObject player;
-    public GameObject respawnPoint;
     private int TOTAL_TIME = 30;
     private int COINS_TARGET = 20;
     private int DIARIES_TARGET = 5;
-    public GameObject cureText;
     private GameObject[] gameObjects;
     public PosprocesingController posprocesingController;
 
