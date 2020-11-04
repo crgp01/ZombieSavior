@@ -13,7 +13,8 @@ public class ScoreManager : MonoBehaviour
     public GameObject gunInHand;
     public GameObject shotgunInHand;
     public bool weapon1Collected = false;
-    public bool weapon2Buyed = false;
+    public bool pistolEquiped = false;
+    public bool shotgunEquiped = false;
     public Slider lifeBarSlider;
     public float timeRemaining = 30;
     public bool timerIsRunning = false;
@@ -67,11 +68,21 @@ public class ScoreManager : MonoBehaviour
             gunImage.gameObject.SetActive(true);
             gunInHand.gameObject.SetActive(true);
             shotgunInHand.SetActive(false);
-        }if (weapon2Buyed)
+            shotgunImage.SetActive(false);
+        }
+        if (shotgunEquiped)
         {
             gunInHand.gameObject.SetActive(false);
             shotgunInHand.SetActive(true);
             shotgunImage.SetActive(true);
+            gunImage.gameObject.SetActive(false);
+        }
+        if (pistolEquiped)
+        {
+            gunInHand.gameObject.SetActive(true);
+            shotgunInHand.SetActive(false);
+            shotgunImage.SetActive(false);
+            gunImage.gameObject.SetActive(true);
         }
         if (recolectedCoins == COINS_TARGET) {
             allCoinsCollected = true;

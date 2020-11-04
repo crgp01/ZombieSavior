@@ -53,7 +53,7 @@ public class StoreController : MonoBehaviour
             if (scoreManager.recolectedCoins >= SHOT_GUN_PRICE)
             {
                 hasShootgun = true;
-                scoreManager.weapon2Buyed = true;
+                scoreManager.shotgunEquiped = true;
                 scoreManager.recolectedCoins = scoreManager.recolectedCoins - SHOT_GUN_PRICE;
             }
             else

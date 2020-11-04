@@ -10414,7 +10414,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1156713700
 Transform:
   m_ObjectHideFlags: 0
@@ -16099,7 +16099,7 @@ MonoBehaviour:
   shotgunImage: {fileID: 1308473272}
   gunInHand: {fileID: 1901541524}
   shotgunInHand: {fileID: 1077817509}
-  weapon1Collected: 0
+  weapon1Collected: 1
   weapon2Buyed: 0
   lifeBarSlider: {fileID: 1164298285}
   timeRemaining: 10
@@ -16340,7 +16340,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1308473273
 RectTransform:
   m_ObjectHideFlags: 0

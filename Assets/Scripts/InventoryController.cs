@@ -37,7 +37,7 @@ public class InventoryController : MonoBehaviour
         {
             pistolButton.gameObject.SetActive(true);
         }
-        if (scoreManager.weapon2Buyed)
+        if (storeController.hasShootgun)
         {
             shotgunButton.gameObject.SetActive(true);
         }
@@ -101,6 +101,15 @@ public class InventoryController : MonoBehaviour
         diaryPanel.SetActive(false);
         coinsPanel.SetActive(false);
     }
+    public void ShowShotgunPanel()
+    {
+        greenPotionPanel.SetActive(false);
+        yellowPotionPanel.SetActive(false);
+        shotgunPanel.SetActive(true);
+        pistolPanel.SetActive(false);
+        diaryPanel.SetActive(false);
+        coinsPanel.SetActive(false);
+    }
     public void UseYellowPotionPanel()
     {
         if (scoreManager.timerIsRunning)
@@ -131,5 +140,13 @@ public class InventoryController : MonoBehaviour
             errorPanel.text = NO_ZOMBIE_MODE_MESSAGE;
         }
 
+    }
+    public void EquipShotgun() {
+        scoreManager.shotgunEquiped = true;
+        scoreManager.pistolEquiped = false;
+    }
+    public void EquipPistol() {
+        scoreManager.shotgunEquiped = false;
+        scoreManager.pistolEquiped = true;
     }
 }
