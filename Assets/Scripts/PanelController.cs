@@ -14,6 +14,7 @@ public class PanelController : MonoBehaviour
     public GameObject endgamePanel;
     public GameObject gameOptionsPanel;
     public GameObject storePanel;
+    public GameObject inventoryPanel;
     public GameObject creditsPanel;
     public GameObject pausePanel;
     public GameObject endLevel1Panel;
@@ -174,6 +175,17 @@ public class PanelController : MonoBehaviour
     {
         creditsPanel.SetActive(true);
         mainPanel.gameObject.SetActive(false);
+    }
+    public void GoToInventory()
+    {
+        inventoryPanel.SetActive(true);
+        PauseGame();
+        pausePanel.gameObject.SetActive(false);
+    }
+    public void GoBackFromInventory()
+    {
+        inventoryPanel.SetActive(false);
+        pausePanel.gameObject.SetActive(true);
     }
     public void BackToMenu()
     {

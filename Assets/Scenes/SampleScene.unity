@@ -4316,7 +4316,7 @@ GameObject:
   - component: {fileID: 494984189}
   - component: {fileID: 494984188}
   m_Layer: 5
-  m_Name: DiariesPanel (1)
+  m_Name: CoinsPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7072,7 +7072,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &817028170
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8839,7 +8839,7 @@ GameObject:
   - component: {fileID: 1010967288}
   - component: {fileID: 1010967287}
   m_Layer: 5
-  m_Name: UsePistol
+  m_Name: UseGreenPotion
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8908,8 +8908,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1298363187}
-        m_MethodName: GoBackFromStore
+      - m_Target: {fileID: 1298363190}
+        m_MethodName: UseGreenPotionPanel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -9467,7 +9467,7 @@ GameObject:
   - component: {fileID: 1056749825}
   - component: {fileID: 1056749824}
   m_Layer: 5
-  m_Name: Counter
+  m_Name: GreenPotionCounter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10009,6 +10009,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 435160, guid: 6e131b51e1e3a994692dad30cc8065ec,
     type: 3}
   m_PrefabInstance: {fileID: 1785545413}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1092868139 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7935416683160852474, guid: 508b48af73c994db8b3d6ea6b8e47fc8,
+    type: 3}
+  m_PrefabInstance: {fileID: 1681942719}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1099666220 stripped
 GameObject:
@@ -11157,7 +11163,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e81d7494385a24f23a2d32858a437603, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  recolectedCoins: 0
+  recolectedCoins: 15
   coinScore: {fileID: 1420593097}
   gunImage: {fileID: 1018146462}
   gunInHand: {fileID: 1901541524}
@@ -11215,6 +11221,7 @@ MonoBehaviour:
   endgamePanel: {fileID: 1954936114}
   gameOptionsPanel: {fileID: 792615539}
   storePanel: {fileID: 722835638}
+  inventoryPanel: {fileID: 1092868139}
   creditsPanel: {fileID: 330040398}
   pausePanel: {fileID: 1415377645}
   endLevel1Panel: {fileID: 532813958}
@@ -11280,7 +11287,7 @@ MonoBehaviour:
   shotgunPanel: {fileID: 832447127}
   pistolPanel: {fileID: 1497130251}
   diaryPanel: {fileID: 646615015}
-  coinsPanel: {fileID: 0}
+  coinsPanel: {fileID: 494984186}
   greenPotionCounterText: {fileID: 1056749824}
   yellowPotionCounterText: {fileID: 1313892299}
   errorPanel: {fileID: 288095013}
@@ -11599,7 +11606,7 @@ GameObject:
   - component: {fileID: 1313892300}
   - component: {fileID: 1313892299}
   m_Layer: 5
-  m_Name: Counter
+  m_Name: YellowPotionCounter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14913,7 +14920,7 @@ PrefabInstance:
     - target: {fileID: 7935416683160852474, guid: 508b48af73c994db8b3d6ea6b8e47fc8,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7935416683160852475, guid: 508b48af73c994db8b3d6ea6b8e47fc8,
         type: 3}
@@ -15028,7 +15035,7 @@ PrefabInstance:
     - target: {fileID: 7935416683963999048, guid: 508b48af73c994db8b3d6ea6b8e47fc8,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: GoBackFromStore
+      value: GoBackFromInventory
       objectReference: {fileID: 0}
     - target: {fileID: 7935416683963999048, guid: 508b48af73c994db8b3d6ea6b8e47fc8,
         type: 3}
@@ -19737,12 +19744,12 @@ PrefabInstance:
     - target: {fileID: 1874623577078818806, guid: c09cebf286c6146088bbf65d11075990,
         type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1874623577078818806, guid: c09cebf286c6146088bbf65d11075990,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1874623578575858736, guid: c09cebf286c6146088bbf65d11075990,
         type: 3}
@@ -19857,7 +19864,7 @@ PrefabInstance:
     - target: {fileID: 1874623578575858737, guid: c09cebf286c6146088bbf65d11075990,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1874623578720396576, guid: c09cebf286c6146088bbf65d11075990,
         type: 3}
@@ -20206,10 +20213,20 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1298363187}
+    - target: {fileID: 4456855028997402856, guid: c4c7c3394f056443996f02fa0d3bacdd,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: GoToInventory
+      objectReference: {fileID: 0}
     - target: {fileID: 4456855029254095577, guid: c4c7c3394f056443996f02fa0d3bacdd,
         type: 3}
       propertyPath: m_Name
       value: PausePanel
+      objectReference: {fileID: 0}
+    - target: {fileID: 4456855029254095577, guid: c4c7c3394f056443996f02fa0d3bacdd,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4456855029254095578, guid: c4c7c3394f056443996f02fa0d3bacdd,
         type: 3}
