@@ -153,6 +153,11 @@ public class PanelController : MonoBehaviour
         gameOptionsPanel.SetActive(true);
         //mainPanel.gameObject.SetActive(false);
     }
+    public void GoToStore()
+    {
+        storePanel.SetActive(true);
+        PauseGame();
+    }
     public void GoToCredits()
     {
         creditsPanel.SetActive(true);
@@ -164,6 +169,7 @@ public class PanelController : MonoBehaviour
         creditsPanel.SetActive(false);
         endgamePanel.SetActive(false);
         pausePanel.SetActive(false);
+        storePanel.SetActive(false);
         mainPanel.gameObject.SetActive(true);
     }
     public void BackToMenuFromEndGame()
