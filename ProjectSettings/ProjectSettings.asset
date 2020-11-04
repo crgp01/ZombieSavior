@@ -664,7 +664,11 @@ PlayerSettings:
       daydreamIconForeground: {fileID: 0}
       daydreamIconBackground: {fileID: 0}
   cloudServicesEnabled:
-    UNet: 1
+    Build: 0
+    Collab: 0
+    ErrorHub: 0
+    Hub: 0
+    UNet: 0
   luminIcon:
     m_Name: 
     m_ModelFolderPath: 
@@ -677,10 +681,10 @@ PlayerSettings:
     m_VersionCode: 1
     m_VersionName: 
   apiCompatibilityLevel: 6
-  cloudProjectId: 
+  cloudProjectId: d32efc45-c298-45ec-96be-45225d133d4c
   framebufferDepthMemorylessMode: 0
-  projectName: 
-  organizationId: 
+  projectName: Taller Niveles
+  organizationId: unity_5yqz50gkh0sipq
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 0
   disableOldInputManagerSupport: 0

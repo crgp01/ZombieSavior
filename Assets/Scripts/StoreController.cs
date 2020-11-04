@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class InventaryController : MonoBehaviour
+public class StoreController : MonoBehaviour
 {
-    private int greenPotionCounter;
-    private int yellowPotionCounter;
-    private bool hasShootgun;
+    public int greenPotionCounter = 1;
+    public int yellowPotionCounter = 0;
+    public bool hasShootgun;
     public Text errorMessage;
     public Text currentCoins;
     private int GREEN_POTION_PRICE = 5;
