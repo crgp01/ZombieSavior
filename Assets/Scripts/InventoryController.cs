@@ -19,7 +19,8 @@ public class InventoryController : MonoBehaviour
     private string COMPLETE_LIFE_MESSAGE = "Ya tienes la vida completa";
     private string NO_POTION_MESSAGE = "No tienes mas pociones";
     private string NO_ZOMBIE_MODE_MESSAGE = "El contador no está corriendo";
-    private string ZERO_COUNTER_MESSAGE = "El contador ya está en 0";
+    private string ZERO_COUNTER_MESSAGE = "Ya se terminó el tiempo";
+    private string APPLIED_POTION_MESSAGE = "Poción aplicada";
     // Start is called before the first frame update
     void Start()
     {
@@ -47,12 +48,16 @@ public class InventoryController : MonoBehaviour
             {
                 storeController.greenPotionCounter--;
                 scoreManager.lifeBarSlider.value = 3;
+                errorPanel.text = APPLIED_POTION_MESSAGE;
+                errorPanel.GetComponent<Text>().color = Color.green;
             }
             else {
+                errorPanel.GetComponent<Text>().color = Color.red;
                 errorPanel.text = NO_POTION_MESSAGE;
             }
         }
         else {
+            errorPanel.GetComponent<Text>().color = Color.red;
             errorPanel.text = COMPLETE_LIFE_MESSAGE;
         }
         
@@ -68,20 +73,31 @@ public class InventoryController : MonoBehaviour
     }
     public void UseYellowPotionPanel()
     {
-        if (scoreManager.zombieMode)
+        if (scoreManager.timerIsRunning)
         {
-            if (scoreManager.timeRemaining > 1)
+            if (scoreManager.timeRemaining >= 1)
             {
-                storeController.greenPotionCounter--;
-                scoreManager.lifeBarSlider.value = 3;
+                if (storeController.yellowPotionCounter > 0)
+                {
+                    storeController.yellowPotionCounter--;
+                    scoreManager.timeRemaining += 30;
+                    errorPanel.text = APPLIED_POTION_MESSAGE;
+                    errorPanel.GetComponent<Text>().color = Color.green;
+                }
+                else {
+                    errorPanel.GetComponent<Text>().color = Color.red;
+                    errorPanel.text = ZERO_COUNTER_MESSAGE;
+                }
             }
             else
             {
-                errorPanel.text = ZERO_COUNTER_MESSAGE;
+                errorPanel.GetComponent<Text>().color = Color.red;
+                errorPanel.text = NO_POTION_MESSAGE;
             }
         }
         else
         {
+            errorPanel.GetComponent<Text>().color = Color.red;
             errorPanel.text = NO_ZOMBIE_MODE_MESSAGE;
         }
 
