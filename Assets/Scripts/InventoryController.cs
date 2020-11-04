@@ -24,6 +24,8 @@ public class InventoryController : MonoBehaviour
     private string NO_ZOMBIE_MODE_MESSAGE = "El contador no está corriendo";
     private string ZERO_COUNTER_MESSAGE = "Ya se terminó el tiempo";
     private string APPLIED_POTION_MESSAGE = "Poción aplicada";
+    private string EQUIPED_WEAPON = "Arma equipada";
+    private string ALREADY_EQUIPED_WEAPON = "Ya tienes esa arma equipada";
     // Start is called before the first frame update
     void Start()
     {
@@ -142,11 +144,31 @@ public class InventoryController : MonoBehaviour
 
     }
     public void EquipShotgun() {
-        scoreManager.shotgunEquiped = true;
-        scoreManager.pistolEquiped = false;
+        if (!scoreManager.shotgunEquiped)
+        {
+            scoreManager.shotgunEquiped = true;
+            scoreManager.pistolEquiped = false;
+            errorPanel.text = EQUIPED_WEAPON;
+            errorPanel.GetComponent<Text>().color = Color.green;
+        }
+        else {
+            errorPanel.GetComponent<Text>().color = Color.red;
+            errorPanel.text = ALREADY_EQUIPED_WEAPON;
+        }
+        
     }
     public void EquipPistol() {
-        scoreManager.shotgunEquiped = false;
-        scoreManager.pistolEquiped = true;
+        if (!scoreManager.pistolEquiped)
+        {
+            scoreManager.shotgunEquiped = false;
+            scoreManager.pistolEquiped = true;
+            errorPanel.text = EQUIPED_WEAPON;
+            errorPanel.GetComponent<Text>().color = Color.green;
+        }
+        else
+        {
+            errorPanel.GetComponent<Text>().color = Color.red;
+            errorPanel.text = ALREADY_EQUIPED_WEAPON;
+        }
     }
 }

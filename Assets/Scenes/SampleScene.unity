@@ -4990,7 +4990,7 @@ GameObject:
   - component: {fileID: 597453393}
   - component: {fileID: 597453392}
   m_Layer: 5
-  m_Name: UsePistol
+  m_Name: UseShotgun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5059,8 +5059,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1298363187}
-        m_MethodName: GoBackFromStore
+      - m_Target: {fileID: 1298363190}
+        m_MethodName: EquipShotgun
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -15889,8 +15889,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1298363187}
-        m_MethodName: GoBackFromStore
+      - m_Target: {fileID: 1298363190}
+        m_MethodName: ShowShotgunPanel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -16100,7 +16100,8 @@ MonoBehaviour:
   gunInHand: {fileID: 1901541524}
   shotgunInHand: {fileID: 1077817509}
   weapon1Collected: 1
-  weapon2Buyed: 0
+  pistolEquiped: 0
+  shotgunEquiped: 0
   lifeBarSlider: {fileID: 1164298285}
   timeRemaining: 10
   timerIsRunning: 0
@@ -17605,7 +17606,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1497130252
 RectTransform:
   m_ObjectHideFlags: 0
@@ -18127,7 +18128,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Usar
+  m_Text: Equipar
 --- !u!222 &1541842648
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -19234,8 +19235,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1298363187}
-        m_MethodName: GoBackFromStore
+      - m_Target: {fileID: 1298363190}
+        m_MethodName: EquipPistol
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -19936,7 +19937,7 @@ PrefabInstance:
     - target: {fileID: 7935416683160852474, guid: 508b48af73c994db8b3d6ea6b8e47fc8,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7935416683160852475, guid: 508b48af73c994db8b3d6ea6b8e47fc8,
         type: 3}
@@ -22215,7 +22216,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1884761905
 RectTransform:
   m_ObjectHideFlags: 0
@@ -24760,12 +24761,12 @@ PrefabInstance:
     - target: {fileID: 1874623577078818806, guid: c09cebf286c6146088bbf65d11075990,
         type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1874623577078818806, guid: c09cebf286c6146088bbf65d11075990,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1874623577243798644, guid: c09cebf286c6146088bbf65d11075990,
         type: 3}
@@ -24945,7 +24946,7 @@ PrefabInstance:
     - target: {fileID: 1874623578575858737, guid: c09cebf286c6146088bbf65d11075990,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1874623578720396576, guid: c09cebf286c6146088bbf65d11075990,
         type: 3}
