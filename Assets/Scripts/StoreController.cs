@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class StoreController : MonoBehaviour
 {
     public int greenPotionCounter = 1;
+    public GameObject unavailableText;
     public int yellowPotionCounter = 0;
     public bool hasShootgun;
     public Text errorMessage;
@@ -26,6 +27,9 @@ public class StoreController : MonoBehaviour
     void Update()
     {
         currentCoins.text = $"{scoreManager.recolectedCoins}";
+        if (hasShootgun) {
+            unavailableText.SetActive(true);
+        }
     }
     public void purchaseGreenPotion() {
         if (scoreManager.recolectedCoins >= GREEN_POTION_PRICE)
