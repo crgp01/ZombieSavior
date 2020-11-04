@@ -11,8 +11,11 @@ public class InventoryController : MonoBehaviour
     public GameObject pistolPanel;
     public GameObject diaryPanel;
     public GameObject coinsPanel;
+    public GameObject pistolButton;
+    public GameObject shotgunButton;
     public Text greenPotionCounterText;
     public Text yellowPotionCounterText;
+    public Text diariesCounterText;
     public Text errorPanel;
     public StoreController storeController;
     public ScoreManager scoreManager;
@@ -24,14 +27,23 @@ public class InventoryController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+       
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (scoreManager.weapon1Collected)
+        {
+            pistolButton.gameObject.SetActive(true);
+        }
+        if (scoreManager.weapon2Buyed)
+        {
+            shotgunButton.gameObject.SetActive(true);
+        }
         greenPotionCounterText.text = $"x{storeController.greenPotionCounter}";
         yellowPotionCounterText.text = $"x{storeController.yellowPotionCounter}";
+        diariesCounterText.text = $"x{scoreManager.diariesCounter}";
     }
     public void ShowGreenPotionPanel() {
         greenPotionPanel.SetActive(true);
@@ -68,6 +80,24 @@ public class InventoryController : MonoBehaviour
         yellowPotionPanel.SetActive(true);
         shotgunPanel.SetActive(false);
         pistolPanel.SetActive(false);
+        diaryPanel.SetActive(false);
+        coinsPanel.SetActive(false);
+    }
+    public void ShowDiariesPanel()
+    {
+        greenPotionPanel.SetActive(false);
+        yellowPotionPanel.SetActive(false);
+        shotgunPanel.SetActive(false);
+        pistolPanel.SetActive(false);
+        diaryPanel.SetActive(true);
+        coinsPanel.SetActive(false);
+    }
+    public void ShowPistolPanel()
+    {
+        greenPotionPanel.SetActive(false);
+        yellowPotionPanel.SetActive(false);
+        shotgunPanel.SetActive(false);
+        pistolPanel.SetActive(true);
         diaryPanel.SetActive(false);
         coinsPanel.SetActive(false);
     }

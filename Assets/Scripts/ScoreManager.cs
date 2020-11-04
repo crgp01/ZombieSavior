@@ -9,8 +9,11 @@ public class ScoreManager : MonoBehaviour
     public int recolectedCoins;
     public Text coinScore;
     public GameObject gunImage;
+    public GameObject shotgunImage;
     public GameObject gunInHand;
+    public GameObject shotgunInHand;
     public bool weapon1Collected = false;
+    public bool weapon2Buyed = false;
     public Slider lifeBarSlider;
     public float timeRemaining = 30;
     public bool timerIsRunning = false;
@@ -63,6 +66,12 @@ public class ScoreManager : MonoBehaviour
         {
             gunImage.gameObject.SetActive(true);
             gunInHand.gameObject.SetActive(true);
+            shotgunInHand.SetActive(false);
+        }if (weapon2Buyed)
+        {
+            gunInHand.gameObject.SetActive(false);
+            shotgunInHand.SetActive(true);
+            shotgunImage.SetActive(true);
         }
         if (recolectedCoins == COINS_TARGET) {
             allCoinsCollected = true;
