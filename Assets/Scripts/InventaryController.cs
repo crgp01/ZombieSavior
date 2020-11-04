@@ -9,6 +9,7 @@ public class InventaryController : MonoBehaviour
     private int yellowPotionCounter;
     private bool hasShootgun;
     public Text errorMessage;
+    public Text currentCoins;
     private int GREEN_POTION_PRICE = 5;
     private int YELLOW_POTION_PRICE = 5;
     private int SHOT_GUN_PRICE = 15;
@@ -24,7 +25,7 @@ public class InventaryController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        currentCoins.text = $"{scoreManager.recolectedCoins}";
     }
     public void purchaseGreenPotion() {
         if (scoreManager.recolectedCoins >= GREEN_POTION_PRICE)
