@@ -27,6 +27,7 @@ TagManager:
   - Document1
   - Document2
   - ZombieBoss
+  - Store
   layers:
   - Default
   - TransparentFX
