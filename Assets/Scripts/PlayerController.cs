@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
@@ -57,6 +58,7 @@ public class PlayerController : MonoBehaviour
         if (col.gameObject.tag == "Coin")
         {
             animator.Play("Pickup");
+            FindObjectOfType<AudioManager>().Play("CoinFall");
             col.gameObject.SetActive(false);
             scoreManager.recolectedCoins++;
         }
