@@ -2258,6 +2258,10 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
+    - target: {fileID: 127168, guid: 1795059418cbe984a9f659ea409db85a, type: 3}
+      propertyPath: m_TagString
+      value: Store
+      objectReference: {fileID: 0}
     - target: {fileID: 462004, guid: 1795059418cbe984a9f659ea409db85a, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.9399999
@@ -9077,6 +9081,7 @@ MonoBehaviour:
   respawnPoint: {fileID: 843813867}
   Document1Panel: {fileID: 1850755267}
   Document2Panel: {fileID: 1861287416}
+  enterStore: 0
   diariesInstructionText: {fileID: 416798138}
   coinCounterText: {fileID: 963508930}
 --- !u!114 &1298363188
@@ -14123,6 +14128,11 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1298363187}
+    - target: {fileID: 7935416683963999048, guid: 508b48af73c994db8b3d6ea6b8e47fc8,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: GoBackFromStore
+      objectReference: {fileID: 0}
     - target: {fileID: 7935416683963999054, guid: 508b48af73c994db8b3d6ea6b8e47fc8,
         type: 3}
       propertyPath: m_IsActive
@@ -16026,6 +16036,10 @@ PrefabInstance:
       propertyPath: curePosition
       value: 
       objectReference: {fileID: 224717701}
+    - target: {fileID: 1311694199, guid: a66cdb69aabbf4bdda25b0355dc46dfe, type: 3}
+      propertyPath: panelController
+      value: 
+      objectReference: {fileID: 1298363187}
     - target: {fileID: 1311694200, guid: a66cdb69aabbf4bdda25b0355dc46dfe, type: 3}
       propertyPath: scoreManager
       value: 

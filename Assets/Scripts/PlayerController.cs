@@ -9,7 +9,7 @@ public class PlayerController : MonoBehaviour
     Animator animator;
     public GameObject medicine;
     public GameObject curePosition;
-    private PanelController panelController;
+    public PanelController panelController;
 
     // Start is called before the first frame update
     void Start()
@@ -49,10 +49,6 @@ public class PlayerController : MonoBehaviour
         {
             DocumentsCounting("document2", other);
 
-        }if (other.CompareTag("Store"))
-        {
-            panelController.storePanel.SetActive(true);
-
         }
     }
     void OnCollisionEnter(Collision col)
@@ -76,6 +72,11 @@ public class PlayerController : MonoBehaviour
         if (col.gameObject.tag == "Zombie")
         {
             scoreManager.lifeBarSlider.value -= 1;
+        }
+        if (col.gameObject.tag == "Store")
+        {
+            panelController.GoToStore();
+            panelController.enterStore = true;
         }
         
     }

@@ -26,6 +26,7 @@ public class PanelController : MonoBehaviour
     public GameObject respawnPoint;
     public GameObject Document1Panel;
     public GameObject Document2Panel;
+    public bool enterStore;
     private GameObject player;
     public Text diariesInstructionText;
     public Text coinCounterText;
@@ -157,6 +158,17 @@ public class PanelController : MonoBehaviour
     {
         storePanel.SetActive(true);
         PauseGame();
+    }
+    public void GoBackFromStore() {
+        if (enterStore)
+        {
+            storePanel.SetActive(false);
+            enterStore = false;
+            UnpauseGame();
+        }
+        else {
+            BackToMenu();
+        }
     }
     public void GoToCredits()
     {
