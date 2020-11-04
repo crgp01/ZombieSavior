@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField] private ScoreManager scoreManager;
+    public ScoreManager scoreManager;
     Animator animator;
     public GameObject medicine;
     public GameObject curePosition;

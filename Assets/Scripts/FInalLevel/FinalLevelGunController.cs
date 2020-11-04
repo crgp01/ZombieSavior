@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class FinalLevelGunController : MonoBehaviour
 {
-    [SerializeField] GameObject bullet;
-    [SerializeField] Transform spawnPoint;
-    [SerializeField] float bulletSpeed;
+    public GameObject bullet;
+    public Transform spawnPoint;
+    private float bulletSpeed = 1;
     public GameObject fire;
     private ParticleSystem fireParticleSystem;
     // [SerializeField] AudioSource shootSound;

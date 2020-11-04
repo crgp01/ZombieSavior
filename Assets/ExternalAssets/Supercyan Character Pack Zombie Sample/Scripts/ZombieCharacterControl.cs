@@ -9,11 +9,11 @@ public class ZombieCharacterControl : MonoBehaviour
         Direct
     }
 
-    [SerializeField] private float m_moveSpeed = 2;
-    [SerializeField] private float m_turnSpeed = 200;
+    private float m_moveSpeed = 2;
+    //private float m_turnSpeed = 200;
 
-    [SerializeField] private Animator m_animator;
-    [SerializeField] private Rigidbody m_rigidBody;
+    public Animator m_animator;
+    public Rigidbody m_rigidBody;
 
     [SerializeField] private ControlMode m_controlMode = ControlMode.Tank;
 

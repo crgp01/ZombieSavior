@@ -8,7 +8,7 @@ public class CameraLogic : MonoBehaviour {
     private float m_height = 1;
     private float m_lookAtAroundAngle = 180;
 
-    [SerializeField] private List<Transform> m_targets;
+    private List<Transform> m_targets = new List<Transform>();
     private int m_currentIndex;
 
 	private void Start () {

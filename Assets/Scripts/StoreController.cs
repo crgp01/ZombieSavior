@@ -16,7 +16,7 @@ public class StoreController : MonoBehaviour
     private int SHOT_GUN_PRICE = 15;
     private string NO_COINS_MESSAGE = "No tienes suficientes monedas";
     private string SHOTGUN_ERROR_MESSAGE = "Ya tienes esta arma";
-    [SerializeField] private ScoreManager scoreManager;
+    public ScoreManager scoreManager;
     // Start is called before the first frame update
     void Start()
     {

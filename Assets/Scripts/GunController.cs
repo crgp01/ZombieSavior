@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class GunController : MonoBehaviour
 {
-    [SerializeField] GameObject bullet;
-    [SerializeField] Transform spawnPoint;
-    [SerializeField] Transform spawnPointShotgun;
-    [SerializeField] float bulletSpeed;
+    public GameObject bullet;
+    public Transform spawnPoint;
+    public Transform spawnPointShotgun;
+    public float bulletSpeed;
     private GameObject newGo;
     private Rigidbody bulletRB;
     public GameObject fire;
@@ -15,7 +15,7 @@ public class GunController : MonoBehaviour
     public int bulletNumber = 3;
     private ParticleSystem fireParticleSystem;
     private ParticleSystem fireParticleSystemShotgun;
-    [SerializeField] private ScoreManager scoreManager;
+    public ScoreManager scoreManager;
     // [SerializeField] AudioSource shootSound;
 
     // Update is called once per frame

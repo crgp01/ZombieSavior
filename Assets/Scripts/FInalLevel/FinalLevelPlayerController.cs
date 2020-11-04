@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class FinalLevelPlayerController : MonoBehaviour
 {
-    [SerializeField] private FinalLevelController scoreManager;
+    [SerializeField] public FinalLevelController scoreManager;
     Animator animator;
     public GameObject medicine;
     private PanelController panelController;
