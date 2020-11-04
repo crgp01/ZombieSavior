@@ -56,9 +56,9 @@ public class InventoryController : MonoBehaviour
         coinsPanel.SetActive(false);
     }
     public void UseGreenPotionPanel() {
-        if (scoreManager.lifeBarSlider.value < 3)
+        if (storeController.greenPotionCounter > 0)
         {
-            if (storeController.greenPotionCounter > 0)
+            if (scoreManager.lifeBarSlider.value < 3)
             {
                 storeController.greenPotionCounter--;
                 scoreManager.lifeBarSlider.value = 3;
@@ -67,12 +67,12 @@ public class InventoryController : MonoBehaviour
             }
             else {
                 errorPanel.GetComponent<Text>().color = Color.red;
-                errorPanel.text = NO_POTION_MESSAGE;
+                errorPanel.text = COMPLETE_LIFE_MESSAGE;
             }
         }
         else {
             errorPanel.GetComponent<Text>().color = Color.red;
-            errorPanel.text = COMPLETE_LIFE_MESSAGE;
+            errorPanel.text = NO_POTION_MESSAGE;
         }
         
     }
