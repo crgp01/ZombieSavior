@@ -16,7 +16,7 @@ public class ZombieBossController : MonoBehaviour
     private Transform peopleTransform;
     public GameObject zombiePrefab;
     public Slider zombieLifeSlider;
-    public int hitCounter;
+    private int hitCounter;
     public bool spawnZombie = true;
     public FinalLevelPanelController panelController;
     // Start is called before the first frame update

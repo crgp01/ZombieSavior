@@ -12,10 +12,13 @@ public class FinalLevelPanelController : MonoBehaviour
     public GameObject gameOptionsPanel;
     public GameObject creditsPanel;
     public GameObject finalGamePanel;
+    public GameObject inventoryPanel;
+    public GameObject storePanel;
     public GameObject pausePanel;
     public FinalLevelController scoreManager;
     public GameObject respawnPoint;
     private GameObject player;
+    private bool enterStore = false;
     public ZombieBossController ZombieBossController;
     // Start is called before the first frame update
     void Start()
@@ -113,6 +116,35 @@ public class FinalLevelPanelController : MonoBehaviour
         endgamePanel.SetActive(false);
         mainPanel.gameObject.SetActive(true);
         GoToBegining();
+    }
+    public void GoToInventory()
+    {
+        inventoryPanel.SetActive(true);
+        PauseGame();
+        pausePanel.gameObject.SetActive(false);
+    }
+    public void GoBackFromInventory()
+    {
+        inventoryPanel.SetActive(false);
+        pausePanel.gameObject.SetActive(true);
+    }
+    public void GoToStore()
+    {
+        storePanel.SetActive(true);
+        PauseGame();
+    }
+    public void GoBackFromStore()
+    {
+        if (enterStore)
+        {
+            storePanel.SetActive(false);
+            enterStore = false;
+            UnpauseGame();
+        }
+        else
+        {
+            BackToMenu();
+        }
     }
     public void FinishGame() {
         SceneManager.LoadScene("SampleScene");

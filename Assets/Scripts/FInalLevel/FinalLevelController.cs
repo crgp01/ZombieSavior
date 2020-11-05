@@ -8,7 +8,7 @@ public class FinalLevelController : MonoBehaviour
 {
     public int recolectedCoins;
     public Text coinScore;
-    public GameObject gunImage;
+    public GameObject gunImage, shotgunImage, shotgunInHand;
     public GameObject gunInHand;
     public Slider lifeBarSlider;
     public float timeRemaining = 30;
@@ -17,7 +17,7 @@ public class FinalLevelController : MonoBehaviour
     public bool medicinePicked = false;
     public bool cureWasPicked = false;
     public bool allCoinsCollected = false;
-    public bool zombieMode = false;
+    public bool zombieMode = false, pistolEquiped = false, shotgunEquiped = false;
     private GameObject player;
     public GameObject respawnPoint;
     private int TOTAL_TIME = 30;
@@ -48,6 +48,20 @@ public class FinalLevelController : MonoBehaviour
         if (zombieMode)
         {
             StartZombieMode();
+        }
+        if (shotgunEquiped)
+        {
+            gunInHand.gameObject.SetActive(false);
+            shotgunInHand.SetActive(true);
+            shotgunImage.SetActive(true);
+            gunImage.gameObject.SetActive(false);
+        }
+        if (pistolEquiped)
+        {
+            gunInHand.gameObject.SetActive(true);
+            shotgunInHand.SetActive(false);
+            shotgunImage.SetActive(false);
+            gunImage.gameObject.SetActive(true);
         }
     }
     void DisplayTime(float timeToDisplay)
