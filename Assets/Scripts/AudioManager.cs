@@ -6,6 +6,8 @@ using System;
 
 public class AudioManager : MonoBehaviour
 {
+    public AudioMixerGroup mixerGroup;
+
     public SoundController[] soundList;
 
     void Awake() {
@@ -15,6 +17,8 @@ public class AudioManager : MonoBehaviour
             sound.source.clip = sound.clip;
 
             sound.source.volume = sound.volume;
+            sound.source.outputAudioMixerGroup = mixerGroup;
+
         }
     }
 
