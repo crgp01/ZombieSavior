@@ -3,7 +3,10 @@ guid: 62ae9a5f94fe44299b3c2638500ef343
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - coinPrefab: {fileID: 6479203747981399581, guid: 4fb8722c1105846c0969547d0887c0f0,
+      type: 3}
+  - people: {fileID: 1968476592218994, guid: 313ad0ef31f75b84f9f31c0528802fdd, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

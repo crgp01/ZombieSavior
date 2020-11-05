@@ -51,7 +51,6 @@ public class ZombieController : MonoBehaviour
                 NavMeshAgent peopleAgent = peoplePrefab.AddComponent<NavMeshAgent>();
                 peopleAgent.SetDestination(new Vector3(200, 1, 190));
             }
-            animator.Play("zombie_death_standing");
             transform.gameObject.SetActive(false);
         }
     }

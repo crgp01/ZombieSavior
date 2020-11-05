@@ -32,7 +32,7 @@ public class ScoreManager : MonoBehaviour
     }
     private void Update()
     {
-        coinScore.text = $"Monedas: {recolectedCoins}";
+        coinScore.text = $"{recolectedCoins}";
 
         TimeCounter();
 
