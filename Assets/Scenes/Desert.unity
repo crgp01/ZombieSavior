@@ -2735,6 +2735,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5c243d3591422814a81656730b54873b, type: 3}
+--- !u!1 &824937401 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1156713699, guid: 2cd211c3780654e9c86caa4ae9d7fdac,
+    type: 3}
+  m_PrefabInstance: {fileID: 2046423680}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &831259572 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1305042708650487001, guid: 7fd9316335ca74f3fa1c6200af1033e3,
@@ -4474,13 +4480,25 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 77ccc4d64d01a4794a6ca96c627aec37, type: 3}
     volume: 1
     source: {fileID: 0}
-  - soundName: 
-    clip: {fileID: 0}
-    volume: 0
+  - soundName: ZombieDie
+    clip: {fileID: 8300000, guid: 659072897dfbe46129aeace4bb2cbc48, type: 3}
+    volume: 1
     source: {fileID: 0}
-  - soundName: 
-    clip: {fileID: 0}
-    volume: 0
+  - soundName: ZombieAttack
+    clip: {fileID: 8300000, guid: 7dfe330559fc5438fb7e19a90bd75f16, type: 3}
+    volume: 1
+    source: {fileID: 0}
+  - soundName: ZombieBossAttack
+    clip: {fileID: 8300000, guid: 7c7003b1599424208b1d9f107eee0437, type: 3}
+    volume: 1
+    source: {fileID: 0}
+  - soundName: ZombieBossDie
+    clip: {fileID: 8300000, guid: 6a5f206601fc545b69fcaa0a722e8abe, type: 3}
+    volume: 1
+    source: {fileID: 0}
+  - soundName: ZombieBossHit
+    clip: {fileID: 8300000, guid: d54535d6c38d6410fa586c707bea8a9b, type: 3}
+    volume: 1
     source: {fileID: 0}
 --- !u!4 &1357301479
 Transform:
@@ -4953,6 +4971,12 @@ GameObject:
 --- !u!1 &1546633260 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3083146175057150161, guid: 2cd211c3780654e9c86caa4ae9d7fdac,
+    type: 3}
+  m_PrefabInstance: {fileID: 2046423680}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1606607265 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 420568766, guid: 2cd211c3780654e9c86caa4ae9d7fdac,
     type: 3}
   m_PrefabInstance: {fileID: 2046423680}
   m_PrefabAsset: {fileID: 0}
@@ -5906,29 +5930,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 2105225095}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 44dadc0c370154236a202516905a2e8d, type: 3}
+  m_Script: {fileID: 11500000, guid: a7141ae082fd64b848ab41edcc489caf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  recolectedCoins: 0
-  coinScore: {fileID: 629658509}
-  gunImage: {fileID: 1042235026}
-  shotgunImage: {fileID: 0}
-  shotgunInHand: {fileID: 0}
-  gunInHand: {fileID: 1452496232}
-  lifeBarSlider: {fileID: 1504598697}
-  timeRemaining: 30
-  timerIsRunning: 0
-  timeText: {fileID: 1056956127}
-  medicinePicked: 0
-  cureWasPicked: 0
-  allCoinsCollected: 0
-  zombieMode: 0
-  pistolEquiped: 0
-  shotgunEquiped: 0
-  canShoot: 0
-  respawnPoint: {fileID: 233234802}
-  cureText: {fileID: 333101922}
-  posprocesingController: {fileID: 1075887165}
+  scoreManager: {fileID: 1612855618}
+  medicine: {fileID: 1484959596}
 --- !u!114 &2105225097
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5943,10 +5949,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bullet: {fileID: 1985338178271116, guid: 48ec186542777474bb236dff1694340c, type: 3}
   spawnPoint: {fileID: 1019198666}
-  spawnPointShotgun: {fileID: 0}
-  bulletSpeed: 1
+  spawnPointShotgun: {fileID: 1606607265}
+  bulletSpeed: 4
   fire: {fileID: 1546633260}
-  fireShotgun: {fileID: 0}
+  fireShotgun: {fileID: 824937401}
   bulletNumber: 3
   finalLevelController: {fileID: 1612855618}
 --- !u!4 &2105225103 stripped
