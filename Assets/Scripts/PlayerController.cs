@@ -24,6 +24,7 @@ public class PlayerController : MonoBehaviour
     {
         if (other.CompareTag("Gun"))
         {
+            FindObjectOfType<AudioManager>().Play("PickGun");
             animator.Play("Pickup");
             other.gameObject.SetActive(false);
             scoreManager.weapon1Collected = true;
@@ -102,6 +103,7 @@ public class PlayerController : MonoBehaviour
     }
     private void DocumentsCounting(string documentType, Collider other)
     {
+        FindObjectOfType<AudioManager>().Play("PickDiary");
         scoreManager.diariesCounter++;
         animator.Play("Pickup");
         other.gameObject.SetActive(false);

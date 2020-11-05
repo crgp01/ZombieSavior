@@ -21093,6 +21093,14 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 7dfe330559fc5438fb7e19a90bd75f16, type: 3}
     volume: 1
     source: {fileID: 0}
+  - soundName: PickDiary
+    clip: {fileID: 8300000, guid: 42c0c082e9cfd46f88f5a01a492cf91c, type: 3}
+    volume: 1
+    source: {fileID: 0}
+  - soundName: PickGun
+    clip: {fileID: 8300000, guid: 1b0926efc48184cc4a627b4f4ac9bfac, type: 3}
+    volume: 1
+    source: {fileID: 0}
   - soundName: Shoot
     clip: {fileID: 8300000, guid: 77ccc4d64d01a4794a6ca96c627aec37, type: 3}
     volume: 0.097
