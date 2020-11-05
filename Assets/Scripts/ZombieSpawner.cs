@@ -5,7 +5,8 @@ using UnityEngine.AI;
 public class ZombieSpawner : MonoBehaviour
 {
     public GameObject zombiePrefab;
-    private Vector3 position = new Vector3(257, 0, 347);
+    public GameObject position;
+    public GameObject position2;
     public GameObject playerPosition;
     private NavMeshAgent zombieAgent;
    
@@ -20,25 +21,11 @@ public class ZombieSpawner : MonoBehaviour
     {
         while (true)
         {
-            GameObject zombieSpawned = Instantiate(zombiePrefab, position + new Vector3(1, 9, 1), Quaternion.identity);
-            //NavMeshAgent zombieAgent = zombieSpawned.AddComponent<NavMeshAgent>();
-            //zombieAgent.SetDestination(playerPosition.transform.position);
+            Instantiate(zombiePrefab, position.transform.position + new Vector3(1, 9, 1), Quaternion.identity);
+            Instantiate(zombiePrefab, position2.transform.position + new Vector3(1, 9, 1), Quaternion.identity);
            
             yield return new WaitForSeconds(15);
         }
     }
-    float timer = 0f;
-
-    void Update()
-    {
-        if (timer <= 15f)
-        {
-            timer += Time.deltaTime;
-        }
-        else
-        {
-            timer = 0;
-            Instantiate(zombiePrefab, position + new Vector3(1, 9, 1), new Quaternion());
-        }
-    }
+   
 }

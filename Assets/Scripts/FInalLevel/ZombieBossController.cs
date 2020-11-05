@@ -31,12 +31,7 @@ public class ZombieBossController : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (hitCounter%2 == 0 && spawnZombie)
-        {
-            Instantiate(zombiePrefab, transform.position + new Vector3(1, 1, 1), Quaternion.identity);
-            Instantiate(zombiePrefab, transform.position + new Vector3(1, 1, 1), Quaternion.identity);
-            spawnZombie = false;
-        }
+       
         FollowingPlayer(transform, playerTransform);
         if (zombieLifeSlider.value == 0)
         {
@@ -47,15 +42,24 @@ public class ZombieBossController : MonoBehaviour
             panelController.playerPanel.gameObject.SetActive(false);
         }
     }
-    void Update() {
-        
+    void Update() {           
+        if (spawnZombie)
+        {
+            Instantiate(zombiePrefab, transform.position + new Vector3(1, 1, 1), Quaternion.identity);
+            Instantiate(zombiePrefab, transform.position + new Vector3(1, 1, 1), Quaternion.identity);
+            spawnZombie = false;
+        }
     }
     void OnCollisionEnter(Collision col)
     {
          if (col.gameObject.tag == "Medicine")
         {
             hitCounter++;
-            zombieLifeSlider.value -= 1;
+            if (hitCounter % 2 == 0)
+            {
+                spawnZombie = true;
+            }
+                zombieLifeSlider.value -= 1;
             FindObjectOfType<AudioManager>().Play("ZombieBossHit");
             animator.Play("zombie_death_standing");
         }
