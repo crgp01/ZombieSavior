@@ -1628,7 +1628,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 1.6938723e+11, z: 4.59e-41, w: 0}
+  m_BoundingSphereOverride: {x: -1.14e-42, y: 4.3e-44, z: 1.1e-44, w: 6e-45}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -5738,7 +5738,7 @@ TerrainCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 670912633}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 3aeb7dadc0c69d54d9e5777e9d5631f1, type: 2}
   m_Enabled: 1
   m_TerrainData: {fileID: 15600000, guid: cd82e4c18df82424fb9833d70aa5d41e, type: 2}
   m_EnableTreeColliders: 1
@@ -7235,60 +7235,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 804104421}
   m_CullTransparentMesh: 0
---- !u!1 &807082585
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 807082587}
-  - component: {fileID: 807082586}
-  m_Layer: 0
-  m_Name: AudioManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &807082586
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 807082585}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c8238493edd9b4cf08ff1c0b16d095d5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  soundList:
-  - soundName: CoinPicked
-    clip: {fileID: 8300000, guid: 64c9234d169e945ceb4ce5c48b34e78a, type: 3}
-    volume: 0
-    pitch: 0.1
-    source: {fileID: 0}
-  - soundName: CoinFall
-    clip: {fileID: 8300000, guid: 4496a3d383baf447fad44e8f8288d6f1, type: 3}
-    volume: 0
-    pitch: 0.1
-    source: {fileID: 0}
---- !u!4 &807082587
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 807082585}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 26.436749, y: 24.329685, z: 428.29056}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 25
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &812244563
 GameObject:
   m_ObjectHideFlags: 0
@@ -21097,6 +21043,74 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 14db1ccf5b7890b499bfd6c79b3bf46f, type: 3}
+--- !u!1 &1758097382
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1758097384}
+  - component: {fileID: 1758097383}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1758097383
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1758097382}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8238493edd9b4cf08ff1c0b16d095d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundList:
+  - soundName: CoinFall
+    clip: {fileID: 8300000, guid: 4496a3d383baf447fad44e8f8288d6f1, type: 3}
+    volume: 1
+    source: {fileID: 0}
+  - soundName: CoinPickup
+    clip: {fileID: 8300000, guid: 64c9234d169e945ceb4ce5c48b34e78a, type: 3}
+    volume: 1
+    source: {fileID: 0}
+  - soundName: Shoot
+    clip: {fileID: 8300000, guid: 77ccc4d64d01a4794a6ca96c627aec37, type: 3}
+    volume: 1
+    source: {fileID: 0}
+  - soundName: ZombieDie
+    clip: {fileID: 8300000, guid: 659072897dfbe46129aeace4bb2cbc48, type: 3}
+    volume: 1
+    source: {fileID: 0}
+  - soundName: ZombieAttack
+    clip: {fileID: 8300000, guid: 7dfe330559fc5438fb7e19a90bd75f16, type: 3}
+    volume: 1
+    source: {fileID: 0}
+  - soundName: Shoot
+    clip: {fileID: 8300000, guid: 77ccc4d64d01a4794a6ca96c627aec37, type: 3}
+    volume: 0.097
+    source: {fileID: 0}
+--- !u!4 &1758097384
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1758097382}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 15.291107, y: 19.0863, z: 403.50162}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 25
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1767149922
 GameObject:
   m_ObjectHideFlags: 0
@@ -25443,6 +25457,11 @@ PrefabInstance:
       propertyPath: scoreManager
       value: 
       objectReference: {fileID: 1298363185}
+    - target: {fileID: 1433377125, guid: 2503c41f30be647878c84483f4668515, type: 3}
+      propertyPath: coinPrefab
+      value: 
+      objectReference: {fileID: 3360279092704220854, guid: 87b955bcb88504e5eb1890fc66603921,
+        type: 3}
     - target: {fileID: 1433377126, guid: 2503c41f30be647878c84483f4668515, type: 3}
       propertyPath: m_Enabled
       value: 1
@@ -25465,7 +25484,7 @@ PrefabInstance:
     - target: {fileID: 3790399337060778297, guid: 2503c41f30be647878c84483f4668515,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 9.25
+      value: 9.39
       objectReference: {fileID: 0}
     - target: {fileID: 3790399337060778297, guid: 2503c41f30be647878c84483f4668515,
         type: 3}
@@ -25987,6 +26006,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Coin
+      objectReference: {fileID: 0}
+    - target: {fileID: 6479203747981399581, guid: 4fb8722c1105846c0969547d0887c0f0,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4fb8722c1105846c0969547d0887c0f0, type: 3}

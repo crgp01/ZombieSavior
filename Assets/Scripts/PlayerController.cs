@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour
     public GameObject medicine;
     public GameObject curePosition;
     public PanelController panelController;
+    //public AudioManager audioManager;
 
     // Start is called before the first frame update
     void Start()
@@ -58,7 +59,7 @@ public class PlayerController : MonoBehaviour
         if (col.gameObject.tag == "Coin")
         {
             animator.Play("Pickup");
-            FindObjectOfType<AudioManager>().Play("CoinFall");
+            FindObjectOfType<AudioManager>().Play("CoinPickup");
             col.gameObject.SetActive(false);
             scoreManager.recolectedCoins++;
         }

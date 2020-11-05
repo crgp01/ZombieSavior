@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 using UnityEngine.AI;
 
 public class ZombieController : MonoBehaviour
@@ -10,7 +11,7 @@ public class ZombieController : MonoBehaviour
     private GameObject player;
     private Transform playerTransform;
     private Animator animator;
-    private GameObject coinPrefab;
+    public GameObject coinPrefab;
     public GameObject people;
     private NavMeshAgent zombieAgent;
     private Transform peopleTransform;
@@ -36,9 +37,11 @@ public class ZombieController : MonoBehaviour
     {
         if (collision.gameObject.tag == "Medicine")
         {
+            FindObjectOfType<AudioManager>().Play("ZombieDie");
             Transform spawnTransform = transform;
+            Instantiate(coinPrefab, spawnTransform.position + new Vector3(1, 8, 1), spawnTransform.rotation);
+          
             transform.gameObject.SetActive(false);
-            Instantiate(coinPrefab, spawnTransform.position + new Vector3(1, 5, 1), spawnTransform.rotation);
             GameObject peoplePrefab = Instantiate(people, spawnTransform.position + new Vector3(0, 1, 0), spawnTransform.rotation);
 
             NavMeshAgent peopleAgent = peoplePrefab.AddComponent<NavMeshAgent>();
@@ -55,6 +58,7 @@ public class ZombieController : MonoBehaviour
         }
         if (Vector3.Distance(zombieTransform.position, playerTransform.position) <= minDist)
         {
+            FindObjectOfType<AudioManager>().Play("ZombieAttack");
             animator.Play("zombie_attack");
         }
     }

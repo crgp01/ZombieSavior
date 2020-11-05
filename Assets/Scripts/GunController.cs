@@ -38,7 +38,7 @@ public class GunController : MonoBehaviour
         {
             if (Input.GetButtonDown("Fire1") && scoreManager.canShoot)
             {
-                // shootSound.Play();
+                FindObjectOfType<AudioManager>().Play("Shoot");
                 if (scoreManager.shotgunEquiped) {
                     for (int i = 1; i < bulletNumber; i++) {
                         newGo = Object.Instantiate(bullet);

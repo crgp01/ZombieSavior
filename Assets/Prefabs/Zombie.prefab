@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62ae9a5f94fe44299b3c2638500ef343, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  coinPrefab: {fileID: 3360279092704220854, guid: 87b955bcb88504e5eb1890fc66603921,
+    type: 3}
   people: {fileID: 1968476592218994, guid: 313ad0ef31f75b84f9f31c0528802fdd, type: 3}
 --- !u!195 &1433377126
 NavMeshAgent:
