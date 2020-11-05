@@ -40,6 +40,7 @@ public class ZombieBossController : MonoBehaviour
         FollowingPlayer(transform, playerTransform);
         if (zombieLifeSlider.value == 0)
         {
+            FindObjectOfType<AudioManager>().Play("ZombieBossDie");
             panelController.PauseGame();
             panelController.finalGamePanel.SetActive(true);
             panelController.mainPanel.gameObject.SetActive(false);
@@ -55,6 +56,7 @@ public class ZombieBossController : MonoBehaviour
         {
             hitCounter++;
             zombieLifeSlider.value -= 1;
+            FindObjectOfType<AudioManager>().Play("ZombieBossHit");
             animator.Play("zombie_death_standing");
         }
     }
@@ -68,6 +70,7 @@ public class ZombieBossController : MonoBehaviour
         }
         if (Vector3.Distance(zombieTransform.position, playerTransform.position) <= minDist)
         {
+            FindObjectOfType<AudioManager>().Play("ZombieBossAttack");
             animator.Play("zombie_attack");
         }
     }

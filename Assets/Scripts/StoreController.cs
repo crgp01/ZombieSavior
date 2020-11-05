@@ -26,7 +26,9 @@ public class StoreController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        currentCoins.text = $"{scoreManager.recolectedCoins}";
+        if (currentCoins) {
+            currentCoins.text = $"{scoreManager.recolectedCoins}";
+        }
         if (hasShootgun) {
             unavailableText.SetActive(true);
         }

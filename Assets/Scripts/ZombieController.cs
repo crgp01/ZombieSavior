@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.AI;
+using UnityEngine.SceneManagement;
 
 public class ZombieController : MonoBehaviour
 {
@@ -15,11 +16,13 @@ public class ZombieController : MonoBehaviour
     public GameObject people;
     private NavMeshAgent zombieAgent;
     private Transform peopleTransform;
+    private Scene currentScene;
 
     //private ScoreManager scoreManager;
     // Start is called before the first frame update
     void Start()
     {
+        currentScene = SceneManager.GetActiveScene();
         player = GameObject.FindGameObjectWithTag("Player");
         playerTransform = player.GetComponent<Transform>();
         animator = GetComponent<Animator>();
@@ -39,13 +42,17 @@ public class ZombieController : MonoBehaviour
         {
             FindObjectOfType<AudioManager>().Play("ZombieDie");
             Transform spawnTransform = transform;
-            Instantiate(coinPrefab, spawnTransform.position + new Vector3(1, 8, 1), spawnTransform.rotation);
-          
-            transform.gameObject.SetActive(false);
-            GameObject peoplePrefab = Instantiate(people, spawnTransform.position + new Vector3(0, 1, 0), spawnTransform.rotation);
+           
+            string sceneName = currentScene.name;
 
-            NavMeshAgent peopleAgent = peoplePrefab.AddComponent<NavMeshAgent>();
-            peopleAgent.SetDestination(new Vector3(200, 1, 190));
+            if (sceneName != "Desert") {
+                Instantiate(coinPrefab, spawnTransform.position + new Vector3(1, 8, 1), spawnTransform.rotation);
+                GameObject peoplePrefab = Instantiate(people, spawnTransform.position + new Vector3(0, 1, 0), spawnTransform.rotation);
+                NavMeshAgent peopleAgent = peoplePrefab.AddComponent<NavMeshAgent>();
+                peopleAgent.SetDestination(new Vector3(200, 1, 190));
+            }
+            animator.Play("zombie_death_standing");
+            transform.gameObject.SetActive(false);
         }
     }
 
