@@ -17,7 +17,7 @@ public class FinalLevelController : MonoBehaviour
     public bool medicinePicked = false;
     public bool cureWasPicked = false;
     public bool allCoinsCollected = false;
-    public bool zombieMode = false, pistolEquiped = false, shotgunEquiped = false;
+    public bool zombieMode = false, pistolEquiped = false, shotgunEquiped = false, canShoot = false;
     private GameObject player;
     public GameObject respawnPoint;
     private int TOTAL_TIME = 30;

@@ -36,6 +36,7 @@ public class FinalLevelPanelController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.P))
         {
             pausePanel.gameObject.SetActive(true);
+            playerPanel.gameObject.SetActive(false);
             PauseGame();
         }
     }
@@ -66,10 +67,12 @@ public class FinalLevelPanelController : MonoBehaviour
 
     public void PauseGame()
     {
+        scoreManager.canShoot = false;
         Time.timeScale = 0f;
     }
     private void UnpauseGame()
     {
+        scoreManager.canShoot = true;
         Time.timeScale = 1;
     }
     public void RestartGame()
@@ -109,6 +112,7 @@ public class FinalLevelPanelController : MonoBehaviour
         creditsPanel.SetActive(false);
         endgamePanel.SetActive(false);
         pausePanel.SetActive(false);
+        storePanel.SetActive(false);
         mainPanel.gameObject.SetActive(true);
     }
     public void BackToMenuFromEndGame()
@@ -120,6 +124,7 @@ public class FinalLevelPanelController : MonoBehaviour
     public void GoToInventory()
     {
         inventoryPanel.SetActive(true);
+        playerPanel.gameObject.SetActive(false);
         PauseGame();
         pausePanel.gameObject.SetActive(false);
     }
@@ -127,6 +132,7 @@ public class FinalLevelPanelController : MonoBehaviour
     {
         inventoryPanel.SetActive(false);
         pausePanel.gameObject.SetActive(true);
+        playerPanel.gameObject.SetActive(true);
     }
     public void GoToStore()
     {

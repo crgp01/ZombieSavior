@@ -48,6 +48,11 @@ public class FinalLevelPlayerController : MonoBehaviour
         {
             scoreManager.lifeBarSlider.value -= 1;
         }
+        if (col.gameObject.tag == "Store")
+        {
+            panelController.GoToStore();
+            panelController.enterStore = true;
+        }
     }
     private void FixedUpdate()
     {
