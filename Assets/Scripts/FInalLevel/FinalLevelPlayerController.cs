@@ -42,7 +42,6 @@ public class FinalLevelPlayerController : MonoBehaviour
         }
         if (col.gameObject.tag == "ZombieBoss")
         {
-            Debug.Log("Dentro del hit boos");
             scoreManager.lifeBarSlider.value -= 1;
         }
         if (col.gameObject.tag == "Zombie")

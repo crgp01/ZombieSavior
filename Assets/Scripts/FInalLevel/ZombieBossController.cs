@@ -31,9 +31,9 @@ public class ZombieBossController : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (hitCounter == 2 && spawnZombie)
+        if (hitCounter%2 == 0 && spawnZombie)
         {
-            Debug.Log("Dentro del hit");
+            Instantiate(zombiePrefab, transform.position + new Vector3(1, 1, 1), Quaternion.identity);
             Instantiate(zombiePrefab, transform.position + new Vector3(1, 1, 1), Quaternion.identity);
             spawnZombie = false;
         }

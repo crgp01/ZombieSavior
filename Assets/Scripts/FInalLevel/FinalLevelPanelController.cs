@@ -62,6 +62,7 @@ public class FinalLevelPanelController : MonoBehaviour
     public void ClosePauseMenu()
     {
         pausePanel.gameObject.SetActive(false);
+        playerPanel.gameObject.SetActive(true);
         UnpauseGame();
     }
 
@@ -82,7 +83,7 @@ public class FinalLevelPanelController : MonoBehaviour
         scoreManager.cureText.SetActive(false);
         playerPanel.SetActive(true);
         scoreManager.RespawnPlayer();
-        ZombieBossController.zombieLifeSlider.value = 6;
+        ZombieBossController.zombieLifeSlider.value = 10;
 
         UnpauseGame();
 
@@ -132,7 +133,7 @@ public class FinalLevelPanelController : MonoBehaviour
     {
         inventoryPanel.SetActive(false);
         pausePanel.gameObject.SetActive(true);
-        playerPanel.gameObject.SetActive(true);
+        playerPanel.gameObject.SetActive(false);
     }
     public void GoToStore()
     {

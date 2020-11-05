@@ -8,7 +8,7 @@ public class FinalLevelShop : MonoBehaviour
     public int greenPotionCounter = 1;
     public GameObject unavailableText;
     public int yellowPotionCounter = 0;
-    public bool hasShootgun;
+    public bool hasShootgun = false;
     public Text errorMessage;
     public Text currentCoins;
     private int GREEN_POTION_PRICE = 5;
@@ -37,7 +37,7 @@ public class FinalLevelShop : MonoBehaviour
         if (finalLevelController.recolectedCoins >= GREEN_POTION_PRICE)
         {
             greenPotionCounter++;
-            finalLevelController.recolectedCoins =- GREEN_POTION_PRICE;
+            finalLevelController.recolectedCoins = finalLevelController.recolectedCoins - GREEN_POTION_PRICE;
         }
         else
         {
@@ -49,7 +49,7 @@ public class FinalLevelShop : MonoBehaviour
         if (finalLevelController.recolectedCoins >= YELLOW_POTION_PRICE)
         {
             yellowPotionCounter++;
-            finalLevelController.recolectedCoins =- YELLOW_POTION_PRICE;
+            finalLevelController.recolectedCoins = finalLevelController.recolectedCoins - YELLOW_POTION_PRICE;
         }
         else
         {
@@ -64,7 +64,7 @@ public class FinalLevelShop : MonoBehaviour
             {
                 hasShootgun = true;
                 finalLevelController.shotgunEquiped = true;
-                finalLevelController.recolectedCoins =- SHOT_GUN_PRICE;
+                finalLevelController.recolectedCoins = finalLevelController.recolectedCoins - SHOT_GUN_PRICE;
             }
             else
             {

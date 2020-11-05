@@ -22,9 +22,10 @@ public class FinalLevelGunController : MonoBehaviour
     // Update is called once per frame
     void Start()
     {
-        if (fire)
+        if (fire || fireShotgun)
         {
             fireParticleSystem = fire.GetComponent<ParticleSystem>();
+            fireParticleSystemShotgun = fireShotgun.GetComponent<ParticleSystem>();
         }
 
     }
