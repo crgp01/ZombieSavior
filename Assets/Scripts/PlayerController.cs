@@ -32,6 +32,7 @@ public class PlayerController : MonoBehaviour
         }
          if (other.CompareTag("Cure"))
         {
+            FindObjectOfType<AudioManager>().Play("CoinPickup");
             medicine.gameObject.SetActive(false);
             curePosition.gameObject.SetActive(false);
             scoreManager.cureText.gameObject.SetActive(false);
