@@ -930,8 +930,8 @@ RectTransform:
   m_Father: {fileID: 102730621}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 16.9, y: 0}
   m_SizeDelta: {x: 70, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -1122,7 +1122,6 @@ GameObject:
   - component: {fileID: 159711519}
   - component: {fileID: 159711518}
   - component: {fileID: 159711517}
-  - component: {fileID: 159711521}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -1223,19 +1222,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!114 &159711521
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 159711516}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: def092db619ae4c2f880ca2b52f2c8da, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  audioMixer: {fileID: 24100000, guid: 3f4f900bd5bb541f7b6cbfa895e249bb, type: 2}
 --- !u!1001 &166593875
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1553,7 +1539,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: -4.4016982e-14, z: 4.5792e-41, w: 0}
+  m_BoundingSphereOverride: {x: 0, y: -1.5845854e+35, z: 4.5901e-41, w: 0}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -1694,8 +1680,8 @@ RectTransform:
   m_Father: {fileID: 1506224621}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 70, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -3702,7 +3688,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &408704927
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6041,7 +6027,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -7493,7 +7479,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 159711521}
+      - m_Target: {fileID: 1298363191}
         m_MethodName: SetMusicVolume
         m_Mode: 0
         m_Arguments:
@@ -7831,13 +7817,24 @@ MonoBehaviour:
   m_FillRect: {fileID: 722941118}
   m_HandleRect: {fileID: 179955046}
   m_Direction: 0
-  m_MinValue: 0
-  m_MaxValue: 5
+  m_MinValue: -80
+  m_MaxValue: 0
   m_WholeNumbers: 1
-  m_Value: 3
+  m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1298363191}
+        m_MethodName: SetSFXVolume
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &918430984
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9815,7 +9812,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -10664,6 +10661,7 @@ GameObject:
   - component: {fileID: 1298363188}
   - component: {fileID: 1298363189}
   - component: {fileID: 1298363190}
+  - component: {fileID: 1298363191}
   m_Layer: 0
   m_Name: ScoreManager
   m_TagString: Untagged
@@ -10822,6 +10820,20 @@ MonoBehaviour:
   errorPanel: {fileID: 288095013}
   storeController: {fileID: 1298363189}
   scoreManager: {fileID: 1298363185}
+--- !u!114 &1298363191
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1298363184}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: def092db619ae4c2f880ca2b52f2c8da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioMixer: {fileID: 24100000, guid: 3f4f900bd5bb541f7b6cbfa895e249bb, type: 2}
+  SFXaudioMixer: {fileID: 24100000, guid: 8de3aadfb4a8f4cc7953ac36af95df87, type: 2}
 --- !u!1001 &1302077459
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14191,6 +14203,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8238493edd9b4cf08ff1c0b16d095d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mixerGroup: {fileID: 24300002, guid: 8de3aadfb4a8f4cc7953ac36af95df87, type: 2}
   soundList:
   - soundName: CoinFall
     clip: {fileID: 8300000, guid: 4496a3d383baf447fad44e8f8288d6f1, type: 3}
@@ -17900,7 +17913,7 @@ PrefabInstance:
     - target: {fileID: 3787859892374528157, guid: 2503c41f30be647878c84483f4668515,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3790399337060778297, guid: 2503c41f30be647878c84483f4668515,
         type: 3}
@@ -17994,7 +18007,7 @@ PrefabInstance:
     - target: {fileID: 4456855029254095577, guid: c4c7c3394f056443996f02fa0d3bacdd,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4456855029254095578, guid: c4c7c3394f056443996f02fa0d3bacdd,
         type: 3}
@@ -18234,7 +18247,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 159711521}
+      objectReference: {fileID: 0}
     - target: {fileID: 4671812899037286049, guid: 679dd80650e024556bf51faa0c99be63,
         type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
@@ -18258,7 +18271,7 @@ PrefabInstance:
     - target: {fileID: 4671812899597373596, guid: 679dd80650e024556bf51faa0c99be63,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4671812899597373599, guid: 679dd80650e024556bf51faa0c99be63,
         type: 3}
