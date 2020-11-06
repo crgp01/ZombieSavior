@@ -28,7 +28,7 @@ public class ScoreManager : MonoBehaviour
     private void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
-        RespawnPlayer();
+        //RespawnPlayer();
        
     }
     private void Update()
@@ -69,7 +69,7 @@ public class ScoreManager : MonoBehaviour
             shotgunImage.SetActive(false);
             gunImage.gameObject.SetActive(true);
         }
-        if (recolectedCoins == COINS_TARGET) {
+        if (recolectedCoins >= COINS_TARGET) {
             allCoinsCollected = true;
         }
         if (diariesCounter == DIARIES_TARGET) {

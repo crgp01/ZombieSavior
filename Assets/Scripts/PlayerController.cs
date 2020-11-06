@@ -49,12 +49,22 @@ public class PlayerController : MonoBehaviour
         if (other.CompareTag("Document1"))
         {
             DocumentsCounting("document1", other);
-
         }
         if (other.CompareTag("Document2"))
         {
             DocumentsCounting("document2", other);
-
+        }
+        if (other.CompareTag("Document3"))
+        {
+            DocumentsCounting("document3", other);
+        }
+        if (other.CompareTag("Document4"))
+        {
+            DocumentsCounting("document4", other);
+        }
+        if (other.CompareTag("Document5"))
+        {
+            DocumentsCounting("document5", other);
         }
     }
     void OnCollisionEnter(Collision col)
@@ -128,6 +138,12 @@ public class PlayerController : MonoBehaviour
             scoreManager.document1WasPicked = true;
         } else if (documentType == "document2") {
             scoreManager.document2WasPicked = true;
+        } else if (documentType == "document3") {
+            scoreManager.document3WasPicked = true;
+        } else if (documentType == "document4") {
+            scoreManager.document4WasPicked = true;
+        } else if (documentType == "document5") {
+            scoreManager.document5WasPicked = true;
         }
         
 

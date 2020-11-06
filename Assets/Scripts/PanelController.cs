@@ -54,6 +54,9 @@ public class PanelController : MonoBehaviour
         }
         ShowDocumentsPanel(scoreManager.document1WasPicked, Document1Panel);
         ShowDocumentsPanel(scoreManager.document2WasPicked, Document2Panel);
+        ShowDocumentsPanel(scoreManager.document3WasPicked, Document3Panel);
+        ShowDocumentsPanel(scoreManager.document4WasPicked, Document4Panel);
+        ShowDocumentsPanel(scoreManager.document5WasPicked, Document5Panel);
     }
 
     public void CloseStoryPanel() {
@@ -64,8 +67,18 @@ public class PanelController : MonoBehaviour
     public void CloseDocumentsPanel() {
         Document1Panel.gameObject.SetActive(false);
         scoreManager.document1WasPicked = false;
+
         Document2Panel.gameObject.SetActive(false);
         scoreManager.document2WasPicked = false;
+
+        Document3Panel.gameObject.SetActive(false);
+        scoreManager.document3WasPicked = false;
+
+        Document4Panel.gameObject.SetActive(false);
+        scoreManager.document4WasPicked = false;
+
+        Document5Panel.gameObject.SetActive(false);
+        scoreManager.document5WasPicked = false;
         UnpauseGame();
     }
     public void PlayGame() {
