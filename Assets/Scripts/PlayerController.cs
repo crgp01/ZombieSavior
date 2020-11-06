@@ -39,9 +39,8 @@ public class PlayerController : MonoBehaviour
             scoreManager.lifeBarSlider.value = 3;
             scoreManager.medicinePicked = true;
         }
-        if (other.CompareTag("FinalGameObject"))
+        if (other.CompareTag("FinalGameObject") && scoreManager.level1Finished)
         {
-            Debug.Log("Dentro del trigger");
             scoreManager.showFinalPanel = true;
 
         }
