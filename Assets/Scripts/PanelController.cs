@@ -9,7 +9,7 @@ public class PanelController : MonoBehaviour
 {
     public GameObject storyPanel, miniMapPanel, mainPanel, playerPanel, cemeteryPanel, endgamePanel, gameOptionsPanel,
         storePanel, inventoryPanel, creditsPanel, pausePanel, endLevel1Panel, finalGameObject, instructionText, gunInstructionText,
-        coinInstructionText, finalInstructionText, respawnPoint, Document1Panel, Document2Panel;
+        coinInstructionText, finalInstructionText, respawnPoint, Document1Panel, Document2Panel, Document3Panel, Document4Panel, Document5Panel;
     public ScoreManager scoreManager;
     public bool enterStore;
     private GameObject player;
@@ -52,14 +52,8 @@ public class PanelController : MonoBehaviour
             endLevel1Panel.gameObject.SetActive(true);
             PauseGame();
         }
-        if (scoreManager.document1WasPicked) {
-            Document1Panel.gameObject.SetActive(true);
-            PauseGame();
-        }
-        if (scoreManager.document2WasPicked) {
-            Document2Panel.gameObject.SetActive(true);
-            PauseGame();
-        }
+        ShowDocumentsPanel(scoreManager.document1WasPicked, Document1Panel);
+        ShowDocumentsPanel(scoreManager.document2WasPicked, Document2Panel);
     }
 
     public void CloseStoryPanel() {
@@ -207,6 +201,14 @@ public class PanelController : MonoBehaviour
         {
             finalInstructionText.GetComponent<Text>().color = Color.red;
             finalGameObject.gameObject.SetActive(true);
+        }
+    }
+    private void ShowDocumentsPanel(bool documentWasPicked, GameObject panelType)
+    {
+        if (documentWasPicked)
+        {
+            panelType.gameObject.SetActive(true);
+            PauseGame();
         }
     }
     private void EndGame() {

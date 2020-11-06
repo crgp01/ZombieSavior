@@ -14,7 +14,7 @@ public class ScoreManager : MonoBehaviour
         timerIsRunning = false, medicinePicked = false, showSignal = false, cureWasPicked = false,
         showStory = false, allCoinsCollected = false, allDiariesCollected = false, zombieMode = false,
         canShoot = false, level1Finished = false, showFinalPanel = false, document1WasPicked = false,
-        document2WasPicked = false;
+        document2WasPicked = false, document3WasPicked = false, document4WasPicked = false, document5WasPicked = false;
     public Slider lifeBarSlider;
     public float timeRemaining = 30;
     public int diariesCounter = 0;
