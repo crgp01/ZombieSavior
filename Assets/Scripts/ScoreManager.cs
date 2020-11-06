@@ -20,7 +20,7 @@ public class ScoreManager : MonoBehaviour
     public int diariesCounter = 0;
     private GameObject player;
     private int TOTAL_TIME = 30;
-    private int COINS_TARGET = 20;
+    public int COINS_TARGET = 30;
     private int DIARIES_TARGET = 5;
     private GameObject[] gameObjects;
     public PosprocesingController posprocesingController;

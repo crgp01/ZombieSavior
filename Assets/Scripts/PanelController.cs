@@ -29,7 +29,7 @@ public class PanelController : MonoBehaviour
     // Update is called once per frames
     void Update()
     {
-        coinCounterText.text = $"Recoge 20 monedas: {scoreManager.recolectedCoins}/20";
+        coinCounterText.text = $"Recoge {scoreManager.COINS_TARGET} monedas: {scoreManager.recolectedCoins}/{scoreManager.COINS_TARGET}";
         diariesInstructionText.text = $"Recoge los diarios del Dr. Cuaticus: {scoreManager.diariesCounter}/5";
         EndGame();
         if (scoreManager.showSignal)
