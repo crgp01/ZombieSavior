@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Analytics;
 using UnityEngine.UI;
 
 public class FinalLevelPlayerController : MonoBehaviour
@@ -42,11 +43,25 @@ public class FinalLevelPlayerController : MonoBehaviour
         }
         if (col.gameObject.tag == "ZombieBoss")
         {
+            IDictionary<string, object> eventDictionary = new Dictionary<string, object> { };
+            eventDictionary.Add("Life value", scoreManager.lifeBarSlider.value);
+            eventDictionary.Add("Player Position", transform.position);
+            eventDictionary.Add("Damage Amount", 1);
+            eventDictionary.Add("Level", 2);
+
+            Analytics.CustomEvent("Player Damaged by Zombie Boss", eventDictionary);
+
             scoreManager.lifeBarSlider.value -= 1;
         }
         if (col.gameObject.tag == "Zombie")
         {
-            Debug.Log("Dentro del hit zombie");
+            IDictionary<string, object> eventDictionary = new Dictionary<string, object> { };
+            eventDictionary.Add("Life value", scoreManager.lifeBarSlider.value);
+            eventDictionary.Add("Player Position", transform.position);
+            eventDictionary.Add("Damage Amount", 1);
+            eventDictionary.Add("Level", 2);
+
+            Analytics.CustomEvent("Player Damaged by Zombie", eventDictionary);
             scoreManager.lifeBarSlider.value -= 1;
         }
         if (col.gameObject.tag == "Store")
@@ -67,6 +82,11 @@ public class FinalLevelPlayerController : MonoBehaviour
         if (scoreManager.zombieMode)
         {
             medicine.gameObject.SetActive(true);
+            IDictionary<string, object> eventDictionary = new Dictionary<string, object> { };
+            eventDictionary.Add("Player position", transform.position);
+            eventDictionary.Add("Level", 2);
+
+            Analytics.CustomEvent("Searching cure", eventDictionary);
         }
 
     }

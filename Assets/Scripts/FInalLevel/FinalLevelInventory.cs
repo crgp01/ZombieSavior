@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine;
+using UnityEngine.Analytics;
 
 public class FinalLevelInventory : MonoBehaviour
 {
@@ -62,6 +63,13 @@ public class FinalLevelInventory : MonoBehaviour
                 finalLevelController.lifeBarSlider.value = 3;
                 errorPanel.text = APPLIED_POTION_MESSAGE;
                 errorPanel.GetComponent<Text>().color = Color.green;
+
+                IDictionary<string, object> eventDictionary = new Dictionary<string, object> { };
+                eventDictionary.Add("Item", "Green Potion");
+                eventDictionary.Add("Location use", transform.position);
+                eventDictionary.Add("Level", 2);
+
+                Analytics.CustomEvent("Use green potion", eventDictionary);
             }
             else
             {
@@ -124,6 +132,13 @@ public class FinalLevelInventory : MonoBehaviour
                     finalLevelController.timeRemaining += 30;
                     errorPanel.text = APPLIED_POTION_MESSAGE;
                     errorPanel.GetComponent<Text>().color = Color.green;
+
+                    IDictionary<string, object> eventDictionary = new Dictionary<string, object> { };
+                    eventDictionary.Add("Item", "Yellow Potion");
+                    eventDictionary.Add("Location use", transform.position);
+                    eventDictionary.Add("Level", 2);
+
+                    Analytics.CustomEvent("Use Yellow Potion", eventDictionary);
                 }
                 else
                 {
@@ -152,6 +167,13 @@ public class FinalLevelInventory : MonoBehaviour
             finalLevelController.pistolEquiped = false;
             errorPanel.text = EQUIPED_WEAPON;
             errorPanel.GetComponent<Text>().color = Color.green;
+
+            IDictionary<string, object> eventDictionary = new Dictionary<string, object> { };
+            eventDictionary.Add("Item", "Shotgun");
+            eventDictionary.Add("Location use", transform.position);
+            eventDictionary.Add("Level", 2);
+
+            Analytics.CustomEvent("Equip Shotgun", eventDictionary);
         }
         else
         {
@@ -168,6 +190,13 @@ public class FinalLevelInventory : MonoBehaviour
             finalLevelController.pistolEquiped = true;
             errorPanel.text = EQUIPED_WEAPON;
             errorPanel.GetComponent<Text>().color = Color.green;
+
+            IDictionary<string, object> eventDictionary = new Dictionary<string, object> { };
+            eventDictionary.Add("Item", "Pistol");
+            eventDictionary.Add("Location use", transform.position);
+            eventDictionary.Add("Level", 2);
+
+            Analytics.CustomEvent("Equip Pistol", eventDictionary);
         }
         else
         {

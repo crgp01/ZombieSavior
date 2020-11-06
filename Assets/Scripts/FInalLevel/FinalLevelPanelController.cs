@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Analytics;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
@@ -38,6 +39,13 @@ public class FinalLevelPanelController : MonoBehaviour
             pausePanel.gameObject.SetActive(true);
             playerPanel.gameObject.SetActive(false);
             PauseGame();
+
+            IDictionary<string, object> eventDictionary = new Dictionary<string, object> { };
+            eventDictionary.Add("Screen", "Pause");
+            eventDictionary.Add("Access location", player.transform.position);
+            eventDictionary.Add("Level", 2);
+
+            Analytics.CustomEvent("Access Pause Panel", eventDictionary);
         }
     }
 
@@ -106,6 +114,13 @@ public class FinalLevelPanelController : MonoBehaviour
     {
         creditsPanel.SetActive(true);
         mainPanel.gameObject.SetActive(false);
+
+        IDictionary<string, object> eventDictionary = new Dictionary<string, object> { };
+        eventDictionary.Add("Screen", "Credits");
+        eventDictionary.Add("Access location", player.transform.position);
+        eventDictionary.Add("Level", 2);
+
+        Analytics.CustomEvent("Access Credits Panel", eventDictionary);
     }
     public void BackToMenu()
     {
@@ -128,6 +143,13 @@ public class FinalLevelPanelController : MonoBehaviour
         playerPanel.gameObject.SetActive(false);
         PauseGame();
         pausePanel.gameObject.SetActive(false);
+
+        IDictionary<string, object> eventDictionary = new Dictionary<string, object> { };
+        eventDictionary.Add("Screen", "Inventory");
+        eventDictionary.Add("Access location", player.transform.position);
+        eventDictionary.Add("Level", 2);
+
+        Analytics.CustomEvent("Access Inventory Panel", eventDictionary);
     }
     public void GoBackFromInventory()
     {
@@ -139,6 +161,13 @@ public class FinalLevelPanelController : MonoBehaviour
     {
         storePanel.SetActive(true);
         PauseGame();
+
+        IDictionary<string, object> eventDictionary = new Dictionary<string, object> { };
+        eventDictionary.Add("Screen", "Store");
+        eventDictionary.Add("Access location", player.transform.position);
+        eventDictionary.Add("Level", 2);
+
+        Analytics.CustomEvent("Access Store Panel", eventDictionary);
     }
     public void GoBackFromStore()
     {

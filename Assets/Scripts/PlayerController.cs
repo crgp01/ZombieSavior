@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Analytics;
 using UnityEngine.Audio;
 using UnityEngine.UI;
 
@@ -32,6 +33,7 @@ public class PlayerController : MonoBehaviour
         }
          if (other.CompareTag("Cure"))
         {
+            Analytics.CustomEvent("Pickup Cure", transform.position);
             FindObjectOfType<AudioManager>().Play("CoinPickup");
             medicine.gameObject.SetActive(false);
             curePosition.gameObject.SetActive(false);
@@ -76,6 +78,13 @@ public class PlayerController : MonoBehaviour
         }
         if (col.gameObject.tag == "Zombie")
         {
+            IDictionary<string, object> eventDictionary = new Dictionary<string, object> { };
+            eventDictionary.Add("Life value", scoreManager.lifeBarSlider.value);
+            eventDictionary.Add("Player Position", transform.position);
+            eventDictionary.Add("Damage Amount", 1);
+            eventDictionary.Add("Level", 1);
+
+            Analytics.CustomEvent("Player Damaged by Zombie", eventDictionary);
             scoreManager.lifeBarSlider.value -= 1;
         }
         if (col.gameObject.tag == "Store")
@@ -98,6 +107,13 @@ public class PlayerController : MonoBehaviour
         {
             medicine.gameObject.SetActive(true);
             curePosition.gameObject.SetActive(true);
+
+            IDictionary<string, object> eventDictionary = new Dictionary<string, object> { };
+            eventDictionary.Add("Player position", transform.position);
+            eventDictionary.Add("Level", 1);
+
+            Analytics.CustomEvent("Searching cure", eventDictionary);
+            scoreManager.lifeBarSlider.value -= 1;
         }
 
     }

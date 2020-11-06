@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Analytics;
 using UnityEngine.UI;
 
 public class StoreController : MonoBehaviour
@@ -34,13 +35,27 @@ public class StoreController : MonoBehaviour
         }
     }
     public void purchaseGreenPotion() {
+
         if (scoreManager.recolectedCoins >= GREEN_POTION_PRICE)
         {
             greenPotionCounter++;
             scoreManager.recolectedCoins = scoreManager.recolectedCoins - GREEN_POTION_PRICE;
+
+            IDictionary<string, object> eventDictionary = new Dictionary<string, object> { };
+            eventDictionary.Add("Item", "Green Potion");
+            eventDictionary.Add("Potion Price", GREEN_POTION_PRICE);
+            eventDictionary.Add("Level", 1);
+
+            Analytics.CustomEvent("Purchase green potion", eventDictionary);
         }
         else {
             errorMessage.text = NO_COINS_MESSAGE;
+            IDictionary<string, object> eventDictionary = new Dictionary<string, object> { };
+            eventDictionary.Add("Current Coins", scoreManager.recolectedCoins);
+            eventDictionary.Add("Potion Price", GREEN_POTION_PRICE);
+            eventDictionary.Add("Level", 1);
+
+            Analytics.CustomEvent("Error Purchasing green potion", eventDictionary);
         }
     }
     public void purchaseYellowPotion() {
@@ -48,9 +63,21 @@ public class StoreController : MonoBehaviour
         {
             yellowPotionCounter++;
             scoreManager.recolectedCoins = scoreManager.recolectedCoins - YELLOW_POTION_PRICE;
+            IDictionary<string, object> eventDictionary = new Dictionary<string, object> { };
+            eventDictionary.Add("Item", "Yellow Potion");
+            eventDictionary.Add("Potion Price", YELLOW_POTION_PRICE);
+            eventDictionary.Add("Level", 1);
+
+            Analytics.CustomEvent("Purchase yellow potion", eventDictionary);
         }
         else {
             errorMessage.text = NO_COINS_MESSAGE;
+            IDictionary<string, object> eventDictionary = new Dictionary<string, object> { };
+            eventDictionary.Add("Current Coins", scoreManager.recolectedCoins);
+            eventDictionary.Add("Potion Price", YELLOW_POTION_PRICE);
+            eventDictionary.Add("Level", 1);
+
+            Analytics.CustomEvent("Error Purchasing yellow potion", eventDictionary);
         }
     }
     public void purchaseShotgun() {
@@ -61,6 +88,13 @@ public class StoreController : MonoBehaviour
                 hasShootgun = true;
                 scoreManager.shotgunEquiped = true;
                 scoreManager.recolectedCoins = scoreManager.recolectedCoins - SHOT_GUN_PRICE;
+
+                IDictionary<string, object> eventDictionary = new Dictionary<string, object> { };
+                eventDictionary.Add("Item", "Shotgun");
+                eventDictionary.Add("Shotgun Price", SHOT_GUN_PRICE);
+                eventDictionary.Add("Level", 1);
+
+                Analytics.CustomEvent("Purchase shotgun", eventDictionary);
             }
             else
             {

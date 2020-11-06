@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Analytics;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
@@ -211,6 +212,7 @@ public class PanelController : MonoBehaviour
     private void EndGame() {
         if (scoreManager.timeRemaining == 0)
         {
+            Analytics.CustomEvent("Level 1 Fail", transform.position);
             PauseGame();
             endgamePanel.gameObject.SetActive(true);
             playerPanel.gameObject.SetActive(false);

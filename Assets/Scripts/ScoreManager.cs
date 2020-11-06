@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Analytics;
 using UnityEngine.SceneManagement;
 
 public class ScoreManager : MonoBehaviour
@@ -75,6 +76,7 @@ public class ScoreManager : MonoBehaviour
             allDiariesCollected = true;
         }
         if (allDiariesCollected && allCoinsCollected && weapon1Collected && cureWasPicked) {
+            Analytics.CustomEvent("Finish Level", transform.position);
             level1Finished = true;
         }
     }
