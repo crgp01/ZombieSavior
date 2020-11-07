@@ -30,7 +30,7 @@ public class PanelController : MonoBehaviour
     void Update()
     {
         coinCounterText.text = $"Recoge {scoreManager.COINS_TARGET} monedas: {scoreManager.recolectedCoins}/{scoreManager.COINS_TARGET}";
-        diariesInstructionText.text = $"Recoge los diarios del Dr. Cuaticus: {scoreManager.diariesCounter}/5";
+        diariesInstructionText.text = $"Recoge los diarios del Dr. Cuaticus: {scoreManager.diariesCounter}/{scoreManager.DIARIES_TARGET}";
         EndGame();
         if (scoreManager.showSignal)
         {

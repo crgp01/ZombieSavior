@@ -14,14 +14,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rsKeyList:
   - metadata:
-      entityId: 20f0cec6-3448-4510-ac18-265970cef6b9
+      entityId: b589d0be-e015-4412-b45b-239f93951bd1
     rs:
-      key: Setting0
-      type: 
-      value: 
-  rsLastCachedKeyList: []
-  configId: 
-  currentEnvironmentId: 5cfec45c-3bf1-474b-afd5-c89a818c5679
+      key: ActiveStore
+      type: bool
+      value: False
+  rsLastCachedKeyList:
+  - metadata:
+      entityId: b589d0be-e015-4412-b45b-239f93951bd1
+    rs:
+      key: ActiveStore
+      type: bool
+      value: False
+  configId: 2eeb9e60-5c17-4d7b-beca-9d6bf1173aef
+  currentEnvironmentId: 061a8dcd-93ec-46e3-bdc3-22db0b07bddb
   environments:
   - id: 5cfec45c-3bf1-474b-afd5-c89a818c5679
     appId: 
@@ -36,7 +42,7 @@ MonoBehaviour:
     createdAt: 2020-11-06T12:46:18Z
     updatedAt: 2020-11-06T12:46:18Z
   rulesList:
-  - id: 70a0784c-3e92-4c19-914a-1a208bb9cbb2
+  - id: e44faa9a-6707-4782-b010-feca4c6ee69f
     name: New Rule
     enabled: 0
     priority: 1000
@@ -46,8 +52,17 @@ MonoBehaviour:
     value: []
     startDate: 
     endDate: 
-  lastCachedRulesList: []
-  addedRulesIDs:
-  - 70a0784c-3e92-4c19-914a-1a208bb9cbb2
+  lastCachedRulesList:
+  - id: e44faa9a-6707-4782-b010-feca4c6ee69f
+    name: New Rule
+    enabled: 0
+    priority: 1000
+    type: 
+    condition: 
+    rolloutPercentage: 100
+    value: []
+    startDate: 
+    endDate: 
+  addedRulesIDs: []
   updatedRulesIDs: []
   deletedRulesIDs: []

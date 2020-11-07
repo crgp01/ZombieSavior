@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.Analytics;
 using UnityEngine.Audio;
 using UnityEngine.UI;
+using Unity.RemoteConfig;
 
 public class PlayerController : MonoBehaviour
 {
@@ -12,15 +13,44 @@ public class PlayerController : MonoBehaviour
     public GameObject medicine;
     public GameObject curePosition;
     public PanelController panelController;
-    //public AudioManager audioManager;
+    public struct userAttributes { }
+    public struct appAttributes { }
 
-    // Start is called before the first frame update
+    public bool storeIsActive = true;
+
+    private void Awake()
+    {
+        ConfigManager.FetchCompleted += DisableStore;
+        ConfigManager.FetchConfigs<userAttributes, appAttributes>(new userAttributes(), new appAttributes());
+    }
     void Start()
     {
         animator = GetComponent<Animator>();
         medicine.gameObject.SetActive(false);
     }
+    private void FixedUpdate()
+    {
+        if (Input.GetKeyDown(KeyCode.V))
+        {
+            animator.Play("Wave");
+        }
+    }
+    private void Update()
+    {
+        if (scoreManager.zombieMode)
+        {
+            medicine.gameObject.SetActive(true);
+            curePosition.gameObject.SetActive(true);
 
+            IDictionary<string, object> eventDictionary = new Dictionary<string, object> { };
+            eventDictionary.Add("Player position", transform.position);
+            eventDictionary.Add("Level", 1);
+
+            Analytics.CustomEvent("Searching cure", eventDictionary);
+            scoreManager.lifeBarSlider.value -= 1;
+        }
+            ConfigManager.FetchConfigs<userAttributes, appAttributes>(new userAttributes(), new appAttributes());
+    }
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Gun"))
@@ -97,36 +127,14 @@ public class PlayerController : MonoBehaviour
             Analytics.CustomEvent("Player Damaged by Zombie", eventDictionary);
             scoreManager.lifeBarSlider.value -= 1;
         }
-        if (col.gameObject.tag == "Store")
+        if (col.gameObject.tag == "Store" && storeIsActive)
         {
             panelController.GoToStore();
             panelController.enterStore = true;
         }
         
     }
-    private void FixedUpdate()
-    {
-        if (Input.GetKeyDown(KeyCode.V))
-        {
-            animator.Play("Wave");
-        }
-    }
-    private void Update()
-    {
-        if (scoreManager.zombieMode)
-        {
-            medicine.gameObject.SetActive(true);
-            curePosition.gameObject.SetActive(true);
-
-            IDictionary<string, object> eventDictionary = new Dictionary<string, object> { };
-            eventDictionary.Add("Player position", transform.position);
-            eventDictionary.Add("Level", 1);
-
-            Analytics.CustomEvent("Searching cure", eventDictionary);
-            scoreManager.lifeBarSlider.value -= 1;
-        }
-
-    }
+    
     private void DocumentsCounting(string documentType, Collider other)
     {
         FindObjectOfType<AudioManager>().Play("PickDiary");
@@ -144,8 +152,10 @@ public class PlayerController : MonoBehaviour
             scoreManager.document4WasPicked = true;
         } else if (documentType == "document5") {
             scoreManager.document5WasPicked = true;
-        }
-        
-
+        }  
+    }
+    void DisableStore(ConfigResponse response)
+    {
+        storeIsActive = ConfigManager.appConfig.GetBool("ActiveStore");
     }
 }
