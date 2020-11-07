@@ -95,6 +95,7 @@ public class StoreController : MonoBehaviour
                     hasShootgun = true;
                     scoreManager.shotgunEquiped = true;
                     scoreManager.recolectedCoins = scoreManager.recolectedCoins - SHOT_GUN_PRICE;
+                    PlayerPrefs.SetInt("hasShootgun", hasShootgun ? 1 : 0);
 
                     IDictionary<string, object> eventDictionary = new Dictionary<string, object> { };
                     eventDictionary.Add("Item", "Shotgun");

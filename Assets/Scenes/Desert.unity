@@ -5307,6 +5307,7 @@ GameObject:
   - component: {fileID: 1612855622}
   - component: {fileID: 1612855621}
   - component: {fileID: 1612855623}
+  - component: {fileID: 1612855624}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -5382,6 +5383,7 @@ MonoBehaviour:
   storePanel: {fileID: 1983841673}
   pausePanel: {fileID: 313275058}
   scoreManager: {fileID: 1612855618}
+  remoteConfigs: {fileID: 1612855624}
   respawnPoint: {fileID: 233234802}
   ZombieBossController: {fileID: 1123088992}
 --- !u!114 &1612855621
@@ -5410,6 +5412,7 @@ MonoBehaviour:
   errorPanel: {fileID: 1927744716}
   storeController: {fileID: 1612855622}
   finalLevelController: {fileID: 1612855618}
+  remoteConfigs: {fileID: 1612855624}
 --- !u!114 &1612855622
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5429,6 +5432,7 @@ MonoBehaviour:
   errorMessage: {fileID: 1486036908}
   currentCoins: {fileID: 902531033}
   finalLevelController: {fileID: 1612855618}
+  remoteConfigs: {fileID: 1612855624}
 --- !u!114 &1612855623
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5443,6 +5447,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioMixer: {fileID: 24100000, guid: 3f4f900bd5bb541f7b6cbfa895e249bb, type: 2}
   SFXaudioMixer: {fileID: 24100000, guid: 8de3aadfb4a8f4cc7953ac36af95df87, type: 2}
+--- !u!114 &1612855624
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1612855617}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1505b82e652e4045ac09dde40d2e116, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  storeIsActive: 1
+  canPurchaseShotgun: 1
+  potionIncreasingTime: 35
 --- !u!1001 &1632999951
 PrefabInstance:
   m_ObjectHideFlags: 0

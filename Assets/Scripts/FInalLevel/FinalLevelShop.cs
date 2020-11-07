@@ -25,7 +25,7 @@ public class FinalLevelShop : MonoBehaviour
     {
         greenPotionCounter = PlayerPrefs.GetInt("greenPotionCounter");
         yellowPotionCounter = PlayerPrefs.GetInt("yellowPotionCounter");
-
+        hasShootgun = PlayerPrefs.GetInt("hasShootgun") == 1 ? true : false;
     }
     void Update()
     {
