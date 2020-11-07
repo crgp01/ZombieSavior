@@ -42,6 +42,7 @@ public class StoreController : MonoBehaviour
         if (scoreManager.recolectedCoins >= GREEN_POTION_PRICE)
         {
             greenPotionCounter++;
+            PlayerPrefs.SetInt("greenPotionCounter", greenPotionCounter);
             scoreManager.recolectedCoins = scoreManager.recolectedCoins - GREEN_POTION_PRICE;
 
             IDictionary<string, object> eventDictionary = new Dictionary<string, object> { };
@@ -65,6 +66,7 @@ public class StoreController : MonoBehaviour
         if (scoreManager.recolectedCoins >= YELLOW_POTION_PRICE)
         {
             yellowPotionCounter++;
+            PlayerPrefs.SetInt("yellowPotionCounter", yellowPotionCounter);
             scoreManager.recolectedCoins = scoreManager.recolectedCoins - YELLOW_POTION_PRICE;
             IDictionary<string, object> eventDictionary = new Dictionary<string, object> { };
             eventDictionary.Add("Item", "Yellow Potion");

@@ -28,12 +28,13 @@ public class FinalLevelController : MonoBehaviour
     private void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
+        recolectedCoins = PlayerPrefs.GetInt("recolectedCoins");
         RespawnPlayer();
-
     }
+
     private void Update()
     {
-        coinScore.text = $"Monedas: {recolectedCoins}";
+        coinScore.text = $"{recolectedCoins}";
 
         TimeCounter();
 

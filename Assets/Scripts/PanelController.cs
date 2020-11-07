@@ -154,15 +154,15 @@ public class PanelController : MonoBehaviour
             storePanel.SetActive(true);
             PauseGame();
         }
-
+    }
+    public void GoBackFromStore() {
         IDictionary<string, object> eventDictionary = new Dictionary<string, object> { };
         eventDictionary.Add("Screen", "Store");
         eventDictionary.Add("Access location", player.transform.position);
         eventDictionary.Add("Level", 1);
-        
+
         Analytics.CustomEvent("Access Store Panel", eventDictionary);
-    }
-    public void GoBackFromStore() {
+
         if (enterStore)
         {
             storePanel.SetActive(false);

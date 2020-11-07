@@ -6,9 +6,9 @@ using UnityEngine.Analytics;
 
 public class FinalLevelShop : MonoBehaviour
 {
-    public int greenPotionCounter = 1;
+    public int greenPotionCounter;
     public GameObject unavailableText;
-    public int yellowPotionCounter = 0;
+    public int yellowPotionCounter;
     public bool hasShootgun = false;
     public Text errorMessage;
     public Text currentCoins;
@@ -20,13 +20,13 @@ public class FinalLevelShop : MonoBehaviour
     private string NO_ABLE_BUY_SHOTGUN = "La compra de esta arma está deshabilitada";
     public FinalLevelController finalLevelController;
     public RemoteConfigs remoteConfigs;
-    // Start is called before the first frame update
-    void Start()
+
+    private void Awake()
     {
+        greenPotionCounter = PlayerPrefs.GetInt("greenPotionCounter");
+        yellowPotionCounter = PlayerPrefs.GetInt("yellowPotionCounter");
 
     }
-
-    // Update is called once per frame
     void Update()
     {
         currentCoins.text = $"{finalLevelController.recolectedCoins}";

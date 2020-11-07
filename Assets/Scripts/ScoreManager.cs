@@ -34,6 +34,8 @@ public class ScoreManager : MonoBehaviour
     private void Update()
     {
         coinScore.text = $"{recolectedCoins}";
+        PlayerPrefs.SetInt("recolectedCoins", recolectedCoins);
+        PlayerPrefs.Save();
 
         TimeCounter();
 

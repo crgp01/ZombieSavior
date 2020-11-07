@@ -40,17 +40,8 @@ public class FinalLevelPanelController : MonoBehaviour
             pausePanel.gameObject.SetActive(true);
             playerPanel.gameObject.SetActive(false);
             PauseGame();
-
-            IDictionary<string, object> eventDictionary = new Dictionary<string, object> { };
-            eventDictionary.Add("Screen", "Pause");
-            eventDictionary.Add("Access location", player.transform.position);
-            eventDictionary.Add("Level", 2);
-
-            Analytics.CustomEvent("Access Pause Panel", eventDictionary);
         }
     }
-
-  
     public void PlayGame()
     {
         mainPanel.gameObject.SetActive(false);

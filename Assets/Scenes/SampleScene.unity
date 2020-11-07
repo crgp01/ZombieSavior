@@ -210,7 +210,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3177765}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 24.3, y: 6.22, z: 372.6}
+  m_LocalPosition: {x: 190.6, y: 6.22, z: 252.29999}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -6468,42 +6468,6 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: 05fb0f479bb87c44b973ad2bed80b8e9, type: 3}
---- !u!1 &801165682 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4671812899406209831, guid: 679dd80650e024556bf51faa0c99be63,
-    type: 3}
-  m_PrefabInstance: {fileID: 4671812899500968189}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &801165683
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 801165682}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -745406591, guid: 220224b43fc464c28bc0e8de8f54a432, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Trigger:
-    m_IsTriggerExpanded: 1
-    m_Type: 1
-    m_LifecycleEvent: 0
-    m_ApplyRules: 0
-    m_Rules:
-      m_Rules: []
-    m_TriggerBool: 0
-    m_InitTime: 5
-    m_RepeatTime: 5
-    m_Repetitions: 0
-    repetitionCount: 0
-  m_EventPayload:
-    m_IsEventExpanded: 1
-    m_StandardEventType: CustomEvent
-    m_Parameters:
-      m_Parameters: []
-    m_Name: Play Game
 --- !u!1 &802022009 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 190658, guid: bb44ef16b180b6941bbe4caf411f6249,
@@ -10918,7 +10882,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   greenPotionCounter: 0
   unavailableText: {fileID: 1350562487}
-  yellowPotionCounter: 1
+  yellowPotionCounter: 0
   hasShootgun: 0
   errorMessage: {fileID: 2011400779}
   currentCoins: {fileID: 796552349}
@@ -19429,7 +19393,7 @@ PrefabInstance:
     - target: {fileID: 4671812899406209825, guid: 679dd80650e024556bf51faa0c99be63,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4671812899406209825, guid: 679dd80650e024556bf51faa0c99be63,
         type: 3}
@@ -19450,7 +19414,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 801165683}
+      objectReference: {fileID: 0}
     - target: {fileID: 4671812899406209825, guid: 679dd80650e024556bf51faa0c99be63,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
@@ -20383,7 +20347,7 @@ PrefabInstance:
     - target: {fileID: 8964486667291751184, guid: 2cd211c3780654e9c86caa4ae9d7fdac,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 24.3
+      value: 190.6
       objectReference: {fileID: 0}
     - target: {fileID: 8964486667291751184, guid: 2cd211c3780654e9c86caa4ae9d7fdac,
         type: 3}
@@ -20393,7 +20357,7 @@ PrefabInstance:
     - target: {fileID: 8964486667291751184, guid: 2cd211c3780654e9c86caa4ae9d7fdac,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 380.6
+      value: 260.3
       objectReference: {fileID: 0}
     - target: {fileID: 8964486667291751184, guid: 2cd211c3780654e9c86caa4ae9d7fdac,
         type: 3}
