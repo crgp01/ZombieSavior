@@ -4,25 +4,16 @@ using UnityEngine;
 using UnityEngine.Analytics;
 using UnityEngine.Audio;
 using UnityEngine.UI;
-using Unity.RemoteConfig;
 
 public class PlayerController : MonoBehaviour
 {
     public ScoreManager scoreManager;
+    public RemoteConfigs remoteConfigs;
     Animator animator;
     public GameObject medicine;
     public GameObject curePosition;
     public PanelController panelController;
-    public struct userAttributes { }
-    public struct appAttributes { }
 
-    public bool storeIsActive = true;
-
-    private void Awake()
-    {
-        ConfigManager.FetchCompleted += DisableStore;
-        ConfigManager.FetchConfigs<userAttributes, appAttributes>(new userAttributes(), new appAttributes());
-    }
     void Start()
     {
         animator = GetComponent<Animator>();
@@ -49,7 +40,6 @@ public class PlayerController : MonoBehaviour
             Analytics.CustomEvent("Searching cure", eventDictionary);
             scoreManager.lifeBarSlider.value -= 1;
         }
-            ConfigManager.FetchConfigs<userAttributes, appAttributes>(new userAttributes(), new appAttributes());
     }
     private void OnTriggerEnter(Collider other)
     {
@@ -127,7 +117,7 @@ public class PlayerController : MonoBehaviour
             Analytics.CustomEvent("Player Damaged by Zombie", eventDictionary);
             scoreManager.lifeBarSlider.value -= 1;
         }
-        if (col.gameObject.tag == "Store" && storeIsActive)
+        if (col.gameObject.tag == "Store" && remoteConfigs.storeIsActive)
         {
             panelController.GoToStore();
             panelController.enterStore = true;
@@ -153,9 +143,5 @@ public class PlayerController : MonoBehaviour
         } else if (documentType == "document5") {
             scoreManager.document5WasPicked = true;
         }  
-    }
-    void DisableStore(ConfigResponse response)
-    {
-        storeIsActive = ConfigManager.appConfig.GetBool("ActiveStore");
     }
 }
