@@ -6436,6 +6436,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 794522414}
   m_CullTransparentMesh: 0
+--- !u!114 &796552349 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7631745661890604811, guid: 116132c514f4a4d679192a87b3137c40,
+    type: 3}
+  m_PrefabInstance: {fileID: 1065703732}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &799878341 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: 05fb0f479bb87c44b973ad2bed80b8e9,
@@ -9493,6 +9505,61 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: GoBackFromStore
       objectReference: {fileID: 0}
+    - target: {fileID: 7631745661431762438, guid: 116132c514f4a4d679192a87b3137c40,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1298363189}
+    - target: {fileID: 7631745661431762438, guid: 116132c514f4a4d679192a87b3137c40,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: purchaseGreenPotion
+      objectReference: {fileID: 0}
+    - target: {fileID: 7631745661890604808, guid: 116132c514f4a4d679192a87b3137c40,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 398.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7631745661890604808, guid: 116132c514f4a4d679192a87b3137c40,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 133.29836
+      objectReference: {fileID: 0}
+    - target: {fileID: 7631745661890604811, guid: 116132c514f4a4d679192a87b3137c40,
+        type: 3}
+      propertyPath: m_Text
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 7631745661890604811, guid: 116132c514f4a4d679192a87b3137c40,
+        type: 3}
+      propertyPath: m_FontData.m_Alignment
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7631745661997345073, guid: 116132c514f4a4d679192a87b3137c40,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1298363189}
+    - target: {fileID: 7631745661997345073, guid: 116132c514f4a4d679192a87b3137c40,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: purchaseYellowPotion
+      objectReference: {fileID: 0}
+    - target: {fileID: 7631745662229195635, guid: 116132c514f4a4d679192a87b3137c40,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1298363189}
+    - target: {fileID: 7631745662229195635, guid: 116132c514f4a4d679192a87b3137c40,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: purchaseShotgun
+      objectReference: {fileID: 0}
+    - target: {fileID: 7631745662302655130, guid: 116132c514f4a4d679192a87b3137c40,
+        type: 3}
+      propertyPath: m_Name
+      value: ShotgunPrice
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 116132c514f4a4d679192a87b3137c40, type: 3}
 --- !u!224 &1065703733 stripped
@@ -10697,6 +10764,7 @@ GameObject:
   - component: {fileID: 1298363189}
   - component: {fileID: 1298363190}
   - component: {fileID: 1298363191}
+  - component: {fileID: 1298363192}
   m_Layer: 0
   m_Name: ScoreManager
   m_TagString: Untagged
@@ -10800,6 +10868,7 @@ MonoBehaviour:
   Document4Panel: {fileID: 1221266212}
   Document5Panel: {fileID: 1896566454}
   scoreManager: {fileID: 1298363185}
+  remoteConfigs: {fileID: 1298363192}
   enterStore: 0
   diariesInstructionText: {fileID: 416798138}
   coinCounterText: {fileID: 963508930}
@@ -10837,7 +10906,7 @@ MonoBehaviour:
   yellowPotionCounter: 1
   hasShootgun: 0
   errorMessage: {fileID: 2011400779}
-  currentCoins: {fileID: 0}
+  currentCoins: {fileID: 796552349}
   scoreManager: {fileID: 1298363185}
 --- !u!114 &1298363190
 MonoBehaviour:
@@ -10865,6 +10934,7 @@ MonoBehaviour:
   errorPanel: {fileID: 288095013}
   storeController: {fileID: 1298363189}
   scoreManager: {fileID: 1298363185}
+  remoteConfigs: {fileID: 1298363192}
 --- !u!114 &1298363191
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10879,6 +10949,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioMixer: {fileID: 24100000, guid: 3f4f900bd5bb541f7b6cbfa895e249bb, type: 2}
   SFXaudioMixer: {fileID: 24100000, guid: 8de3aadfb4a8f4cc7953ac36af95df87, type: 2}
+--- !u!114 &1298363192
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1298363184}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1505b82e652e4045ac09dde40d2e116, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  storeIsActive: 1
+  potionIncreasingTime: 35
 --- !u!1001 &1302077459
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -20274,6 +20358,11 @@ PrefabInstance:
       propertyPath: panelController
       value: 
       objectReference: {fileID: 1298363187}
+    - target: {fileID: 3083146174761978092, guid: 2cd211c3780654e9c86caa4ae9d7fdac,
+        type: 3}
+      propertyPath: remoteConfigs
+      value: 
+      objectReference: {fileID: 1298363192}
     - target: {fileID: 8964486667291751184, guid: 2cd211c3780654e9c86caa4ae9d7fdac,
         type: 3}
       propertyPath: m_LocalPosition.x

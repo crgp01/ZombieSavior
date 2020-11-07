@@ -19,6 +19,7 @@ public class InventoryController : MonoBehaviour
     public Text errorPanel;
     public StoreController storeController;
     public ScoreManager scoreManager;
+    public RemoteConfigs remoteConfigs;
     private string COMPLETE_LIFE_MESSAGE = "Ya tienes la vida completa";
     private string NO_POTION_MESSAGE = "No tienes mas pociones";
     private string NO_ZOMBIE_MODE_MESSAGE = "El contador no está corriendo";
@@ -26,7 +27,7 @@ public class InventoryController : MonoBehaviour
     private string APPLIED_POTION_MESSAGE = "Poción aplicada";
     private string EQUIPED_WEAPON = "Arma equipada";
     private string ALREADY_EQUIPED_WEAPON = "Ya tienes esa arma equipada";
-    // Start is called before the first frame update
+
     void Start()
     {
        
@@ -121,7 +122,7 @@ public class InventoryController : MonoBehaviour
                 if (storeController.yellowPotionCounter > 0)
                 {
                     storeController.yellowPotionCounter--;
-                    scoreManager.timeRemaining += 30;
+                    scoreManager.timeRemaining += remoteConfigs.potionIncreasingTime;
                     errorPanel.text = APPLIED_POTION_MESSAGE;
                     errorPanel.GetComponent<Text>().color = Color.green;
                 }

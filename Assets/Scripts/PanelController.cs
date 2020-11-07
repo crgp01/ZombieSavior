@@ -11,6 +11,7 @@ public class PanelController : MonoBehaviour
         storePanel, inventoryPanel, creditsPanel, pausePanel, endLevel1Panel, finalGameObject, instructionText, gunInstructionText,
         coinInstructionText, finalInstructionText, respawnPoint, Document1Panel, Document2Panel, Document3Panel, Document4Panel, Document5Panel;
     public ScoreManager scoreManager;
+    public RemoteConfigs remoteConfigs;
     public bool enterStore;
     private GameObject player;
     public Text diariesInstructionText, coinCounterText;
@@ -149,8 +150,10 @@ public class PanelController : MonoBehaviour
     }
     public void GoToStore()
     {
-        storePanel.SetActive(true);
-        PauseGame();
+        if (remoteConfigs.storeIsActive) {
+            storePanel.SetActive(true);
+            PauseGame();
+        }
     }
     public void GoBackFromStore() {
         if (enterStore)

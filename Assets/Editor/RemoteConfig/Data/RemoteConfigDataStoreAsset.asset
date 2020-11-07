@@ -18,14 +18,26 @@ MonoBehaviour:
     rs:
       key: ActiveStore
       type: bool
-      value: False
+      value: True
+  - metadata:
+      entityId: aa3aab01-efc3-443f-9b92-80409cd25ce1
+    rs:
+      key: YellowPotionIncreasingTime
+      type: int
+      value: 35
   rsLastCachedKeyList:
   - metadata:
       entityId: b589d0be-e015-4412-b45b-239f93951bd1
     rs:
       key: ActiveStore
       type: bool
-      value: False
+      value: True
+  - metadata:
+      entityId: aa3aab01-efc3-443f-9b92-80409cd25ce1
+    rs:
+      key: YellowPotionIncreasingTime
+      type: int
+      value: 111
   configId: 2eeb9e60-5c17-4d7b-beca-9d6bf1173aef
   currentEnvironmentId: 061a8dcd-93ec-46e3-bdc3-22db0b07bddb
   environments:

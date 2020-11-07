@@ -6,24 +6,35 @@ using Unity.RemoteConfig;
 public class RemoteConfigs : MonoBehaviour
 {
     public bool storeIsActive = true;
+    public int potionIncreasingTime = 35;
     public struct userAttributes { }
     public struct appAttributes { }
     // Start is called before the first frame update
     private void Awake()
     {
         ConfigManager.FetchCompleted += DisableStore;
+        ConfigManager.FetchCompleted += YellowPotionIncreasingTime;
         ConfigManager.FetchConfigs<userAttributes, appAttributes>(new userAttributes(), new appAttributes());
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
         ConfigManager.FetchConfigs<userAttributes, appAttributes>(new userAttributes(), new appAttributes());
 
     }
 
-    void DisableStore(ConfigResponse response)
+    private void DisableStore(ConfigResponse response)
     {
         storeIsActive = ConfigManager.appConfig.GetBool("ActiveStore");
+    }
+    private void YellowPotionIncreasingTime(ConfigResponse response)
+    {
+        storeIsActive = ConfigManager.appConfig.GetBool("YellowPotionIncreasingTime");
+    }
+
+    private void OnDestroy() {
+        ConfigManager.FetchCompleted -= DisableStore;
+        ConfigManager.FetchCompleted -= YellowPotionIncreasingTime;
     }
 }
