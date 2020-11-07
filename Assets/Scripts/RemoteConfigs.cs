@@ -6,6 +6,7 @@ using Unity.RemoteConfig;
 public class RemoteConfigs : MonoBehaviour
 {
     public bool storeIsActive = true;
+    public bool canPurchaseShotgun = true;
     public int potionIncreasingTime = 35;
     public struct userAttributes { }
     public struct appAttributes { }
@@ -14,6 +15,7 @@ public class RemoteConfigs : MonoBehaviour
     {
         ConfigManager.FetchCompleted += DisableStore;
         ConfigManager.FetchCompleted += YellowPotionIncreasingTime;
+        ConfigManager.FetchCompleted += CanPurchaseShotgun;
         ConfigManager.FetchConfigs<userAttributes, appAttributes>(new userAttributes(), new appAttributes());
     }
 
@@ -32,9 +34,14 @@ public class RemoteConfigs : MonoBehaviour
     {
         storeIsActive = ConfigManager.appConfig.GetBool("YellowPotionIncreasingTime");
     }
+    private void CanPurchaseShotgun(ConfigResponse response)
+    {
+        canPurchaseShotgun = ConfigManager.appConfig.GetBool("EnableShotgunPurchase");
+    }
 
     private void OnDestroy() {
         ConfigManager.FetchCompleted -= DisableStore;
         ConfigManager.FetchCompleted -= YellowPotionIncreasingTime;
+        ConfigManager.FetchCompleted -= CanPurchaseShotgun;
     }
 }

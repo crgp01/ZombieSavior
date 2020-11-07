@@ -20,6 +20,7 @@ public class FinalLevelInventory : MonoBehaviour
     public Text errorPanel;
     public FinalLevelShop storeController;
     public FinalLevelController finalLevelController;
+    public RemoteConfigs remoteConfigs;
     private string COMPLETE_LIFE_MESSAGE = "Ya tienes la vida completa";
     private string NO_POTION_MESSAGE = "No tienes mas pociones";
     private string NO_ZOMBIE_MODE_MESSAGE = "El contador no está corriendo";
@@ -129,7 +130,7 @@ public class FinalLevelInventory : MonoBehaviour
                 if (storeController.yellowPotionCounter > 0)
                 {
                     storeController.yellowPotionCounter--;
-                    finalLevelController.timeRemaining += 30;
+                    finalLevelController.timeRemaining += remoteConfigs.potionIncreasingTime;
                     errorPanel.text = APPLIED_POTION_MESSAGE;
                     errorPanel.GetComponent<Text>().color = Color.green;
 

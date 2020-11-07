@@ -9493,7 +9493,7 @@ PrefabInstance:
     - target: {fileID: 561027253443941607, guid: 116132c514f4a4d679192a87b3137c40,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 561027254238699605, guid: 116132c514f4a4d679192a87b3137c40,
         type: 3}
@@ -9559,6 +9559,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: ShotgunPrice
+      objectReference: {fileID: 0}
+    - target: {fileID: 7631745663317929285, guid: 116132c514f4a4d679192a87b3137c40,
+        type: 3}
+      propertyPath: m_Text
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7631745663317929338, guid: 116132c514f4a4d679192a87b3137c40,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 420.81232
+      objectReference: {fileID: 0}
+    - target: {fileID: 7631745663317929338, guid: 116132c514f4a4d679192a87b3137c40,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -210.41
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 116132c514f4a4d679192a87b3137c40, type: 3}
@@ -10908,6 +10923,7 @@ MonoBehaviour:
   errorMessage: {fileID: 2011400779}
   currentCoins: {fileID: 796552349}
   scoreManager: {fileID: 1298363185}
+  remoteConfigs: {fileID: 1298363192}
 --- !u!114 &1298363190
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10962,6 +10978,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   storeIsActive: 1
+  canPurchaseShotgun: 1
   potionIncreasingTime: 35
 --- !u!1001 &1302077459
 PrefabInstance:
@@ -19452,7 +19469,7 @@ PrefabInstance:
     - target: {fileID: 4671812899597373596, guid: 679dd80650e024556bf51faa0c99be63,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4671812899597373599, guid: 679dd80650e024556bf51faa0c99be63,
         type: 3}
@@ -19517,7 +19534,7 @@ PrefabInstance:
     - target: {fileID: 4671812899597373599, guid: 679dd80650e024556bf51faa0c99be63,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 11
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 4671812899597373599, guid: 679dd80650e024556bf51faa0c99be63,
         type: 3}
@@ -19527,7 +19544,7 @@ PrefabInstance:
     - target: {fileID: 4671812899597373599, guid: 679dd80650e024556bf51faa0c99be63,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 1058.0001
+      value: 1037.0001
       objectReference: {fileID: 0}
     - target: {fileID: 4671812899597373599, guid: 679dd80650e024556bf51faa0c99be63,
         type: 3}

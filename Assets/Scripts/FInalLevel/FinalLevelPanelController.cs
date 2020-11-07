@@ -17,6 +17,7 @@ public class FinalLevelPanelController : MonoBehaviour
     public GameObject storePanel;
     public GameObject pausePanel;
     public FinalLevelController scoreManager;
+    public RemoteConfigs remoteConfigs;
     public GameObject respawnPoint;
     private GameObject player;
     private bool enterStore = false;
@@ -159,8 +160,12 @@ public class FinalLevelPanelController : MonoBehaviour
     }
     public void GoToStore()
     {
-        storePanel.SetActive(true);
-        PauseGame();
+        if (remoteConfigs.storeIsActive)
+        {
+            storePanel.SetActive(true);
+            PauseGame();
+
+        }
 
         IDictionary<string, object> eventDictionary = new Dictionary<string, object> { };
         eventDictionary.Add("Screen", "Store");

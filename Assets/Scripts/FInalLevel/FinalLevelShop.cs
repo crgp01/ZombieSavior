@@ -17,7 +17,9 @@ public class FinalLevelShop : MonoBehaviour
     private int SHOT_GUN_PRICE = 15;
     private string NO_COINS_MESSAGE = "No tienes suficientes monedas";
     private string SHOTGUN_ERROR_MESSAGE = "Ya tienes esta arma";
+    private string NO_ABLE_BUY_SHOTGUN = "La compra de esta arma está deshabilitada";
     public FinalLevelController finalLevelController;
+    public RemoteConfigs remoteConfigs;
     // Start is called before the first frame update
     void Start()
     {
@@ -83,29 +85,35 @@ public class FinalLevelShop : MonoBehaviour
     }
     public void purchaseShotgun()
     {
-        if (!hasShootgun)
+        if (remoteConfigs.canPurchaseShotgun)
         {
-            if (finalLevelController.recolectedCoins >= SHOT_GUN_PRICE)
+            if (!hasShootgun)
             {
-                hasShootgun = true;
-                finalLevelController.shotgunEquiped = true;
-                finalLevelController.recolectedCoins = finalLevelController.recolectedCoins - SHOT_GUN_PRICE;
+                if (finalLevelController.recolectedCoins >= SHOT_GUN_PRICE)
+                {
+                    hasShootgun = true;
+                    finalLevelController.shotgunEquiped = true;
+                    finalLevelController.recolectedCoins = finalLevelController.recolectedCoins - SHOT_GUN_PRICE;
 
-                IDictionary<string, object> eventDictionary = new Dictionary<string, object> { };
-                eventDictionary.Add("Item", "Shotgun");
-                eventDictionary.Add("Shotgun Price", SHOT_GUN_PRICE);
-                eventDictionary.Add("Level", 1);
+                    IDictionary<string, object> eventDictionary = new Dictionary<string, object> { };
+                    eventDictionary.Add("Item", "Shotgun");
+                    eventDictionary.Add("Shotgun Price", SHOT_GUN_PRICE);
+                    eventDictionary.Add("Level", 1);
 
-                Analytics.CustomEvent("Purchase shotgun", eventDictionary);
+                    Analytics.CustomEvent("Purchase shotgun", eventDictionary);
+                }
+                else
+                {
+                    errorMessage.text = NO_COINS_MESSAGE;
+                }
             }
             else
             {
-                errorMessage.text = NO_COINS_MESSAGE;
+                errorMessage.text = SHOTGUN_ERROR_MESSAGE;
             }
-        }
-        else
+        } else
         {
-            errorMessage.text = SHOTGUN_ERROR_MESSAGE;
+            errorMessage.text = NO_ABLE_BUY_SHOTGUN;
         }
 
     }

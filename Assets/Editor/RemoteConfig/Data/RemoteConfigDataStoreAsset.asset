@@ -25,6 +25,12 @@ MonoBehaviour:
       key: YellowPotionIncreasingTime
       type: int
       value: 35
+  - metadata:
+      entityId: 9913335d-da17-4383-9f7d-325b62f1449a
+    rs:
+      key: EnableShotgunPurchase
+      type: bool
+      value: True
   rsLastCachedKeyList:
   - metadata:
       entityId: b589d0be-e015-4412-b45b-239f93951bd1
@@ -37,7 +43,13 @@ MonoBehaviour:
     rs:
       key: YellowPotionIncreasingTime
       type: int
-      value: 111
+      value: 35
+  - metadata:
+      entityId: 9913335d-da17-4383-9f7d-325b62f1449a
+    rs:
+      key: EnableShotgunPurchase
+      type: bool
+      value: True
   configId: 2eeb9e60-5c17-4d7b-beca-9d6bf1173aef
   currentEnvironmentId: 061a8dcd-93ec-46e3-bdc3-22db0b07bddb
   environments:
