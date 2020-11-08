@@ -16,11 +16,11 @@ public class ScoreManager : MonoBehaviour
         canShoot = false, level1Finished = false, showFinalPanel = false, document1WasPicked = false,
         document2WasPicked = false, document3WasPicked = false, document4WasPicked = false, document5WasPicked = false;
     public Slider lifeBarSlider;
-    public float timeRemaining = 30;
+    public float timeRemaining = 45;
     public int diariesCounter = 0;
     private GameObject player;
-    private int TOTAL_TIME = 30;
-    public int COINS_TARGET = 30;
+    private int TOTAL_TIME = 45;
+    public int COINS_TARGET = 25;
     public int DIARIES_TARGET = 5;
     private GameObject[] gameObjects;
     public PosprocesingController posprocesingController;
@@ -28,7 +28,7 @@ public class ScoreManager : MonoBehaviour
     private void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
-        //RespawnPlayer();
+        RespawnPlayer();
        
     }
     private void Update()
@@ -49,7 +49,6 @@ public class ScoreManager : MonoBehaviour
         }
         if (zombieMode)
         {
-            //FindObjectOfType<AudioManager>().Play("ArchieKilled");
             StartZombieMode();
         }
         if (weapon1Collected && cureWasPicked)

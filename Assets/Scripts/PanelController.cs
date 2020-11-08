@@ -18,7 +18,7 @@ public class PanelController : MonoBehaviour
 
     void Start()
     {
-        //PauseGame();
+        PauseGame();
         player = GameObject.FindGameObjectWithTag("Player");
         miniMapPanel.gameObject.SetActive(false);
         playerPanel.gameObject.SetActive(false);
@@ -27,7 +27,6 @@ public class PanelController : MonoBehaviour
         
     }
 
-    // Update is called once per frames
     void Update()
     {
         coinCounterText.text = $"Recoge {scoreManager.COINS_TARGET} monedas: {scoreManager.recolectedCoins}/{scoreManager.COINS_TARGET}";

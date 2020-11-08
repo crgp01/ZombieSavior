@@ -10,7 +10,7 @@ public class RemoteConfigs : MonoBehaviour
     public int potionIncreasingTime = 35;
     public struct userAttributes { }
     public struct appAttributes { }
-    // Start is called before the first frame update
+
     private void Awake()
     {
         ConfigManager.FetchCompleted += DisableStore;
@@ -19,11 +19,9 @@ public class RemoteConfigs : MonoBehaviour
         ConfigManager.FetchConfigs<userAttributes, appAttributes>(new userAttributes(), new appAttributes());
     }
 
-    // Update is called once per frame
     private void Update()
     {
         ConfigManager.FetchConfigs<userAttributes, appAttributes>(new userAttributes(), new appAttributes());
-
     }
 
     private void DisableStore(ConfigResponse response)

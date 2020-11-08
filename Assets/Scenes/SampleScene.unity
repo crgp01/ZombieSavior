@@ -5539,17 +5539,17 @@ PrefabInstance:
     - target: {fileID: 6306506884801354774, guid: e43b37b3398501541908eefd5c8bff8c,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -243.67
+      value: -322.72
       objectReference: {fileID: 0}
     - target: {fileID: 6306506884801354774, guid: e43b37b3398501541908eefd5c8bff8c,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -14.6
+      value: -3.9
       objectReference: {fileID: 0}
     - target: {fileID: 6306506884801354774, guid: e43b37b3398501541908eefd5c8bff8c,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 436.92
+      value: 470.3
       objectReference: {fileID: 0}
     - target: {fileID: 6306506884801354774, guid: e43b37b3398501541908eefd5c8bff8c,
         type: 3}
@@ -5594,17 +5594,17 @@ PrefabInstance:
     - target: {fileID: 6306506884801354774, guid: e43b37b3398501541908eefd5c8bff8c,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 6306506884801354774, guid: e43b37b3398501541908eefd5c8bff8c,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 6306506884801354774, guid: e43b37b3398501541908eefd5c8bff8c,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 6306506884801380406, guid: e43b37b3398501541908eefd5c8bff8c,
         type: 3}
@@ -6571,7 +6571,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 843813867}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 20, y: 15, z: 444}
+  m_LocalPosition: {x: 20, y: 13.39, z: 444}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -10330,7 +10330,7 @@ MonoBehaviour:
   document4WasPicked: 0
   document5WasPicked: 0
   lifeBarSlider: {fileID: 1164298285}
-  timeRemaining: 30
+  timeRemaining: 45
   diariesCounter: 0
   COINS_TARGET: 30
   DIARIES_TARGET: 5
@@ -10736,103 +10736,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 8969033620042720927}
   m_PrefabAsset: {fileID: 0}
---- !u!82 &1311694196
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1311694194}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 24300002, guid: 8de3aadfb4a8f4cc7953ac36af95df87,
-    type: 2}
-  m_audioClip: {fileID: 8300000, guid: e2c071afbf4324559a40f750d7feca24, type: 3}
-  m_PlayOnAwake: 1
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 16.329956
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
 --- !u!1001 &1313890651
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14439,7 +14342,7 @@ MonoBehaviour:
     pitch: 0
     source: {fileID: 0}
   - soundName: ArchieHurt
-    clip: {fileID: 8300000, guid: 938737d868c074265947a00ed76ecc95, type: 3}
+    clip: {fileID: 8300000, guid: a8a8bc450d89c470aac2ce188da08d8c, type: 3}
     volume: 1
     pitch: 0
     source: {fileID: 0}
@@ -19137,6 +19040,31 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 159711520}
     m_Modifications:
+    - target: {fileID: 6122111317225649968, guid: c8005ea2c6f6e479ea273a5751cb55d0,
+        type: 3}
+      propertyPath: m_FontData.m_Alignment
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6122111317225649971, guid: c8005ea2c6f6e479ea273a5751cb55d0,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 175.65
+      objectReference: {fileID: 0}
+    - target: {fileID: 6122111317225649971, guid: c8005ea2c6f6e479ea273a5751cb55d0,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 357.98
+      objectReference: {fileID: 0}
+    - target: {fileID: 6122111317225649971, guid: c8005ea2c6f6e479ea273a5751cb55d0,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 663.6136
+      objectReference: {fileID: 0}
+    - target: {fileID: 6122111317225649971, guid: c8005ea2c6f6e479ea273a5751cb55d0,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 77
+      objectReference: {fileID: 0}
     - target: {fileID: 6122111317467384047, guid: c8005ea2c6f6e479ea273a5751cb55d0,
         type: 3}
       propertyPath: m_AnchorMax.x
@@ -19146,6 +19074,86 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6122111317770246216, guid: c8005ea2c6f6e479ea273a5751cb55d0,
+        type: 3}
+      propertyPath: m_FontData.m_Alignment
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6122111317770246219, guid: c8005ea2c6f6e479ea273a5751cb55d0,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 103.21
+      objectReference: {fileID: 0}
+    - target: {fileID: 6122111317770246219, guid: c8005ea2c6f6e479ea273a5751cb55d0,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 663.6121
+      objectReference: {fileID: 0}
+    - target: {fileID: 6122111317770246219, guid: c8005ea2c6f6e479ea273a5751cb55d0,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 77
+      objectReference: {fileID: 0}
+    - target: {fileID: 6122111317770246219, guid: c8005ea2c6f6e479ea273a5751cb55d0,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 357.98
+      objectReference: {fileID: 0}
+    - target: {fileID: 6122111317965975958, guid: c8005ea2c6f6e479ea273a5751cb55d0,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 33.916
+      objectReference: {fileID: 0}
+    - target: {fileID: 6122111317965975958, guid: c8005ea2c6f6e479ea273a5751cb55d0,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 357.98
+      objectReference: {fileID: 0}
+    - target: {fileID: 6122111317965975958, guid: c8005ea2c6f6e479ea273a5751cb55d0,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 663.6087
+      objectReference: {fileID: 0}
+    - target: {fileID: 6122111317965975958, guid: c8005ea2c6f6e479ea273a5751cb55d0,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 77
+      objectReference: {fileID: 0}
+    - target: {fileID: 6122111317965975959, guid: c8005ea2c6f6e479ea273a5751cb55d0,
+        type: 3}
+      propertyPath: m_FontData.m_Alignment
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6122111318014977964, guid: c8005ea2c6f6e479ea273a5751cb55d0,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 251.72
+      objectReference: {fileID: 0}
+    - target: {fileID: 6122111318014977964, guid: c8005ea2c6f6e479ea273a5751cb55d0,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 357.98
+      objectReference: {fileID: 0}
+    - target: {fileID: 6122111318014977964, guid: c8005ea2c6f6e479ea273a5751cb55d0,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 663.6136
+      objectReference: {fileID: 0}
+    - target: {fileID: 6122111318014977964, guid: c8005ea2c6f6e479ea273a5751cb55d0,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 77
+      objectReference: {fileID: 0}
+    - target: {fileID: 6122111318014977965, guid: c8005ea2c6f6e479ea273a5751cb55d0,
+        type: 3}
+      propertyPath: m_Text
+      value: Encuentra el arma del Dr. Cuaticus
+      objectReference: {fileID: 0}
+    - target: {fileID: 6122111318014977965, guid: c8005ea2c6f6e479ea273a5751cb55d0,
+        type: 3}
+      propertyPath: m_FontData.m_Alignment
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6122111318226969548, guid: c8005ea2c6f6e479ea273a5751cb55d0,
         type: 3}
@@ -19166,6 +19174,31 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -114.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6122111318813838105, guid: c8005ea2c6f6e479ea273a5751cb55d0,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 329.32
+      objectReference: {fileID: 0}
+    - target: {fileID: 6122111318813838105, guid: c8005ea2c6f6e479ea273a5751cb55d0,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 357.98
+      objectReference: {fileID: 0}
+    - target: {fileID: 6122111318813838105, guid: c8005ea2c6f6e479ea273a5751cb55d0,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 663.6115
+      objectReference: {fileID: 0}
+    - target: {fileID: 6122111318813838105, guid: c8005ea2c6f6e479ea273a5751cb55d0,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 77
+      objectReference: {fileID: 0}
+    - target: {fileID: 6122111318813838110, guid: c8005ea2c6f6e479ea273a5751cb55d0,
+        type: 3}
+      propertyPath: m_FontData.m_Alignment
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6122111319050242617, guid: c8005ea2c6f6e479ea273a5751cb55d0,
         type: 3}

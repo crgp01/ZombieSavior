@@ -9,17 +9,10 @@ public class PosprocesingController : MonoBehaviour
     private ColorGrading colorgrading = null;
     private Vignette vignette = null;
 
-    // Start is called before the first frame update
     void Start()
     {
         volume.profile.TryGetSettings(out colorgrading);
         volume.profile.TryGetSettings(out vignette);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     public void EnableColorGrading(bool enabled)

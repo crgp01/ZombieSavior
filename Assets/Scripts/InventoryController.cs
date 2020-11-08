@@ -28,12 +28,6 @@ public class InventoryController : MonoBehaviour
     private string EQUIPED_WEAPON = "Arma equipada";
     private string ALREADY_EQUIPED_WEAPON = "Ya tienes esa arma equipada";
 
-    void Start()
-    {
-       
-    }
-
-    // Update is called once per frame
     void Update()
     {
         if (scoreManager.weapon1Collected)

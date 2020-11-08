@@ -7,7 +7,7 @@ public class SettingConfiguration : MonoBehaviour
 {
     public AudioMixer audioMixer;
     public AudioMixer SFXaudioMixer;
-    // Start is called before the first frame update
+
     public void SetMusicVolume(float volume) {
         audioMixer.SetFloat("MusicVolume", volume);
     }
