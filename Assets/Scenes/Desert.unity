@@ -4933,6 +4933,11 @@ MonoBehaviour:
     volume: 1
     pitch: 0
     source: {fileID: 0}
+  - soundName: Cure
+    clip: {fileID: 8300000, guid: 3785aac0fe0344c248755b697991fddc, type: 3}
+    volume: 1
+    pitch: 0
+    source: {fileID: 0}
   - soundName: ZombieBossAttack
     clip: {fileID: 8300000, guid: 7c7003b1599424208b1d9f107eee0437, type: 3}
     volume: 1

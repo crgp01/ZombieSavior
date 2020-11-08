@@ -210,7 +210,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3177765}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 25.7, y: 15.6, z: 436}
+  m_LocalPosition: {x: 202, y: 15.6, z: 230}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1586,7 +1586,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_BoundingSphereOverride: {x: 0, y: -5.7922056e+21, z: 4.5811e-41, w: -1}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -10758,7 +10758,7 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 500
+  MaxDistance: 16.329956
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
@@ -14470,6 +14470,11 @@ MonoBehaviour:
     source: {fileID: 0}
   - soundName: Victoria
     clip: {fileID: 8300000, guid: 582835f4c82fa4ed5a4851fdc1ea95be, type: 3}
+    volume: 1
+    pitch: 0
+    source: {fileID: 0}
+  - soundName: Cure
+    clip: {fileID: 8300000, guid: 3785aac0fe0344c248755b697991fddc, type: 3}
     volume: 1
     pitch: 0
     source: {fileID: 0}
@@ -19658,6 +19663,10 @@ PrefabInstance:
       propertyPath: m_Volume
       value: 0.165
       objectReference: {fileID: 0}
+    - target: {fileID: 1311694202, guid: 2cd211c3780654e9c86caa4ae9d7fdac, type: 3}
+      propertyPath: MaxDistance
+      value: 17.964882
+      objectReference: {fileID: 0}
     - target: {fileID: 3083146174761978083, guid: 2cd211c3780654e9c86caa4ae9d7fdac,
         type: 3}
       propertyPath: scoreManager
@@ -19707,7 +19716,7 @@ PrefabInstance:
     - target: {fileID: 8964486667291751184, guid: 2cd211c3780654e9c86caa4ae9d7fdac,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 25.7
+      value: 202
       objectReference: {fileID: 0}
     - target: {fileID: 8964486667291751184, guid: 2cd211c3780654e9c86caa4ae9d7fdac,
         type: 3}
@@ -19717,7 +19726,7 @@ PrefabInstance:
     - target: {fileID: 8964486667291751184, guid: 2cd211c3780654e9c86caa4ae9d7fdac,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 444
+      value: 238
       objectReference: {fileID: 0}
     - target: {fileID: 8964486667291751184, guid: 2cd211c3780654e9c86caa4ae9d7fdac,
         type: 3}

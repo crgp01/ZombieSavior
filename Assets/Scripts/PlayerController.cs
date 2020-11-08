@@ -16,11 +16,13 @@ public class PlayerController : MonoBehaviour
     public GameObject zombieLocationSpawner;
     public PanelController panelController;
     public ZombieSpawner zombieSpawner;
+    private AudioSource audioSource;
 
     void Start()
     {
         animator = GetComponent<Animator>();
         medicine.gameObject.SetActive(false);
+        audioSource = GetComponent<AudioSource>();
     }
     private void FixedUpdate()
     {
@@ -58,7 +60,7 @@ public class PlayerController : MonoBehaviour
         if (other.CompareTag("Cure"))
         {
             Analytics.CustomEvent("Pickup Cure", transform.position);
-            FindObjectOfType<AudioManager>().Play("CoinPickup");
+            FindObjectOfType<AudioManager>().Play("Cure");
             medicine.gameObject.SetActive(false);
             curePosition.gameObject.SetActive(false);
             scoreManager.cureText.gameObject.SetActive(false);
@@ -68,6 +70,8 @@ public class PlayerController : MonoBehaviour
         if (other.CompareTag("FinalGameObject") && scoreManager.level1Finished)
         {
             scoreManager.showFinalPanel = true;
+            audioSource.Stop();
+            FindObjectOfType<AudioManager>().Play("Victoria");
 
         }
         if (other.CompareTag("Document1"))

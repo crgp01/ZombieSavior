@@ -21,6 +21,7 @@ public class FinalLevelPlayerController : MonoBehaviour
     {
          if (other.CompareTag("Cure"))
         {
+            FindObjectOfType<AudioManager>().Play("Cure");
             scoreManager.cureText.gameObject.SetActive(false);
             scoreManager.lifeBarSlider.value = 3;
             scoreManager.medicinePicked = true;
