@@ -44,6 +44,7 @@ public class StoreController : MonoBehaviour
             greenPotionCounter++;
             PlayerPrefs.SetInt("greenPotionCounter", greenPotionCounter);
             scoreManager.recolectedCoins = scoreManager.recolectedCoins - GREEN_POTION_PRICE;
+            FindObjectOfType<AudioManager>().Play("Compra1");
 
             IDictionary<string, object> eventDictionary = new Dictionary<string, object> { };
             eventDictionary.Add("Item", "Green Potion");
@@ -68,6 +69,7 @@ public class StoreController : MonoBehaviour
             yellowPotionCounter++;
             PlayerPrefs.SetInt("yellowPotionCounter", yellowPotionCounter);
             scoreManager.recolectedCoins = scoreManager.recolectedCoins - YELLOW_POTION_PRICE;
+            FindObjectOfType<AudioManager>().Play("Compra1");
             IDictionary<string, object> eventDictionary = new Dictionary<string, object> { };
             eventDictionary.Add("Item", "Yellow Potion");
             eventDictionary.Add("Potion Price", YELLOW_POTION_PRICE);
@@ -92,6 +94,7 @@ public class StoreController : MonoBehaviour
             {
                 if (scoreManager.recolectedCoins >= SHOT_GUN_PRICE)
                 {
+                    FindObjectOfType<AudioManager>().Play("Compra2");
                     hasShootgun = true;
                     scoreManager.shotgunEquiped = true;
                     scoreManager.recolectedCoins = scoreManager.recolectedCoins - SHOT_GUN_PRICE;

@@ -42,12 +42,14 @@ public class ScoreManager : MonoBehaviour
         if (lifeBarSlider.value == 0)
         {
             zombieMode = true;
+           
         }
         if (lifeBarSlider.value > 0) {
             zombieMode = false;
         }
         if (zombieMode)
         {
+            //FindObjectOfType<AudioManager>().Play("ArchieKilled");
             StartZombieMode();
         }
         if (weapon1Collected && cureWasPicked)
@@ -133,7 +135,6 @@ public class ScoreManager : MonoBehaviour
             posprocesingController.EnableVignet(true);
             timeText.gameObject.SetActive(true);
             timerIsRunning = true;
-
     }
     public void RespawnPlayer() {
         player.transform.position = respawnPoint.transform.position;

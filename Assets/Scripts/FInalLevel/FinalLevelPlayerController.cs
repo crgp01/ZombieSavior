@@ -51,6 +51,7 @@ public class FinalLevelPlayerController : MonoBehaviour
             Analytics.CustomEvent("Player Damaged by Zombie Boss", eventDictionary);
 
             scoreManager.lifeBarSlider.value -= 1;
+            FindObjectOfType<AudioManager>().Play("ArchieHurt");
         }
         if (col.gameObject.tag == "Zombie")
         {
@@ -62,6 +63,7 @@ public class FinalLevelPlayerController : MonoBehaviour
 
             Analytics.CustomEvent("Player Damaged by Zombie", eventDictionary);
             scoreManager.lifeBarSlider.value -= 1;
+            FindObjectOfType<AudioManager>().Play("ArchieHurt");
         }
         if (col.gameObject.tag == "Store")
         {

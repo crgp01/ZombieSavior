@@ -1652,7 +1652,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 1.8643849e-28, z: 4.5838e-41, w: 8.318957e+29}
+  m_BoundingSphereOverride: {x: 0, y: -1.8242601e+12, z: 4.5811e-41, w: 3.5701916e+10}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -15126,6 +15126,34 @@ MonoBehaviour:
     source: {fileID: 0}
   - soundName: ZombieSteps
     clip: {fileID: 8300000, guid: bdbc846dfce854647b59617a215604f3, type: 3}
+    volume: 0.483
+    source: {fileID: 0}
+  - soundName: Purchase
+    clip: {fileID: 8300000, guid: 02fff0dcfc56649f5a076c7ca67eb164, type: 3}
+    volume: 1
+    source: {fileID: 0}
+  - soundName: ArchieHurt
+    clip: {fileID: 8300000, guid: 938737d868c074265947a00ed76ecc95, type: 3}
+    volume: 1
+    source: {fileID: 0}
+  - soundName: ArchieKilled
+    clip: {fileID: 8300000, guid: a8a8bc450d89c470aac2ce188da08d8c, type: 3}
+    volume: 1
+    source: {fileID: 0}
+  - soundName: Compra1
+    clip: {fileID: 8300000, guid: 36c109c2b7e5e469a816053caa18a233, type: 3}
+    volume: 1
+    source: {fileID: 0}
+  - soundName: Compra2
+    clip: {fileID: 8300000, guid: 02fff0dcfc56649f5a076c7ca67eb164, type: 3}
+    volume: 1
+    source: {fileID: 0}
+  - soundName: Compra3
+    clip: {fileID: 8300000, guid: f33b87ee1b6544ef3857ce65d42a5034, type: 3}
+    volume: 1
+    source: {fileID: 0}
+  - soundName: Wrong
+    clip: {fileID: 8300000, guid: d19e6bd56cde04bc7aa4793422f67fd7, type: 3}
     volume: 1
     source: {fileID: 0}
 --- !u!4 &1758097384

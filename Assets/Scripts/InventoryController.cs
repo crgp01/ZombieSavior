@@ -62,16 +62,19 @@ public class InventoryController : MonoBehaviour
             if (scoreManager.lifeBarSlider.value < 3)
             {
                 storeController.greenPotionCounter--;
+                FindObjectOfType<AudioManager>().Play("Compra3");
                 scoreManager.lifeBarSlider.value = 3;
                 errorPanel.text = APPLIED_POTION_MESSAGE;
                 errorPanel.GetComponent<Text>().color = Color.green;
             }
             else {
+                FindObjectOfType<AudioManager>().Play("Wrong");
                 errorPanel.GetComponent<Text>().color = Color.red;
                 errorPanel.text = COMPLETE_LIFE_MESSAGE;
             }
         }
         else {
+            FindObjectOfType<AudioManager>().Play("Wrong");
             errorPanel.GetComponent<Text>().color = Color.red;
             errorPanel.text = NO_POTION_MESSAGE;
         }
@@ -122,23 +125,27 @@ public class InventoryController : MonoBehaviour
                 if (storeController.yellowPotionCounter > 0)
                 {
                     storeController.yellowPotionCounter--;
+                    FindObjectOfType<AudioManager>().Play("Compra3");
                     scoreManager.timeRemaining += remoteConfigs.potionIncreasingTime;
                     errorPanel.text = APPLIED_POTION_MESSAGE;
                     errorPanel.GetComponent<Text>().color = Color.green;
                 }
                 else {
+                    FindObjectOfType<AudioManager>().Play("Wrong");
                     errorPanel.GetComponent<Text>().color = Color.red;
                     errorPanel.text = ZERO_COUNTER_MESSAGE;
                 }
             }
             else
             {
+                FindObjectOfType<AudioManager>().Play("Wrong");
                 errorPanel.GetComponent<Text>().color = Color.red;
                 errorPanel.text = NO_POTION_MESSAGE;
             }
         }
         else
         {
+            FindObjectOfType<AudioManager>().Play("Wrong");
             errorPanel.GetComponent<Text>().color = Color.red;
             errorPanel.text = NO_ZOMBIE_MODE_MESSAGE;
         }
@@ -147,12 +154,14 @@ public class InventoryController : MonoBehaviour
     public void EquipShotgun() {
         if (!scoreManager.shotgunEquiped)
         {
+            FindObjectOfType<AudioManager>().Play("Compra3");
             scoreManager.shotgunEquiped = true;
             scoreManager.pistolEquiped = false;
             errorPanel.text = EQUIPED_WEAPON;
             errorPanel.GetComponent<Text>().color = Color.green;
         }
         else {
+            FindObjectOfType<AudioManager>().Play("Wrong");
             errorPanel.GetComponent<Text>().color = Color.red;
             errorPanel.text = ALREADY_EQUIPED_WEAPON;
         }
@@ -161,6 +170,7 @@ public class InventoryController : MonoBehaviour
     public void EquipPistol() {
         if (!scoreManager.pistolEquiped)
         {
+            FindObjectOfType<AudioManager>().Play("Compra3");
             scoreManager.shotgunEquiped = false;
             scoreManager.pistolEquiped = true;
             errorPanel.text = EQUIPED_WEAPON;
@@ -168,6 +178,7 @@ public class InventoryController : MonoBehaviour
         }
         else
         {
+            FindObjectOfType<AudioManager>().Play("Wrong");
             errorPanel.GetComponent<Text>().color = Color.red;
             errorPanel.text = ALREADY_EQUIPED_WEAPON;
         }

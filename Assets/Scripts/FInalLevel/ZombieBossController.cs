@@ -37,6 +37,7 @@ public class ZombieBossController : MonoBehaviour
         {
             FindObjectOfType<AudioManager>().Stop("ZombieBossDie");
             FindObjectOfType<AudioManager>().Stop("ZombieAttack");
+            FindObjectOfType<AudioManager>().Stop("BossMusic");
             FindObjectOfType<AudioManager>().Play("ZombieBossAttack");
 
             panelController.PauseGame();

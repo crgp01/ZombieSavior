@@ -28,6 +28,7 @@ public class FinalLevelInventory : MonoBehaviour
     private string APPLIED_POTION_MESSAGE = "Poción aplicada";
     private string EQUIPED_WEAPON = "Arma equipada";
     private string ALREADY_EQUIPED_WEAPON = "Ya tienes esa arma equipada";
+    private string CANT_USE_POTION = "No puedes usarla mientras buscas la cura";
     // Start is called before the first frame update
     void Start()
     {
@@ -59,30 +60,42 @@ public class FinalLevelInventory : MonoBehaviour
         if (storeController.greenPotionCounter > 0)
         {
             if (finalLevelController.lifeBarSlider.value < 3)
-            {
-                storeController.greenPotionCounter--;
-                finalLevelController.lifeBarSlider.value = 3;
-                errorPanel.text = APPLIED_POTION_MESSAGE;
-                errorPanel.GetComponent<Text>().color = Color.green;
+                { 
+                if (!finalLevelController.zombieMode)
+                {
+                    storeController.greenPotionCounter--;
+                    FindObjectOfType<AudioManager>().Play("Compra3");
+                    finalLevelController.lifeBarSlider.value = 3;
+                    errorPanel.text = APPLIED_POTION_MESSAGE;
+                    errorPanel.GetComponent<Text>().color = Color.green;
 
-                IDictionary<string, object> eventDictionary = new Dictionary<string, object> { };
-                eventDictionary.Add("Item", "Green Potion");
-                eventDictionary.Add("Location use", transform.position);
-                eventDictionary.Add("Level", 2);
+                    IDictionary<string, object> eventDictionary = new Dictionary<string, object> { };
+                    eventDictionary.Add("Item", "Green Potion");
+                    eventDictionary.Add("Location use", transform.position);
+                    eventDictionary.Add("Level", 2);
 
-                Analytics.CustomEvent("Use green potion", eventDictionary);
+                    Analytics.CustomEvent("Use green potion", eventDictionary);
+                }
+                else {
+                    FindObjectOfType<AudioManager>().Play("Wrong");
+                    errorPanel.GetComponent<Text>().color = Color.red;
+                    errorPanel.text = CANT_USE_POTION;
+                }
             }
             else
             {
+                FindObjectOfType<AudioManager>().Play("Wrong");
                 errorPanel.GetComponent<Text>().color = Color.red;
                 errorPanel.text = COMPLETE_LIFE_MESSAGE;
             }
         }
         else
         {
+            FindObjectOfType<AudioManager>().Play("Wrong");
             errorPanel.GetComponent<Text>().color = Color.red;
             errorPanel.text = NO_POTION_MESSAGE;
         }
+
 
     }
     public void ShowYellowPotionPanel()
@@ -130,6 +143,7 @@ public class FinalLevelInventory : MonoBehaviour
                 if (storeController.yellowPotionCounter > 0)
                 {
                     storeController.yellowPotionCounter--;
+                    FindObjectOfType<AudioManager>().Play("Compra3");
                     finalLevelController.timeRemaining += remoteConfigs.potionIncreasingTime;
                     errorPanel.text = APPLIED_POTION_MESSAGE;
                     errorPanel.GetComponent<Text>().color = Color.green;
@@ -143,18 +157,21 @@ public class FinalLevelInventory : MonoBehaviour
                 }
                 else
                 {
+                    FindObjectOfType<AudioManager>().Play("Wrong");
                     errorPanel.GetComponent<Text>().color = Color.red;
                     errorPanel.text = ZERO_COUNTER_MESSAGE;
                 }
             }
             else
             {
+                FindObjectOfType<AudioManager>().Play("Wrong");
                 errorPanel.GetComponent<Text>().color = Color.red;
                 errorPanel.text = NO_POTION_MESSAGE;
             }
         }
         else
         {
+            FindObjectOfType<AudioManager>().Play("Wrong");
             errorPanel.GetComponent<Text>().color = Color.red;
             errorPanel.text = NO_ZOMBIE_MODE_MESSAGE;
         }
@@ -166,6 +183,7 @@ public class FinalLevelInventory : MonoBehaviour
         {
             finalLevelController.shotgunEquiped = true;
             finalLevelController.pistolEquiped = false;
+            FindObjectOfType<AudioManager>().Play("Compra3");
             errorPanel.text = EQUIPED_WEAPON;
             errorPanel.GetComponent<Text>().color = Color.green;
 
@@ -178,6 +196,7 @@ public class FinalLevelInventory : MonoBehaviour
         }
         else
         {
+            FindObjectOfType<AudioManager>().Play("Wrong");
             errorPanel.GetComponent<Text>().color = Color.red;
             errorPanel.text = ALREADY_EQUIPED_WEAPON;
         }
@@ -189,6 +208,7 @@ public class FinalLevelInventory : MonoBehaviour
         {
             finalLevelController.shotgunEquiped = false;
             finalLevelController.pistolEquiped = true;
+            FindObjectOfType<AudioManager>().Play("Compra3");
             errorPanel.text = EQUIPED_WEAPON;
             errorPanel.GetComponent<Text>().color = Color.green;
 
@@ -201,6 +221,7 @@ public class FinalLevelInventory : MonoBehaviour
         }
         else
         {
+            FindObjectOfType<AudioManager>().Play("Wrong");
             errorPanel.GetComponent<Text>().color = Color.red;
             errorPanel.text = ALREADY_EQUIPED_WEAPON;
         }

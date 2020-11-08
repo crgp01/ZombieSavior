@@ -133,6 +133,7 @@ public class FinalLevelController : MonoBehaviour
         posprocesingController.EnableVignet(true);
         timeText.gameObject.SetActive(true);
         timerIsRunning = true;
+        FindObjectOfType<AudioManager>().Play("ArchieKilled");
 
     }
     public void RespawnPlayer()

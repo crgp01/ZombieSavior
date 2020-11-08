@@ -40,6 +40,7 @@ public class FinalLevelShop : MonoBehaviour
         if (finalLevelController.recolectedCoins >= GREEN_POTION_PRICE)
         {
             greenPotionCounter++;
+            FindObjectOfType<AudioManager>().Play("Compra1");
             finalLevelController.recolectedCoins = finalLevelController.recolectedCoins - GREEN_POTION_PRICE;
             IDictionary<string, object> eventDictionary = new Dictionary<string, object> { };
             eventDictionary.Add("Item", "Green Potion");
@@ -64,6 +65,7 @@ public class FinalLevelShop : MonoBehaviour
         if (finalLevelController.recolectedCoins >= YELLOW_POTION_PRICE)
         {
             yellowPotionCounter++;
+            FindObjectOfType<AudioManager>().Play("Compra1");
             finalLevelController.recolectedCoins = finalLevelController.recolectedCoins - YELLOW_POTION_PRICE;
             IDictionary<string, object> eventDictionary = new Dictionary<string, object> { };
             eventDictionary.Add("Item", "Yellow Potion");
@@ -92,6 +94,7 @@ public class FinalLevelShop : MonoBehaviour
                 if (finalLevelController.recolectedCoins >= SHOT_GUN_PRICE)
                 {
                     hasShootgun = true;
+                    FindObjectOfType<AudioManager>().Play("Compra2");
                     finalLevelController.shotgunEquiped = true;
                     finalLevelController.recolectedCoins = finalLevelController.recolectedCoins - SHOT_GUN_PRICE;
 

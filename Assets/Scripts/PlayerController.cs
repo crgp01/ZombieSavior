@@ -116,6 +116,7 @@ public class PlayerController : MonoBehaviour
 
             Analytics.CustomEvent("Player Damaged by Zombie", eventDictionary);
             scoreManager.lifeBarSlider.value -= 1;
+            FindObjectOfType<AudioManager>().Play("ArchieHurt");
         }
         if (col.gameObject.tag == "Store" && remoteConfigs.storeIsActive)
         {
