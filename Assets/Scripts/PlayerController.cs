@@ -9,13 +9,14 @@ public class PlayerController : MonoBehaviour
 {
     public ScoreManager scoreManager;
     public RemoteConfigs remoteConfigs;
-    Animator animator;
+    private Animator animator;
     public GameObject medicine;
     public GameObject curePosition;
     public GameObject zombiePrefab;
     public GameObject zombieLocationSpawner;
     public PanelController panelController;
     public ZombieSpawner zombieSpawner;
+    public InventoryController inventoryController;
     private AudioSource audioSource;
 
     void Start()
@@ -54,6 +55,8 @@ public class PlayerController : MonoBehaviour
             animator.Play("Pickup");
             other.gameObject.SetActive(false);
             scoreManager.weapon1Collected = true;
+            scoreManager.pistolEquiped = true;
+            
             scoreManager.canShoot = true;
             Instantiate(zombiePrefab, zombieLocationSpawner.transform.position, Quaternion.identity);
         }

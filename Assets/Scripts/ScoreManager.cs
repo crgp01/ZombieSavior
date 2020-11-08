@@ -28,7 +28,7 @@ public class ScoreManager : MonoBehaviour
     private void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
-        RespawnPlayer();
+        //RespawnPlayer();
        
     }
     private void Update()
@@ -49,6 +49,7 @@ public class ScoreManager : MonoBehaviour
         }
         if (zombieMode)
         {
+            //FindObjectOfType<AudioManager>().Play("ArchieKilled");
             StartZombieMode();
         }
         if (weapon1Collected && cureWasPicked)
@@ -64,6 +65,7 @@ public class ScoreManager : MonoBehaviour
             shotgunInHand.SetActive(true);
             shotgunImage.SetActive(true);
             gunImage.gameObject.SetActive(false);
+            pistolEquiped = false;
         }
         if (pistolEquiped)
         {
@@ -71,6 +73,7 @@ public class ScoreManager : MonoBehaviour
             shotgunInHand.SetActive(false);
             shotgunImage.SetActive(false);
             gunImage.gameObject.SetActive(true);
+            shotgunEquiped = false;
         }
         if (recolectedCoins >= COINS_TARGET) {
             allCoinsCollected = true;

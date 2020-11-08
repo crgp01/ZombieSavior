@@ -210,7 +210,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3177765}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 202, y: 15.6, z: 230}
+  m_LocalPosition: {x: 221.48, y: 1.01, z: 415.58}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -10696,7 +10696,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e81d7494385a24f23a2d32858a437603, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  recolectedCoins: 0
+  recolectedCoins: 20
   coinScore: {fileID: 1420593097}
   timeText: {fileID: 1995155579}
   gunImage: {fileID: 1018146462}
@@ -19993,6 +19993,11 @@ PrefabInstance:
       propertyPath: zombieSpawner
       value: 
       objectReference: {fileID: 1298363188}
+    - target: {fileID: 3083146174761978092, guid: 2cd211c3780654e9c86caa4ae9d7fdac,
+        type: 3}
+      propertyPath: inventoryController
+      value: 
+      objectReference: {fileID: 1298363190}
     - target: {fileID: 3083146174978534671, guid: 2cd211c3780654e9c86caa4ae9d7fdac,
         type: 3}
       propertyPath: m_IsActive
@@ -20001,17 +20006,17 @@ PrefabInstance:
     - target: {fileID: 8964486667291751184, guid: 2cd211c3780654e9c86caa4ae9d7fdac,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 202
+      value: 221.48
       objectReference: {fileID: 0}
     - target: {fileID: 8964486667291751184, guid: 2cd211c3780654e9c86caa4ae9d7fdac,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 13.6
+      value: -0.99
       objectReference: {fileID: 0}
     - target: {fileID: 8964486667291751184, guid: 2cd211c3780654e9c86caa4ae9d7fdac,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 238
+      value: 423.58
       objectReference: {fileID: 0}
     - target: {fileID: 8964486667291751184, guid: 2cd211c3780654e9c86caa4ae9d7fdac,
         type: 3}
