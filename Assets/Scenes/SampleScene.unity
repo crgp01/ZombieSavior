@@ -210,7 +210,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3177765}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 217.7, y: 3.5, z: 416.2}
+  m_LocalPosition: {x: 25.7, y: 15.6, z: 436}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -9039,7 +9039,7 @@ PrefabInstance:
     - target: {fileID: 561027253443941607, guid: 116132c514f4a4d679192a87b3137c40,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 561027254238699605, guid: 116132c514f4a4d679192a87b3137c40,
         type: 3}
@@ -10310,7 +10310,7 @@ MonoBehaviour:
   shotgunInHand: {fileID: 1077817509}
   respawnPoint: {fileID: 843813867}
   cureText: {fileID: 327942682}
-  weapon1Collected: 1
+  weapon1Collected: 0
   pistolEquiped: 0
   shotgunEquiped: 0
   timerIsRunning: 0
@@ -14391,66 +14391,87 @@ MonoBehaviour:
   - soundName: CoinFall
     clip: {fileID: 8300000, guid: 4496a3d383baf447fad44e8f8288d6f1, type: 3}
     volume: 1
+    pitch: 0
     source: {fileID: 0}
   - soundName: CoinPickup
     clip: {fileID: 8300000, guid: 64c9234d169e945ceb4ce5c48b34e78a, type: 3}
     volume: 1
+    pitch: 0
     source: {fileID: 0}
   - soundName: Shoot
     clip: {fileID: 8300000, guid: 77ccc4d64d01a4794a6ca96c627aec37, type: 3}
     volume: 1
+    pitch: 0
     source: {fileID: 0}
   - soundName: ZombieDie
     clip: {fileID: 8300000, guid: 659072897dfbe46129aeace4bb2cbc48, type: 3}
     volume: 1
+    pitch: 0
     source: {fileID: 0}
   - soundName: ZombieAttack
     clip: {fileID: 8300000, guid: 7dfe330559fc5438fb7e19a90bd75f16, type: 3}
     volume: 1
+    pitch: 0
     source: {fileID: 0}
   - soundName: PickDiary
     clip: {fileID: 8300000, guid: 42c0c082e9cfd46f88f5a01a492cf91c, type: 3}
     volume: 1
+    pitch: 0
     source: {fileID: 0}
   - soundName: PickGun
     clip: {fileID: 8300000, guid: 1b0926efc48184cc4a627b4f4ac9bfac, type: 3}
     volume: 1
+    pitch: 0
     source: {fileID: 0}
   - soundName: ArchieSteps
     clip: {fileID: 8300000, guid: e2c071afbf4324559a40f750d7feca24, type: 3}
     volume: 1
+    pitch: 0
     source: {fileID: 0}
   - soundName: ZombieSteps
     clip: {fileID: 8300000, guid: bdbc846dfce854647b59617a215604f3, type: 3}
-    volume: 0.483
+    volume: 1
+    pitch: 0
     source: {fileID: 0}
   - soundName: Purchase
     clip: {fileID: 8300000, guid: 02fff0dcfc56649f5a076c7ca67eb164, type: 3}
     volume: 1
+    pitch: 0
     source: {fileID: 0}
   - soundName: ArchieHurt
     clip: {fileID: 8300000, guid: 938737d868c074265947a00ed76ecc95, type: 3}
     volume: 1
+    pitch: 0
     source: {fileID: 0}
   - soundName: ArchieKilled
     clip: {fileID: 8300000, guid: a8a8bc450d89c470aac2ce188da08d8c, type: 3}
     volume: 1
+    pitch: 0
     source: {fileID: 0}
   - soundName: Compra1
     clip: {fileID: 8300000, guid: 36c109c2b7e5e469a816053caa18a233, type: 3}
     volume: 1
+    pitch: 0
     source: {fileID: 0}
   - soundName: Compra2
     clip: {fileID: 8300000, guid: 02fff0dcfc56649f5a076c7ca67eb164, type: 3}
     volume: 1
+    pitch: 0
     source: {fileID: 0}
   - soundName: Compra3
     clip: {fileID: 8300000, guid: f33b87ee1b6544ef3857ce65d42a5034, type: 3}
     volume: 1
+    pitch: 0
     source: {fileID: 0}
   - soundName: Wrong
     clip: {fileID: 8300000, guid: d19e6bd56cde04bc7aa4793422f67fd7, type: 3}
     volume: 1
+    pitch: 0
+    source: {fileID: 0}
+  - soundName: Victoria
+    clip: {fileID: 8300000, guid: 582835f4c82fa4ed5a4851fdc1ea95be, type: 3}
+    volume: 1
+    pitch: 0
     source: {fileID: 0}
 --- !u!4 &1758097384
 Transform:
@@ -18273,12 +18294,12 @@ PrefabInstance:
     - target: {fileID: 3787859892374528157, guid: 2503c41f30be647878c84483f4668515,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3790399337060778297, guid: 2503c41f30be647878c84483f4668515,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 54.55
+      value: 117.6
       objectReference: {fileID: 0}
     - target: {fileID: 3790399337060778297, guid: 2503c41f30be647878c84483f4668515,
         type: 3}
@@ -18288,7 +18309,7 @@ PrefabInstance:
     - target: {fileID: 3790399337060778297, guid: 2503c41f30be647878c84483f4668515,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 445.4
+      value: 429.6
       objectReference: {fileID: 0}
     - target: {fileID: 3790399337060778297, guid: 2503c41f30be647878c84483f4668515,
         type: 3}
@@ -18330,12 +18351,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3819103773896442485, guid: 2503c41f30be647878c84483f4668515,
+        type: 3}
+      propertyPath: m_controlMode
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3852343643951456825, guid: 2503c41f30be647878c84483f4668515,
         type: 3}
       propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3819103773896442485, guid: 2503c41f30be647878c84483f4668515, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 2503c41f30be647878c84483f4668515, type: 3}
 --- !u!1001 &4456855030666260532
 PrefabInstance:
@@ -18746,7 +18773,7 @@ PrefabInstance:
     - target: {fileID: 4671812899597373596, guid: 679dd80650e024556bf51faa0c99be63,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4671812899597373599, guid: 679dd80650e024556bf51faa0c99be63,
         type: 3}
@@ -19627,6 +19654,10 @@ PrefabInstance:
       propertyPath: Loop
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1311694202, guid: 2cd211c3780654e9c86caa4ae9d7fdac, type: 3}
+      propertyPath: m_Volume
+      value: 0.165
+      objectReference: {fileID: 0}
     - target: {fileID: 3083146174761978083, guid: 2cd211c3780654e9c86caa4ae9d7fdac,
         type: 3}
       propertyPath: scoreManager
@@ -19676,17 +19707,17 @@ PrefabInstance:
     - target: {fileID: 8964486667291751184, guid: 2cd211c3780654e9c86caa4ae9d7fdac,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 217.7
+      value: 25.7
       objectReference: {fileID: 0}
     - target: {fileID: 8964486667291751184, guid: 2cd211c3780654e9c86caa4ae9d7fdac,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.5
+      value: 13.6
       objectReference: {fileID: 0}
     - target: {fileID: 8964486667291751184, guid: 2cd211c3780654e9c86caa4ae9d7fdac,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 424.2
+      value: 444
       objectReference: {fileID: 0}
     - target: {fileID: 8964486667291751184, guid: 2cd211c3780654e9c86caa4ae9d7fdac,
         type: 3}

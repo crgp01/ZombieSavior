@@ -54,7 +54,6 @@ public class PlayerController : MonoBehaviour
             scoreManager.weapon1Collected = true;
             scoreManager.canShoot = true;
             Instantiate(zombiePrefab, zombieLocationSpawner.transform.position, Quaternion.identity);
-            zombieSpawner.StartZombieSpawner();
         }
         if (other.CompareTag("Cure"))
         {

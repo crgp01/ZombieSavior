@@ -9,6 +9,7 @@ public class ZombieController : MonoBehaviour
 {
     private int maxDist = 2;
     private int minDist = 2;
+    private int rangeDistance = 8;
     private GameObject player;
     private Transform playerTransform;
     private Animator animator;
@@ -17,6 +18,8 @@ public class ZombieController : MonoBehaviour
     private NavMeshAgent zombieAgent;
     private Transform peopleTransform;
     private Scene currentScene;
+    private static float STEP_TIMER = 0.5f;
+    private float timeRemaining = STEP_TIMER;
 
     //private ScoreManager scoreManager;
     // Start is called before the first frame update
@@ -52,18 +55,29 @@ public class ZombieController : MonoBehaviour
             }
             transform.gameObject.SetActive(false);
         }
+        if (collision.gameObject.tag == "Player") {
+            FindObjectOfType<AudioManager>().Play("ZombieAttack");
+        }
     }
 
     void FollowingPlayer(Transform zombieTransform, Transform playerTransform) {
         transform.LookAt(playerTransform.position);
 
+        if (Vector3.Distance(zombieTransform.position, playerTransform.position) <= rangeDistance)
+        {
+            timeRemaining -= Time.deltaTime;
+            if (timeRemaining <= 0)
+            {
+                FindObjectOfType<AudioManager>().Play("ZombieSteps");
+                timeRemaining = STEP_TIMER;
+            }
+        }
         if (Vector3.Distance(zombieTransform.position, playerTransform.position) >= maxDist)
         {
             zombieAgent.SetDestination(playerTransform.position);
         }
         if (Vector3.Distance(zombieTransform.position, playerTransform.position) <= minDist)
         {
-            FindObjectOfType<AudioManager>().Play("ZombieAttack");
             animator.Play("zombie_attack");
         }
     }

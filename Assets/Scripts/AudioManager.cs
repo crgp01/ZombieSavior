@@ -17,6 +17,7 @@ public class AudioManager : MonoBehaviour
             sound.source.clip = sound.clip;
 
             sound.source.volume = sound.volume;
+
             sound.source.outputAudioMixerGroup = mixerGroup;
 
         }
@@ -24,6 +25,10 @@ public class AudioManager : MonoBehaviour
 
     public void Play(string name) {
         SoundController soundFinded = Array.Find(soundList, sound => sound.soundName == name);
+        AudioSource audioSource = soundFinded.source;
+        if (name == "ArchieSteps") {
+            audioSource.pitch = UnityEngine.Random.Range(1f, 1.2f);
+        }
         soundFinded.source.Play();
     }
 

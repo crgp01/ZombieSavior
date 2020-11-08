@@ -32,6 +32,9 @@ public class SimpleCharacterControl : MonoBehaviour {
     private float m_minJumpInterval = 0.25f;
 
     private bool m_isGrounded;
+    private bool playerIsMoving = false;
+    private static float STEP_TIMER = 0.3f;
+    private float timeRemaining = STEP_TIMER;
     private List<Collider> m_collisions = new List<Collider>();
 
     private void OnCollisionEnter(Collision collision)
@@ -138,6 +141,15 @@ public class SimpleCharacterControl : MonoBehaviour {
 
         m_animator.SetFloat("MoveSpeed", m_currentV);
 
+        if (m_currentV > 0.2 || m_currentV < -0.2)
+        {
+            playerIsMoving = true;
+        }
+        else {
+            playerIsMoving = false;
+        }
+
+        PlayStepSound();
         JumpingAndLanding();
     }
 
@@ -159,6 +171,17 @@ public class SimpleCharacterControl : MonoBehaviour {
         if (!m_isGrounded && m_wasGrounded)
         {
             m_animator.SetTrigger("Jump");
+        }
+    }
+    private void PlayStepSound() {       
+        if (playerIsMoving)
+        {
+            timeRemaining -= Time.deltaTime;
+            if (timeRemaining <= 0)
+            {
+                FindObjectOfType<AudioManager>().Play("ArchieSteps");
+                timeRemaining = STEP_TIMER;
+            }
         }
     }
 }

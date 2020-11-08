@@ -15,6 +15,7 @@ public class ZombieSpawner : MonoBehaviour
     {
         zombieAgent = GetComponent<NavMeshAgent>();
         instance = this;
+        StartZombieSpawner();
 
     }
 

@@ -18,7 +18,10 @@ public class ZombieBossController : MonoBehaviour
     public Slider zombieLifeSlider;
     private int hitCounter;
     public bool spawnZombie = true;
+    private int rangeDistance = 5;
     public FinalLevelPanelController panelController;
+    private static float STEP_TIMER = 0.5f;
+    private float timeRemaining = STEP_TIMER;
     // Start is called before the first frame update
     void Start()
     {
@@ -35,15 +38,14 @@ public class ZombieBossController : MonoBehaviour
         FollowingPlayer(transform, playerTransform);
         if (zombieLifeSlider.value == 0)
         {
-            FindObjectOfType<AudioManager>().Stop("ZombieBossDie");
-            FindObjectOfType<AudioManager>().Stop("ZombieAttack");
-            FindObjectOfType<AudioManager>().Stop("BossMusic");
-            FindObjectOfType<AudioManager>().Play("ZombieBossAttack");
+        
+            //FindObjectOfType<AudioManager>().Play("ZombieBossAttack");
 
             panelController.PauseGame();
             panelController.finalGamePanel.SetActive(true);
             panelController.mainPanel.gameObject.SetActive(false);
             panelController.playerPanel.gameObject.SetActive(false);
+            FindObjectOfType<AudioManager>().Play("ZombieBossDie");
         }
     }
     void Update() {           
@@ -67,6 +69,9 @@ public class ZombieBossController : MonoBehaviour
             FindObjectOfType<AudioManager>().Play("ZombieBossHit");
             animator.Play("zombie_death_standing");
         }
+        if (col.gameObject.tag == "Player") {
+            FindObjectOfType<AudioManager>().Play("ZombieBossAttack");
+        }
     }
 
     void FollowingPlayer(Transform zombieTransform, Transform playerTransform) {
@@ -78,8 +83,16 @@ public class ZombieBossController : MonoBehaviour
         }
         if (Vector3.Distance(zombieTransform.position, playerTransform.position) <= minDist)
         {
-            FindObjectOfType<AudioManager>().Play("ZombieBossAttack");
             animator.Play("zombie_attack");
+        }
+        if (Vector3.Distance(zombieTransform.position, playerTransform.position) <= rangeDistance)
+        {
+            timeRemaining -= Time.deltaTime;
+            if (timeRemaining <= 0)
+            {
+                FindObjectOfType<AudioManager>().Play("ZombieSteps");
+                timeRemaining = STEP_TIMER;
+            }
         }
     }
 }

@@ -4838,33 +4838,105 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mixerGroup: {fileID: 24300002, guid: 8de3aadfb4a8f4cc7953ac36af95df87, type: 2}
   soundList:
+  - soundName: CoinFall
+    clip: {fileID: 8300000, guid: 4496a3d383baf447fad44e8f8288d6f1, type: 3}
+    volume: 1
+    pitch: 0
+    source: {fileID: 0}
+  - soundName: CoinPickup
+    clip: {fileID: 8300000, guid: 64c9234d169e945ceb4ce5c48b34e78a, type: 3}
+    volume: 1
+    pitch: 0
+    source: {fileID: 0}
   - soundName: Shoot
     clip: {fileID: 8300000, guid: 77ccc4d64d01a4794a6ca96c627aec37, type: 3}
     volume: 1
+    pitch: 0
     source: {fileID: 0}
   - soundName: ZombieDie
     clip: {fileID: 8300000, guid: 659072897dfbe46129aeace4bb2cbc48, type: 3}
     volume: 1
+    pitch: 0
     source: {fileID: 0}
   - soundName: ZombieAttack
     clip: {fileID: 8300000, guid: 7dfe330559fc5438fb7e19a90bd75f16, type: 3}
     volume: 1
+    pitch: 0
     source: {fileID: 0}
-  - soundName: ZombieBossAttack
-    clip: {fileID: 8300000, guid: 7c7003b1599424208b1d9f107eee0437, type: 3}
+  - soundName: PickDiary
+    clip: {fileID: 8300000, guid: 42c0c082e9cfd46f88f5a01a492cf91c, type: 3}
     volume: 1
+    pitch: 0
     source: {fileID: 0}
-  - soundName: ZombieBossDie
-    clip: {fileID: 8300000, guid: 6a5f206601fc545b69fcaa0a722e8abe, type: 3}
+  - soundName: PickGun
+    clip: {fileID: 8300000, guid: 1b0926efc48184cc4a627b4f4ac9bfac, type: 3}
     volume: 1
+    pitch: 0
+    source: {fileID: 0}
+  - soundName: ArchieSteps
+    clip: {fileID: 8300000, guid: e2c071afbf4324559a40f750d7feca24, type: 3}
+    volume: 1
+    pitch: 0
+    source: {fileID: 0}
+  - soundName: ZombieSteps
+    clip: {fileID: 8300000, guid: bdbc846dfce854647b59617a215604f3, type: 3}
+    volume: 1
+    pitch: 0
+    source: {fileID: 0}
+  - soundName: Purchase
+    clip: {fileID: 8300000, guid: 02fff0dcfc56649f5a076c7ca67eb164, type: 3}
+    volume: 1
+    pitch: 0
+    source: {fileID: 0}
+  - soundName: ArchieHurt
+    clip: {fileID: 8300000, guid: 938737d868c074265947a00ed76ecc95, type: 3}
+    volume: 1
+    pitch: 0
+    source: {fileID: 0}
+  - soundName: ArchieKilled
+    clip: {fileID: 8300000, guid: a8a8bc450d89c470aac2ce188da08d8c, type: 3}
+    volume: 1
+    pitch: 0
+    source: {fileID: 0}
+  - soundName: Compra1
+    clip: {fileID: 8300000, guid: 36c109c2b7e5e469a816053caa18a233, type: 3}
+    volume: 1
+    pitch: 0
+    source: {fileID: 0}
+  - soundName: Compra2
+    clip: {fileID: 8300000, guid: 02fff0dcfc56649f5a076c7ca67eb164, type: 3}
+    volume: 1
+    pitch: 0
+    source: {fileID: 0}
+  - soundName: Compra3
+    clip: {fileID: 8300000, guid: f33b87ee1b6544ef3857ce65d42a5034, type: 3}
+    volume: 1
+    pitch: 0
+    source: {fileID: 0}
+  - soundName: Wrong
+    clip: {fileID: 8300000, guid: d19e6bd56cde04bc7aa4793422f67fd7, type: 3}
+    volume: 1
+    pitch: 0
+    source: {fileID: 0}
+  - soundName: Victoria
+    clip: {fileID: 8300000, guid: 582835f4c82fa4ed5a4851fdc1ea95be, type: 3}
+    volume: 1
+    pitch: 0
     source: {fileID: 0}
   - soundName: ZombieBossHit
     clip: {fileID: 8300000, guid: d54535d6c38d6410fa586c707bea8a9b, type: 3}
     volume: 1
+    pitch: 0
     source: {fileID: 0}
-  - soundName: BossMusic
-    clip: {fileID: 8300000, guid: 7a5cfd295bc2f4d54b3015d30de6d06a, type: 3}
-    volume: 0.131
+  - soundName: ZombieBossDie
+    clip: {fileID: 8300000, guid: 6a5f206601fc545b69fcaa0a722e8abe, type: 3}
+    volume: 1
+    pitch: 0
+    source: {fileID: 0}
+  - soundName: ZombieBossAttack
+    clip: {fileID: 8300000, guid: 7c7003b1599424208b1d9f107eee0437, type: 3}
+    volume: 1
+    pitch: 0
     source: {fileID: 0}
 --- !u!4 &1357301479
 Transform:
@@ -5433,6 +5505,7 @@ MonoBehaviour:
   remoteConfigs: {fileID: 1612855624}
   respawnPoint: {fileID: 233234802}
   ZombieBossController: {fileID: 1123088992}
+  bossMusic: {fileID: 0}
 --- !u!114 &1612855621
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6238,12 +6311,16 @@ PrefabInstance:
         type: 2}
     - target: {fileID: 1311694202, guid: 2cd211c3780654e9c86caa4ae9d7fdac, type: 3}
       propertyPath: m_PlayOnAwake
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1311694202, guid: 2cd211c3780654e9c86caa4ae9d7fdac, type: 3}
       propertyPath: Loop
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1311694202, guid: 2cd211c3780654e9c86caa4ae9d7fdac, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 7a5cfd295bc2f4d54b3015d30de6d06a, type: 3}
     - target: {fileID: 3083146174761978083, guid: 2cd211c3780654e9c86caa4ae9d7fdac,
         type: 3}
       propertyPath: scoreManager
@@ -6327,7 +6404,6 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 3083146174761978083, guid: 2cd211c3780654e9c86caa4ae9d7fdac, type: 3}
     - {fileID: 3083146174761978092, guid: 2cd211c3780654e9c86caa4ae9d7fdac, type: 3}
-    - {fileID: 1311694202, guid: 2cd211c3780654e9c86caa4ae9d7fdac, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 2cd211c3780654e9c86caa4ae9d7fdac, type: 3}
 --- !u!114 &2047309017 stripped
 MonoBehaviour:
