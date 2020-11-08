@@ -28,7 +28,7 @@ public class ScoreManager : MonoBehaviour
     private void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
-        //RespawnPlayer();
+        RespawnPlayer();
        
     }
     private void Update()
