@@ -12,7 +12,10 @@ public class PlayerController : MonoBehaviour
     Animator animator;
     public GameObject medicine;
     public GameObject curePosition;
+    public GameObject zombiePrefab;
+    public GameObject zombieLocationSpawner;
     public PanelController panelController;
+    public ZombieSpawner zombieSpawner;
 
     void Start()
     {
@@ -50,8 +53,10 @@ public class PlayerController : MonoBehaviour
             other.gameObject.SetActive(false);
             scoreManager.weapon1Collected = true;
             scoreManager.canShoot = true;
+            Instantiate(zombiePrefab, zombieLocationSpawner.transform.position, Quaternion.identity);
+            zombieSpawner.StartZombieSpawner();
         }
-         if (other.CompareTag("Cure"))
+        if (other.CompareTag("Cure"))
         {
             Analytics.CustomEvent("Pickup Cure", transform.position);
             FindObjectOfType<AudioManager>().Play("CoinPickup");

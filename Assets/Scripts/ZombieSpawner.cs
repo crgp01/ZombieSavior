@@ -9,12 +9,13 @@ public class ZombieSpawner : MonoBehaviour
     public GameObject position2;
     public GameObject playerPosition;
     private NavMeshAgent zombieAgent;
-   
+    static MonoBehaviour instance;
+
     void Start()
     {
-        StartCoroutine(EnemySpawner());
         zombieAgent = GetComponent<NavMeshAgent>();
-        
+        instance = this;
+
     }
 
     IEnumerator EnemySpawner()
@@ -27,5 +28,10 @@ public class ZombieSpawner : MonoBehaviour
             yield return new WaitForSeconds(15);
         }
     }
-   
+
+    public void StartZombieSpawner() {
+        instance.StartCoroutine(((ZombieSpawner)instance).EnemySpawner());
+    }
+
+
 }
