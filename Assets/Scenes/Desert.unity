@@ -5506,6 +5506,7 @@ MonoBehaviour:
   respawnPoint: {fileID: 233234802}
   ZombieBossController: {fileID: 1123088992}
   bossMusic: {fileID: 0}
+  musicIsPlaying: 0
 --- !u!114 &1612855621
 MonoBehaviour:
   m_ObjectHideFlags: 0

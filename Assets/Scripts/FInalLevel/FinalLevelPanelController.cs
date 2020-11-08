@@ -23,6 +23,7 @@ public class FinalLevelPanelController : MonoBehaviour
     private bool enterStore = false;
     public ZombieBossController ZombieBossController;
     public AudioSource bossMusic;
+    public bool musicIsPlaying = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -48,7 +49,11 @@ public class FinalLevelPanelController : MonoBehaviour
     {
         mainPanel.gameObject.SetActive(false);
         playerPanel.gameObject.SetActive(true);
-        bossMusic.Play();
+        if (!musicIsPlaying) {
+            bossMusic.Play();
+            musicIsPlaying = true;
+        }
+      
         UnpauseGame();
     }
     public void QuitGame()

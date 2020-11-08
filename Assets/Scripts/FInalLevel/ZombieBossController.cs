@@ -22,6 +22,7 @@ public class ZombieBossController : MonoBehaviour
     public FinalLevelPanelController panelController;
     private static float STEP_TIMER = 0.5f;
     private float timeRemaining = STEP_TIMER;
+    private AudioSource bossMusic;
     // Start is called before the first frame update
     void Start()
     {
@@ -29,6 +30,7 @@ public class ZombieBossController : MonoBehaviour
         playerTransform = player.GetComponent<Transform>();
         animator = GetComponent<Animator>();
         zombieAgent = GetComponent<NavMeshAgent>();
+        bossMusic = player.GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -38,14 +40,13 @@ public class ZombieBossController : MonoBehaviour
         FollowingPlayer(transform, playerTransform);
         if (zombieLifeSlider.value == 0)
         {
-        
-            //FindObjectOfType<AudioManager>().Play("ZombieBossAttack");
-
             panelController.PauseGame();
             panelController.finalGamePanel.SetActive(true);
             panelController.mainPanel.gameObject.SetActive(false);
             panelController.playerPanel.gameObject.SetActive(false);
             FindObjectOfType<AudioManager>().Play("ZombieBossDie");
+            bossMusic.Stop();
+            FindObjectOfType<AudioManager>().Play("Victoria");
         }
     }
     void Update() {           
