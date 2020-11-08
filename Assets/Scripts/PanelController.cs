@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 
 public class PanelController : MonoBehaviour
 {
-    public GameObject storyPanel, miniMapPanel, mainPanel, playerPanel, cemeteryPanel, endgamePanel, gameOptionsPanel,
+    public GameObject storyPanel, miniMapPanel, mainPanel, playerPanel, cemeteryPanel, townPanel, endgamePanel, gameOptionsPanel,
         storePanel, inventoryPanel, creditsPanel, pausePanel, endLevel1Panel, finalGameObject, instructionText, gunInstructionText,
         coinInstructionText, finalInstructionText, respawnPoint, Document1Panel, Document2Panel, Document3Panel, Document4Panel, Document5Panel;
     public ScoreManager scoreManager;
@@ -27,6 +27,7 @@ public class PanelController : MonoBehaviour
         
     }
 
+    // Update is called once per frames
     void Update()
     {
         coinCounterText.text = $"Recoge {scoreManager.COINS_TARGET} monedas: {scoreManager.recolectedCoins}/{scoreManager.COINS_TARGET}";
@@ -40,6 +41,10 @@ public class PanelController : MonoBehaviour
         if (scoreManager.showStory) {
             PauseGame();
             storyPanel.gameObject.SetActive(true);
+        }
+        if (scoreManager.showSignal2) {
+            PauseGame();
+            townPanel.gameObject.SetActive(true);
         }
         if (playerPanel) {
             ChangeColorText();
@@ -63,6 +68,11 @@ public class PanelController : MonoBehaviour
         storyPanel.gameObject.SetActive(false);
         UnpauseGame();
         scoreManager.showStory = false;
+    }
+    public void CloseTownPanel() {
+        townPanel.gameObject.SetActive(false);
+        UnpauseGame();
+        scoreManager.showSignal2 = false;
     }
     public void CloseDocumentsPanel() {
         Document1Panel.gameObject.SetActive(false);

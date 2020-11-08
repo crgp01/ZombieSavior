@@ -111,6 +111,10 @@ public class PlayerController : MonoBehaviour
         {
             scoreManager.showSignal = true;
         }
+        if (col.gameObject.tag == "Signal2")
+        {
+            scoreManager.showSignal2 = true;
+        }
         if (col.gameObject.tag == "CureHouse")
         {
             col.gameObject.SetActive(false);

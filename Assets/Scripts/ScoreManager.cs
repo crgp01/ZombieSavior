@@ -11,7 +11,7 @@ public class ScoreManager : MonoBehaviour
     public Text coinScore, timeText;
     public GameObject gunImage, shotgunImage, gunInHand, shotgunInHand, respawnPoint, cureText;
     public bool weapon1Collected = false, pistolEquiped = false, shotgunEquiped = false,
-        timerIsRunning = false, medicinePicked = false, showSignal = false, cureWasPicked = false,
+        timerIsRunning = false, medicinePicked = false, showSignal = false, showSignal2 = false, cureWasPicked = false,
         showStory = false, allCoinsCollected = false, allDiariesCollected = false, zombieMode = false,
         canShoot = false, level1Finished = false, showFinalPanel = false, document1WasPicked = false,
         document2WasPicked = false, document3WasPicked = false, document4WasPicked = false, document5WasPicked = false;

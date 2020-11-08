@@ -31,6 +31,7 @@ TagManager:
   - Document3
   - Document4
   - Document5
+  - Signal2
   layers:
   - Default
   - TransparentFX
