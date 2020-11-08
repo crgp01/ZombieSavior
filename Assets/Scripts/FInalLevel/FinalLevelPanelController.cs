@@ -28,6 +28,7 @@ public class FinalLevelPanelController : MonoBehaviour
         PauseGame();
         player = GameObject.FindGameObjectWithTag("Player");
         playerPanel.gameObject.SetActive(false);
+        FindObjectOfType<AudioManager>().Stop("BossMusic");
 
     }
      
@@ -46,13 +47,14 @@ public class FinalLevelPanelController : MonoBehaviour
     {
         mainPanel.gameObject.SetActive(false);
         playerPanel.gameObject.SetActive(true);
+        FindObjectOfType<AudioManager>().Play("BossMusic");
         UnpauseGame();
     }
     public void QuitGame()
     {
         #if UNITY_EDITOR
    
-                        UnityEditor.EditorApplication.isPlaying = false;
+            UnityEditor.EditorApplication.isPlaying = false;
         #else
                 Application.Quit();
         #endif
@@ -84,6 +86,9 @@ public class FinalLevelPanelController : MonoBehaviour
         playerPanel.SetActive(true);
         scoreManager.RespawnPlayer();
         ZombieBossController.zombieLifeSlider.value = 10;
+        Destroy(scoreManager.medicine1);
+        Destroy(scoreManager.medicine2);
+
 
         UnpauseGame();
 

@@ -35,7 +35,10 @@ public class ZombieBossController : MonoBehaviour
         FollowingPlayer(transform, playerTransform);
         if (zombieLifeSlider.value == 0)
         {
-            FindObjectOfType<AudioManager>().Play("ZombieBossDie");
+            FindObjectOfType<AudioManager>().Stop("ZombieBossDie");
+            FindObjectOfType<AudioManager>().Stop("ZombieAttack");
+            FindObjectOfType<AudioManager>().Play("ZombieBossAttack");
+
             panelController.PauseGame();
             panelController.finalGamePanel.SetActive(true);
             panelController.mainPanel.gameObject.SetActive(false);

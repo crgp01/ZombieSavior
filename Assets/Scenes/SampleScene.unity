@@ -1652,7 +1652,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_BoundingSphereOverride: {x: 0, y: 1.8643849e-28, z: 4.5838e-41, w: 8.318957e+29}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -11220,6 +11220,103 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 8969033620042720927}
   m_PrefabAsset: {fileID: 0}
+--- !u!82 &1311694196
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1311694194}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 24300002, guid: 8de3aadfb4a8f4cc7953ac36af95df87,
+    type: 2}
+  m_audioClip: {fileID: 8300000, guid: e2c071afbf4324559a40f750d7feca24, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1001 &1313890651
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15023,9 +15120,13 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 1b0926efc48184cc4a627b4f4ac9bfac, type: 3}
     volume: 1
     source: {fileID: 0}
-  - soundName: Shoot
-    clip: {fileID: 8300000, guid: 77ccc4d64d01a4794a6ca96c627aec37, type: 3}
-    volume: 0.097
+  - soundName: ArchieSteps
+    clip: {fileID: 8300000, guid: e2c071afbf4324559a40f750d7feca24, type: 3}
+    volume: 1
+    source: {fileID: 0}
+  - soundName: ZombieSteps
+    clip: {fileID: 8300000, guid: bdbc846dfce854647b59617a215604f3, type: 3}
+    volume: 1
     source: {fileID: 0}
 --- !u!4 &1758097384
 Transform:
@@ -20408,6 +20509,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_CollisionDetection
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9074044244725410730, guid: 2cd211c3780654e9c86caa4ae9d7fdac,
+        type: 3}
+      propertyPath: m_controlMode
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2cd211c3780654e9c86caa4ae9d7fdac, type: 3}

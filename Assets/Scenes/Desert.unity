@@ -2712,6 +2712,36 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: caaa7ae63a9ddff43a592237cf4c65fc, type: 3}
+--- !u!1 &797009879
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 797009880}
+  m_Layer: 0
+  m_Name: CureSpawnPoint2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &797009880
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 797009879}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 21.226929, y: 0.17407778, z: 65.38193}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 15
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &803200937
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3373,6 +3403,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TagString
       value: Cure
+      objectReference: {fileID: 0}
+    - target: {fileID: 7082859390622781161, guid: cf5e72b7fe5614e118989f091e599017,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7087916630938865601, guid: cf5e72b7fe5614e118989f091e599017,
         type: 3}
@@ -4682,7 +4717,7 @@ PrefabInstance:
     - target: {fileID: 4671812899597373596, guid: 679dd80650e024556bf51faa0c99be63,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4671812899597373599, guid: 679dd80650e024556bf51faa0c99be63,
         type: 3}
@@ -4934,6 +4969,10 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: d54535d6c38d6410fa586c707bea8a9b, type: 3}
     volume: 1
     source: {fileID: 0}
+  - soundName: BossMusic
+    clip: {fileID: 8300000, guid: 7a5cfd295bc2f4d54b3015d30de6d06a, type: 3}
+    volume: 0.131
+    source: {fileID: 0}
 --- !u!4 &1357301479
 Transform:
   m_ObjectHideFlags: 0
@@ -5082,12 +5121,6 @@ RectTransform:
   m_AnchoredPosition: {x: -5, y: 0}
   m_SizeDelta: {x: -20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!1 &1484959596 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7082859390622781161, guid: cf5e72b7fe5614e118989f091e599017,
-    type: 3}
-  m_PrefabInstance: {fileID: 975922187}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1486036908 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7631745663317929285, guid: 116132c514f4a4d679192a87b3137c40,
@@ -5454,7 +5487,7 @@ MonoBehaviour:
   timeText: {fileID: 1056956127}
   medicinePicked: 0
   cureWasPicked: 0
-  allCoinsCollected: 0
+  allCoinsCollected: 1
   zombieMode: 0
   pistolEquiped: 0
   shotgunEquiped: 0
@@ -5462,6 +5495,12 @@ MonoBehaviour:
   respawnPoint: {fileID: 233234802}
   cureText: {fileID: 333101922}
   posprocesingController: {fileID: 1075887165}
+  medicineLocation1: {fileID: 1926579980}
+  medicineLocation2: {fileID: 797009879}
+  medicinePrefab: {fileID: 7082859390622781161, guid: cf5e72b7fe5614e118989f091e599017,
+    type: 3}
+  medicine1: {fileID: 0}
+  medicine2: {fileID: 0}
 --- !u!4 &1612855619
 Transform:
   m_ObjectHideFlags: 0
@@ -6076,6 +6115,36 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 660116949}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1926579980
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1926579981}
+  m_Layer: 0
+  m_Name: CureSpawnPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1926579981
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1926579980}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 81.8, y: 0.46, z: 25.2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 14
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1927744716 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1305042709180233067, guid: 7fd9316335ca74f3fa1c6200af1033e3,
@@ -6296,7 +6365,7 @@ PrefabInstance:
         type: 3}
       propertyPath: medicine
       value: 
-      objectReference: {fileID: 1484959596}
+      objectReference: {fileID: 0}
     - target: {fileID: 3083146175107926744, guid: 2cd211c3780654e9c86caa4ae9d7fdac,
         type: 3}
       propertyPath: m_IsActive
@@ -6365,6 +6434,7 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 3083146174761978083, guid: 2cd211c3780654e9c86caa4ae9d7fdac, type: 3}
     - {fileID: 3083146174761978092, guid: 2cd211c3780654e9c86caa4ae9d7fdac, type: 3}
+    - {fileID: 1311694202, guid: 2cd211c3780654e9c86caa4ae9d7fdac, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 2cd211c3780654e9c86caa4ae9d7fdac, type: 3}
 --- !u!114 &2047309017 stripped
 MonoBehaviour:
@@ -6409,7 +6479,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreManager: {fileID: 1612855618}
-  medicine: {fileID: 1484959596}
+  medicine: {fileID: 7082859390622781161, guid: cf5e72b7fe5614e118989f091e599017,
+    type: 3}
 --- !u!114 &2105225097
 MonoBehaviour:
   m_ObjectHideFlags: 0

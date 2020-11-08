@@ -24,6 +24,13 @@ public class FinalLevelController : MonoBehaviour
     public GameObject cureText;
     private GameObject[] gameObjects;
     public PosprocesingController posprocesingController;
+    public GameObject medicineLocation1;
+    public GameObject medicineLocation2;
+    public GameObject medicinePrefab;
+    public GameObject medicine1;
+    public GameObject medicine2;
+    private bool medicineWasSpawned = true;
+
 
     private void Start()
     {
@@ -41,10 +48,23 @@ public class FinalLevelController : MonoBehaviour
         if (lifeBarSlider.value == 0)
         {
             zombieMode = true;
+            if (medicineWasSpawned) {
+                medicine1 = Instantiate(medicinePrefab, medicineLocation1.transform.position, Quaternion.identity);
+                medicine1.gameObject.tag = "Cure";
+     
+                medicine2 = Instantiate(medicinePrefab, medicineLocation2.transform.position, Quaternion.identity);
+                medicine2.gameObject.tag = "Cure";
+
+                medicineWasSpawned = false;
+            }
+           
         }
         if (lifeBarSlider.value > 0)
         {
             zombieMode = false;
+            medicineWasSpawned = true;
+            Destroy(medicine1);
+            Destroy(medicine2);
         }
         if (zombieMode)
         {

@@ -26,4 +26,9 @@ public class AudioManager : MonoBehaviour
         SoundController soundFinded = Array.Find(soundList, sound => sound.soundName == name);
         soundFinded.source.Play();
     }
+
+    public void Stop(string name) {
+        SoundController soundFinded = Array.Find(soundList, sound => sound.soundName == name);
+        soundFinded.source.Stop();
+    }
 }

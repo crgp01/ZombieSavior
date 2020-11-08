@@ -1,12 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
+using UnityEngine.Audio;
 
 public class SimpleCharacterControl : MonoBehaviour {
 
     private enum ControlMode
     {
-        Tank,
-        Direct
+        Tank
     }
 
     [SerializeField] private float m_moveSpeed = 2;
@@ -15,7 +15,7 @@ public class SimpleCharacterControl : MonoBehaviour {
      public Animator m_animator;
      public Rigidbody m_rigidBody;
 
-    [SerializeField] private ControlMode m_controlMode = ControlMode.Direct;
+    [SerializeField] private ControlMode m_controlMode = ControlMode.Tank;
 
     private float m_currentV = 0;
     private float m_currentH = 0;
@@ -45,6 +45,7 @@ public class SimpleCharacterControl : MonoBehaviour {
                     m_collisions.Add(collision.collider);
                 }
                 m_isGrounded = true;
+               
             }
         }
     }
@@ -83,7 +84,9 @@ public class SimpleCharacterControl : MonoBehaviour {
             {
                 m_collisions.Remove(collision.collider);
             }
-            if (m_collisions.Count == 0) { m_isGrounded = false; }
+            if (m_collisions.Count == 0) {
+                m_isGrounded = false;
+            }
         }
     }
 
@@ -101,10 +104,6 @@ public class SimpleCharacterControl : MonoBehaviour {
 
         switch(m_controlMode)
         {
-            case ControlMode.Direct:
-                DirectUpdate();
-                break;
-
             case ControlMode.Tank:
                 TankUpdate();
                 break;
@@ -113,7 +112,6 @@ public class SimpleCharacterControl : MonoBehaviour {
                 Debug.LogError("Unsupported state");
                 break;
         }
-
         m_wasGrounded = m_isGrounded;
     }
 
@@ -139,41 +137,6 @@ public class SimpleCharacterControl : MonoBehaviour {
         transform.Rotate(0, m_currentH * m_turnSpeed * Time.deltaTime, 0);
 
         m_animator.SetFloat("MoveSpeed", m_currentV);
-
-        JumpingAndLanding();
-    }
-
-    private void DirectUpdate()
-    {
-        float v = Input.GetAxis("Vertical");
-        float h = Input.GetAxis("Horizontal");
-
-        Transform camera = Camera.main.transform;
-
-        if (Input.GetKey(KeyCode.LeftShift))
-        {
-            v *= m_walkScale;
-            h *= m_walkScale;
-        }
-
-        m_currentV = Mathf.Lerp(m_currentV, v, Time.deltaTime * m_interpolation);
-        m_currentH = Mathf.Lerp(m_currentH, h, Time.deltaTime * m_interpolation);
-
-        Vector3 direction = camera.forward * m_currentV + camera.right * m_currentH;
-
-        float directionLength = direction.magnitude;
-        direction.y = 0;
-        direction = direction.normalized * directionLength;
-
-        if(direction != Vector3.zero)
-        {
-            m_currentDirection = Vector3.Slerp(m_currentDirection, direction, Time.deltaTime * m_interpolation);
-
-            transform.rotation = Quaternion.LookRotation(m_currentDirection);
-            transform.position += m_currentDirection * m_moveSpeed * Time.deltaTime;
-
-            m_animator.SetFloat("MoveSpeed", direction.magnitude);
-        }
 
         JumpingAndLanding();
     }

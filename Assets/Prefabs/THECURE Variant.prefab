@@ -52,7 +52,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1987713744733760, guid: b55df95fa6211964e8ad561501250fac, type: 3}
       propertyPath: m_Name
-      value: THECURE
+      value: THECURE Variant
       objectReference: {fileID: 0}
     - target: {fileID: 1987713744733760, guid: b55df95fa6211964e8ad561501250fac, type: 3}
       propertyPath: m_TagString

@@ -15,14 +15,12 @@ public class FinalLevelPlayerController : MonoBehaviour
     void Start()
     {
         animator = GetComponent<Animator>();
-        medicine.gameObject.SetActive(false);
     }
 
     private void OnTriggerEnter(Collider other)
     {
          if (other.CompareTag("Cure"))
         {
-            medicine.gameObject.SetActive(false);
             scoreManager.cureText.gameObject.SetActive(false);
             scoreManager.lifeBarSlider.value = 3;
             scoreManager.medicinePicked = true;
@@ -33,6 +31,7 @@ public class FinalLevelPlayerController : MonoBehaviour
         if (col.gameObject.tag == "Coin")
         {
             animator.Play("Pickup");
+            FindObjectOfType<AudioManager>().Play("CoinPickup");
             col.gameObject.SetActive(false);
             scoreManager.recolectedCoins++;
         }
@@ -81,7 +80,6 @@ public class FinalLevelPlayerController : MonoBehaviour
     {
         if (scoreManager.zombieMode)
         {
-            medicine.gameObject.SetActive(true);
             IDictionary<string, object> eventDictionary = new Dictionary<string, object> { };
             eventDictionary.Add("Player position", transform.position);
             eventDictionary.Add("Level", 2);
