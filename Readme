@@ -1,0 +1,46 @@
+Readme
+Todos los assets externos se encuentran en External Assets:
+
+Assets Externos:
+Bed & Bath Furniture Pack
+BrokenVector
+Cartoon_Texture_Pack
+Flare Gun
+Fonts
+FREE_Cartoon_Halloween_Pack
+JustPlay
+Low_Poly_Mini_Village
+RawWoodenFurnitureFree
+Runemark Studio
+shotgun
+Standard Assets
+Supercyan Character Pack Free Sample
+Supercyan Character Pack Zombie Sample
+Survival Tools
+
+Scripts externos:
+AudioManager: https://www.youtube.com/watch?v=6OT43pvUyfY
+SoundController: https://www.youtube.com/watch?v=6OT43pvUyfY
+Remote Configs: https://www.youtube.com/watch?v=14njHI4CGgA
+FreeZombieController: Supercyan Character Pack Zombie Sample
+SimpleCharacterController: Supercyan Character Pack Free Sample
+SettingConfiguration: https://www.youtube.com/watch?v=YOaYQrN1oYQ
+CameraOrbitAutoRotation: Clase de Cámarass Unity101
+PosprocesingController: https://docs.unity3d.com/Manual/PostProcessingOverview.html
+
+Assets Propios:
+Terrain
+Moneda
+
+Scripts Propios:
+BulletController
+CoinController
+GunController
+InventoryController
+PanelController
+PeoplePrefabController
+PlayerControllerr
+PosprocesingController
+ScoreManager
+FreeZombieController
+ZombieSpawner
