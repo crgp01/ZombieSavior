@@ -21,6 +21,13 @@ public class StoreController : MonoBehaviour
     public ScoreManager scoreManager;
     public RemoteConfigs remoteConfigs;
 
+    // Start is called before the first frame update
+    void Start()
+    {
+        
+    }
+
+    // Update is called once per frame
     void Update()
     {
         if (currentCoins) {
@@ -44,7 +51,7 @@ public class StoreController : MonoBehaviour
             eventDictionary.Add("Potion Price", GREEN_POTION_PRICE);
             eventDictionary.Add("Level", 1);
 
-            Analytics.CustomEvent("Purchase green potion", eventDictionary);
+            AnalyticsEvent.Custom("Purchase green potion", eventDictionary);
         }
         else {
             errorMessage.text = NO_COINS_MESSAGE;
@@ -53,7 +60,7 @@ public class StoreController : MonoBehaviour
             eventDictionary.Add("Potion Price", GREEN_POTION_PRICE);
             eventDictionary.Add("Level", 1);
 
-            Analytics.CustomEvent("Error Purchasing green potion", eventDictionary);
+            AnalyticsEvent.Custom("Error Purchasing green potion", eventDictionary);
         }
     }
     public void purchaseYellowPotion() {
@@ -68,7 +75,8 @@ public class StoreController : MonoBehaviour
             eventDictionary.Add("Potion Price", YELLOW_POTION_PRICE);
             eventDictionary.Add("Level", 1);
 
-            Analytics.CustomEvent("Purchase yellow potion", eventDictionary);
+            AnalyticsEvent.Custom("Purchase yellow potion", eventDictionary);
+
         }
         else {
             errorMessage.text = NO_COINS_MESSAGE;
@@ -77,7 +85,7 @@ public class StoreController : MonoBehaviour
             eventDictionary.Add("Potion Price", YELLOW_POTION_PRICE);
             eventDictionary.Add("Level", 1);
 
-            Analytics.CustomEvent("Error Purchasing yellow potion", eventDictionary);
+            AnalyticsEvent.Custom("Error Purchasing yellow potion", eventDictionary);
         }
     }
     public void purchaseShotgun() {
@@ -98,7 +106,7 @@ public class StoreController : MonoBehaviour
                     eventDictionary.Add("Shotgun Price", SHOT_GUN_PRICE);
                     eventDictionary.Add("Level", 1);
 
-                    Analytics.CustomEvent("Purchase shotgun", eventDictionary);
+                    AnalyticsEvent.Custom("Purchase shotgun", eventDictionary);
                 }
                 else
                 {

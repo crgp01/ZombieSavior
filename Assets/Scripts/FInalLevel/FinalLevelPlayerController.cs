@@ -48,7 +48,7 @@ public class FinalLevelPlayerController : MonoBehaviour
             eventDictionary.Add("Damage Amount", 1);
             eventDictionary.Add("Level", 2);
 
-            Analytics.CustomEvent("Player Damaged by Zombie Boss", eventDictionary);
+            AnalyticsEvent.Custom("Player Damaged by Zombie Boss", eventDictionary);
 
             scoreManager.lifeBarSlider.value -= 1;
             FindObjectOfType<AudioManager>().Play("ArchieHurt");
@@ -61,7 +61,8 @@ public class FinalLevelPlayerController : MonoBehaviour
             eventDictionary.Add("Damage Amount", 1);
             eventDictionary.Add("Level", 2);
 
-            Analytics.CustomEvent("Player Damaged by Zombie", eventDictionary);
+            AnalyticsEvent.Custom("Player Damaged by Zombie", eventDictionary);
+
             scoreManager.lifeBarSlider.value -= 1;
             FindObjectOfType<AudioManager>().Play("ArchieHurt");
         }
@@ -81,7 +82,7 @@ public class FinalLevelPlayerController : MonoBehaviour
             eventDictionary.Add("Player position", transform.position);
             eventDictionary.Add("Level", 2);
 
-            Analytics.CustomEvent("Searching cure", eventDictionary);
+            AnalyticsEvent.Custom("Searching cure", eventDictionary);
         }
 
     }
