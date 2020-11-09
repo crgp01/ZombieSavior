@@ -2179,9 +2179,9 @@ MonoBehaviour:
   m_HandleRect: {fileID: 0}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 5
+  m_MaxValue: 20
   m_WholeNumbers: 0
-  m_Value: 5
+  m_Value: 20
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -5452,7 +5452,7 @@ MonoBehaviour:
   shotgunInHand: {fileID: 23088878}
   gunInHand: {fileID: 1452496232}
   lifeBarSlider: {fileID: 1504598697}
-  timeRemaining: 20
+  timeRemaining: 30
   timerIsRunning: 0
   timeText: {fileID: 1056956127}
   medicinePicked: 0

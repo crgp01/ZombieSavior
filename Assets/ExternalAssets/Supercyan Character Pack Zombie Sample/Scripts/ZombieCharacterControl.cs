@@ -9,8 +9,6 @@ public class ZombieCharacterControl : MonoBehaviour
         Direct
     }
 
-    private float m_moveSpeed = 2;
-
     public Animator m_animator;
     public Rigidbody m_rigidBody;
     public bool zombieIsMoving;

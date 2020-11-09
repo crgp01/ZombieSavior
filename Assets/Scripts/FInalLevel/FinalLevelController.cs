@@ -11,7 +11,7 @@ public class FinalLevelController : MonoBehaviour
     public GameObject gunImage, shotgunImage, shotgunInHand;
     public GameObject gunInHand;
     public Slider lifeBarSlider;
-    public float timeRemaining = 15;
+    public float timeRemaining = 30;
     public bool timerIsRunning = false;
     public Text timeText;
     public bool medicinePicked = false;

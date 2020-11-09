@@ -91,10 +91,9 @@ public class FinalLevelPanelController : MonoBehaviour
         scoreManager.cureText.SetActive(false);
         playerPanel.SetActive(true);
         scoreManager.RespawnPlayer();
-        ZombieBossController.zombieLifeSlider.value = 10;
+        ZombieBossController.zombieLifeSlider.value = 20;
         Destroy(scoreManager.medicine1);
         Destroy(scoreManager.medicine2);
-
 
         UnpauseGame();
 

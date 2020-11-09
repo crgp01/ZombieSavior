@@ -10985,7 +10985,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e81d7494385a24f23a2d32858a437603, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  recolectedCoins: 20
+  recolectedCoins: 0
   coinScore: {fileID: 1420593097}
   timeText: {fileID: 1995155579}
   gunImage: {fileID: 1018146462}

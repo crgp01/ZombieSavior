@@ -9,7 +9,6 @@ public class FinalLevelPlayerController : MonoBehaviour
     [SerializeField] public FinalLevelController scoreManager;
     Animator animator;
     public GameObject medicine;
-    private PanelController panelController;
 
     // Start is called before the first frame update
     void Start()
@@ -65,11 +64,6 @@ public class FinalLevelPlayerController : MonoBehaviour
             Analytics.CustomEvent("Player Damaged by Zombie", eventDictionary);
             scoreManager.lifeBarSlider.value -= 1;
             FindObjectOfType<AudioManager>().Play("ArchieHurt");
-        }
-        if (col.gameObject.tag == "Store")
-        {
-            panelController.GoToStore();
-            panelController.enterStore = true;
         }
     }
     private void FixedUpdate()
