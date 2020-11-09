@@ -1304,6 +1304,7 @@ GameObject:
   - component: {fileID: 5347139068220951608}
   - component: {fileID: -3603998288060520632}
   - component: {fileID: -6238763905808316848}
+  - component: {fileID: 8249580287143197485}
   m_Layer: 0
   m_Name: People
   m_TagString: People
@@ -1390,3 +1391,15 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
+--- !u!114 &8249580287143197485
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1968476592218994}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a6e3b400d0b745c8afb68a31f513e22, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
