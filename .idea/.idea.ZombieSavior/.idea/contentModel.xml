@@ -1,0 +1,172 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\Users\Andrés Quilodrán\.Rider2019.2\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\Andrés Quilodrán\.Rider2019.2\system\resharper-host\local\Transient\ReSharperHost\v192\SolutionCaches\_ZombieSavior.622596842.00" t="ExcludeRecursive" />
+    <e p="C:\Users\Andrés Quilodrán\Documents\Unity\ZombieSavior" t="IncludeRecursive">
+      <e p="Assembly-CSharp-Editor.csproj" t="IncludeRecursive" />
+      <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
+      <e p="Assets" t="Include">
+        <e p="ExternalAssets" t="Include">
+          <e p="Bed &amp; Bath Furniture Pack" t="Include">
+            <e p="Documentation.txt" t="Include" />
+          </e>
+          <e p="BrokenVector" t="Include">
+            <e p="LowPolyBrickHouses" t="Include">
+              <e p="Editor" t="Include">
+                <e p="ModelCustomizerInspector.cs" t="Include" />
+              </e>
+              <e p="Scripts" t="Include">
+                <e p="ModelCustomizer.cs" t="Include" />
+              </e>
+              <e p="Shaders" t="Include">
+                <e p="FoliageShader.shader" t="Include" />
+              </e>
+            </e>
+            <e p="LowPolyShaders" t="Include">
+              <e p="Shaders" t="Include">
+                <e p="LowPolyPBRShader.shader" t="Include" />
+                <e p="LowPolyUnlitShader.shader" t="Include" />
+              </e>
+            </e>
+          </e>
+          <e p="Fonts" t="Include">
+            <e p="Documentation" t="Include">
+              <e p="JazzCreateAltKeys_BubbleFont.txt" t="Include" />
+              <e p="JazzCreateBubble_VersionHistory_1.1.txt" t="Include" />
+            </e>
+            <e p="Script" t="Include">
+              <e p="scriptTexttest.cs" t="Include" />
+            </e>
+          </e>
+          <e p="Standard Assets" t="Include">
+            <e p="Cameras" t="Include">
+              <e p="CameraGuidelines.txt" t="Include" />
+              <e p="Scripts" t="Include">
+                <e p="AbstractTargetFollower.cs" t="Include" />
+                <e p="AutoCam.cs" t="Include" />
+                <e p="FreeLookCam.cs" t="Include" />
+                <e p="HandHeldCam.cs" t="Include" />
+                <e p="LookatTarget.cs" t="Include" />
+                <e p="PivotBasedCameraRig.cs" t="Include" />
+                <e p="ProtectCameraFromWallClip.cs" t="Include" />
+                <e p="TargetFieldOfView.cs" t="Include" />
+              </e>
+            </e>
+            <e p="CrossPlatformInput" t="Include">
+              <e p="CrossPlatformInputGuidelines.txt" t="Include" />
+              <e p="Scripts" t="Include">
+                <e p="AxisTouchButton.cs" t="Include" />
+                <e p="ButtonHandler.cs" t="Include" />
+                <e p="CrossPlatformInputManager.cs" t="Include" />
+                <e p="InputAxisScrollbar.cs" t="Include" />
+                <e p="Joystick.cs" t="Include" />
+                <e p="MobileControlRig.cs" t="Include" />
+                <e p="PlatformSpecific" t="Include">
+                  <e p="MobileInput.cs" t="Include" />
+                  <e p="StandaloneInput.cs" t="Include" />
+                </e>
+                <e p="TiltInput.cs" t="Include" />
+                <e p="TouchPad.cs" t="Include" />
+                <e p="VirtualInput.cs" t="Include" />
+              </e>
+            </e>
+            <e p="Utility" t="Include">
+              <e p="ActivateTrigger.cs" t="Include" />
+              <e p="AlphaButtonClickMask.cs" t="Include" />
+              <e p="AutoMobileShaderSwitch.cs" t="Include" />
+              <e p="AutoMoveAndRotate.cs" t="Include" />
+              <e p="CameraRefocus.cs" t="Include" />
+              <e p="CurveControlledBob.cs" t="Include" />
+              <e p="DragRigidbody.cs" t="Include" />
+              <e p="DynamicShadowSettings.cs" t="Include" />
+              <e p="EventSystemChecker.cs" t="Include" />
+              <e p="FollowTarget.cs" t="Include" />
+              <e p="ForcedReset.cs" t="Include" />
+              <e p="FOVKick.cs" t="Include" />
+              <e p="FPSCounter.cs" t="Include" />
+              <e p="LerpControlledBob.cs" t="Include" />
+              <e p="ObjectResetter.cs" t="Include" />
+              <e p="ParticleSystemDestroyer.cs" t="Include" />
+              <e p="PlatformSpecificContent.cs" t="Include" />
+              <e p="SimpleActivatorMenu.cs" t="Include" />
+              <e p="SimpleMouseRotator.cs" t="Include" />
+              <e p="SmoothFollow.cs" t="Include" />
+              <e p="TimedObjectActivator.cs" t="Include" />
+              <e p="TimedObjectDestructor.cs" t="Include" />
+              <e p="WaypointCircuit.cs" t="Include" />
+              <e p="WaypointProgressTracker.cs" t="Include" />
+            </e>
+          </e>
+          <e p="Supercyan Character Pack Free Sample" t="Include">
+            <e p="Scripts" t="Include">
+              <e p="CameraLogic.cs" t="Include" />
+              <e p="Demo.cs" t="Include" />
+              <e p="SimpleCharacterControl.cs" t="Include" />
+            </e>
+          </e>
+          <e p="Supercyan Character Pack Zombie Sample" t="Include">
+            <e p="Scripts" t="Include">
+              <e p="ZombieCameraLogic.cs" t="Include" />
+              <e p="ZombieCharacterControl.cs" t="Include" />
+              <e p="ZombieFree.cs" t="Include" />
+            </e>
+          </e>
+          <e p="Survival Tools" t="Include">
+            <e p="ReadMe" t="Include">
+              <e p="ReadMe.txt" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="Samples" t="Include">
+          <e p="Remote Config" t="Include">
+            <e p="1.0.9" t="Include">
+              <e p="Example Sample" t="Include">
+                <e p="SampleExample.cs" t="Include" />
+              </e>
+            </e>
+          </e>
+          <e p="Terrain Tools" t="Include">
+            <e p="0.1.0-preview" t="Include">
+              <e p="Terrain Assets" t="Include">
+                <e p="ThirdPartyNotices.txt" t="Include" />
+              </e>
+            </e>
+          </e>
+        </e>
+        <e p="Scripts" t="Include">
+          <e p="AudioManager.cs" t="Include" />
+          <e p="BulletController.cs" t="Include" />
+          <e p="CameraOrbitAutoRotation.cs" t="Include" />
+          <e p="CoinController.cs" t="Include" />
+          <e p="FInalLevel" t="Include">
+            <e p="FinalLevelController.cs" t="Include" />
+            <e p="FinalLevelGunController.cs" t="Include" />
+            <e p="FinalLevelInventory.cs" t="Include" />
+            <e p="FinalLevelPanelController.cs" t="Include" />
+            <e p="FinalLevelPlayerController.cs" t="Include" />
+            <e p="FinalLevelShop.cs" t="Include" />
+            <e p="ZombieBossController.cs" t="Include" />
+          </e>
+          <e p="GunController.cs" t="Include" />
+          <e p="InventoryController.cs" t="Include" />
+          <e p="PanelController.cs" t="Include" />
+          <e p="PeoplePrefab.cs" t="Include" />
+          <e p="PlayerController.cs" t="Include" />
+          <e p="PosprocesingController.cs" t="Include" />
+          <e p="RemoteConfigs.cs" t="Include" />
+          <e p="ScoreManager.cs" t="Include" />
+          <e p="SettingConfiguration.cs" t="Include" />
+          <e p="SoundController.cs" t="Include" />
+          <e p="StoreController.cs" t="Include" />
+          <e p="ZombieController.cs" t="Include" />
+          <e p="ZombieSpawner.cs" t="Include" />
+        </e>
+      </e>
+      <e p="obj" t="ExcludeRecursive" />
+      <e p="Packages" t="ExcludeRecursive" />
+      <e p="Temp\bin" t="ExcludeRecursive" />
+      <e p="ZombieSavior.sln" t="IncludeFlat" />
+    </e>
+  </component>
+</project>
