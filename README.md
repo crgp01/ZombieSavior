@@ -4,3 +4,9 @@ Zombie Saviour es un videojuego en Unity creado para PC tanto para Windows como 
 ### Proyecto en WebGL
 https://crgp01.github.io/ZombieSavior/
 
+### Nota: 
+Para clonar el proyecto y ejecutarlo en local se debe tener habilitado 
+el formato de archivo de git-lfs (https://git-lfs.github.com/) ya que las texturas 
+y las imágenes han sido comprimidas por su tamaño y de no tenerlo va a afectar toda 
+la visualización del juego.
+
