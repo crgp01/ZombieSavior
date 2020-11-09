@@ -43,7 +43,7 @@ public class PlayerController : MonoBehaviour
             eventDictionary.Add("Player position", transform.position);
             eventDictionary.Add("Level", 1);
 
-            Analytics.CustomEvent("Searching cure", eventDictionary);
+            AnalyticsEvent.Custom("Searching cure", eventDictionary);
             scoreManager.lifeBarSlider.value -= 1;
         }
     }
@@ -129,7 +129,8 @@ public class PlayerController : MonoBehaviour
             eventDictionary.Add("Damage Amount", 1);
             eventDictionary.Add("Level", 1);
 
-            Analytics.CustomEvent("Player Damaged by Zombie", eventDictionary);
+            AnalyticsEvent.Custom("Player Damaged by Zombie", eventDictionary);
+
             scoreManager.lifeBarSlider.value -= 1;
             FindObjectOfType<AudioManager>().Play("ArchieHurt");
         }

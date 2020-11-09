@@ -122,7 +122,7 @@ public class FinalLevelPanelController : MonoBehaviour
         eventDictionary.Add("Access location", player.transform.position);
         eventDictionary.Add("Level", 2);
 
-        Analytics.CustomEvent("Access Credits Panel", eventDictionary);
+        AnalyticsEvent.Custom("Access Credits Panel", eventDictionary);
     }
     public void BackToMenu()
     {
@@ -151,7 +151,7 @@ public class FinalLevelPanelController : MonoBehaviour
         eventDictionary.Add("Access location", player.transform.position);
         eventDictionary.Add("Level", 2);
 
-        Analytics.CustomEvent("Access Inventory Panel", eventDictionary);
+        AnalyticsEvent.Custom("Access Inventory Panel", eventDictionary);
     }
     public void GoBackFromInventory()
     {
@@ -173,7 +173,7 @@ public class FinalLevelPanelController : MonoBehaviour
         eventDictionary.Add("Access location", player.transform.position);
         eventDictionary.Add("Level", 2);
 
-        Analytics.CustomEvent("Access Store Panel", eventDictionary);
+        AnalyticsEvent.Custom("Access Store Panel", eventDictionary);
     }
     public void GoBackFromStore()
     {
