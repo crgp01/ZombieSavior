@@ -32,6 +32,7 @@ TagManager:
   - Document4
   - Document5
   - Signal2
+  - FinalPoint
   layers:
   - Default
   - TransparentFX
